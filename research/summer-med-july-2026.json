@@ -54,7 +54,7 @@
           "url": "https://www.msccruises.co.uk/",
           "price2": 1558,
           "price3": 3417,
-          "note": "inside, 2 гостя — сайт линии",
+          "note": "inside, 2 гостя — сайт линии · обновлено 2026-06-14",
           "verifiedAt": "2026-06-14",
           "source": "cruisello-go"
         },
@@ -63,7 +63,7 @@
           "url": "https://cruisello.com/go/MSC-GRANDIOSA-20260705-7?pid=d3a7b25b-bda7-4aa3-9bab-37b658d3117e",
           "price2": 1558,
           "price3": 3417,
-          "note": "переход к бронированию",
+          "note": "переход к бронированию · обновлено 2026-06-14",
           "verifiedAt": "2026-06-14"
         },
         {
@@ -72,7 +72,8 @@
           "price2": 1558,
           "price3": 3417,
           "note": "inside, live fetch",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "manual": false
         },
         {
           "vendor": "Oceanview",
@@ -82,7 +83,8 @@
           "note": "~€1049/чел × 2",
           "cabin": "Oceanview",
           "verifiedAt": "2026-06-14",
-          "source": "Cruisello"
+          "source": "Cruisello",
+          "manual": false
         },
         {
           "vendor": "Balcony",
@@ -92,7 +94,8 @@
           "note": "~€1409/чел × 2",
           "cabin": "Balcony",
           "verifiedAt": "2026-06-14",
-          "source": "Cruisello"
+          "source": "Cruisello",
+          "manual": false
         },
         {
           "vendor": "CruiseDirect",
@@ -101,7 +104,8 @@
           "price3": null,
           "note": "ссылка Cruisello /go/ · цена на сайте",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "hidden": false
         },
         {
           "vendor": "iCruise",
@@ -110,7 +114,8 @@
           "price3": null,
           "note": "ссылка Cruisello /go/ · цена на сайте",
           "affiliateUrl": "https://www.icruise.com",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "hidden": false
         },
         {
           "vendor": "Inside",
@@ -118,35 +123,31 @@
           "note": "~€779/чел × 2",
           "source": "Cruisello",
           "verifiedAt": "2026-06-14",
-          "price3": 3417
-        },
-        {
-          "vendor": "CruiseCompete",
-          "url": "https://www.cruisecompete.com",
-          "price2": null,
-          "manual": true,
-          "note": "котировка по email (1–2 дня)",
-          "verifiedAt": null,
-          "hidden": true,
-          "affiliateUrl": "https://www.cruisecompete.com",
-          "source": "cruisello-go"
+          "price3": 3417,
+          "manual": false
         },
         {
           "ok": true,
           "vendor": "Vacations To Go",
-          "url": "https://www.vacationstogo.com",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=47945",
           "price2": 1766,
           "price3": 2649,
           "price3Est": true,
           "pricePP": 883,
           "currency": "USD",
           "fastDealId": "47945",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "note": "VTG inside · 2026-07-05 · 2ч $1766 · 3ч $2649 (оценка +1pp)",
           "verifiedAt": "2026-06-14",
-          "manual": false,
-          "affiliateUrl": "https://www.vacationstogo.com",
-          "source": "cruisello-go",
-          "hidden": false
+          "manual": false
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
         }
       ],
       "teen16": {
@@ -160,7 +161,7 @@
         "policyUrl": "https://www.msccruises.co.uk/faq",
         "discountHint": "Отдельной детской скидки для 16 лет, скорее всего, нет"
       },
-      "lastRefreshed": "2026-06-14T15:29:48.449Z",
+      "lastRefreshed": "2026-06-14T22:02:01.678Z",
       "bestPrice2": {
         "vendor": "MSC Cruises (прямо)",
         "price": 1558,

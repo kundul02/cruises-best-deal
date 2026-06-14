@@ -53,21 +53,27 @@
           "price2": 3198,
           "note": "~€1599/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 4947,
+          "manual": false
         },
         {
           "vendor": "Balcony",
           "price2": 4398,
           "note": "~€2199/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 4947,
+          "manual": false
         },
         {
           "vendor": "Suite",
           "price2": 11998,
           "note": "~€5999/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 4947,
+          "manual": false
         },
         {
           "vendor": "Cruisello",
@@ -75,7 +81,8 @@
           "price2": 3198,
           "price3": 4947,
           "note": "inside, live fetch",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "manual": false
         },
         {
           "vendor": "CruiseDirect",
@@ -96,11 +103,19 @@
         {
           "vendor": "TUI Cruises (прямо)",
           "url": "https://www.cruisecheap.com/cruises/transatlantic-cruises.html",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "price2": 3198,
+          "price3": 4947,
+          "verifiedAt": "2026-06-14",
+          "note": " · обновлено 2026-06-14"
         },
         {
           "vendor": "Cruisello · Book",
-          "url": "https://cruisello.com/go/TUI-MEINS1-20260824-15?pid=7d665313-dd91-44f8-beb6-9b5c9c335a7f"
+          "url": "https://cruisello.com/go/TUI-MEINS1-20260824-15?pid=7d665313-dd91-44f8-beb6-9b5c9c335a7f",
+          "price2": 3198,
+          "price3": 4947,
+          "verifiedAt": "2026-06-14",
+          "note": " · обновлено 2026-06-14"
         },
         {
           "vendor": "CruiseCompete",
@@ -112,15 +127,14 @@
           "hidden": true
         }
       ],
-      "lastRefreshed": "2026-06-14T22:02:19.957Z",
+      "lastRefreshed": "2026-06-14T22:08:37.437Z",
       "bestPrice2": {
         "vendor": "Inside",
         "price": 3198
       },
       "bestPrice3": {
-        "vendor": "Cruisello",
-        "price": 4947,
-        "url": "https://cruisello.com/cruises/15-nights-transatlantic-cruise-usa-from-hamburg-to-bayonne-new-york~TUI-MEINS1-20260824-15"
+        "vendor": "Inside",
+        "price": 4947
       },
       "bestPriceAt": "2026-06-14"
     },
@@ -159,28 +173,36 @@
           "price2": 1658,
           "note": "~€829/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 2214,
+          "manual": false
         },
         {
           "vendor": "Oceanview",
           "price2": 1960,
           "note": "~€980/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 2214,
+          "manual": false
         },
         {
           "vendor": "Balcony",
           "price2": 2350,
           "note": "~€1175/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 2214,
+          "manual": false
         },
         {
           "vendor": "Suite",
           "price2": 4724,
           "note": "~€2362/чел × 2",
           "source": "Cruisello",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "price3": 2214,
+          "manual": false
         },
         {
           "vendor": "Cruisello",
@@ -188,7 +210,8 @@
           "price2": 1658,
           "price3": 2214,
           "note": "inside, live fetch",
-          "verifiedAt": "2026-06-14"
+          "verifiedAt": "2026-06-14",
+          "manual": false
         },
         {
           "vendor": "CruiseDirect",
@@ -209,11 +232,19 @@
         {
           "vendor": "MSC Cruises (прямо)",
           "url": "https://www.msccruises.co.uk/",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "price2": 1658,
+          "price3": 2214,
+          "verifiedAt": "2026-06-14",
+          "note": " · обновлено 2026-06-14"
         },
         {
           "vendor": "Cruisello · Book",
-          "url": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c"
+          "url": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c",
+          "price2": 1658,
+          "price3": 2214,
+          "verifiedAt": "2026-06-14",
+          "note": " · обновлено 2026-06-14"
         },
         {
           "vendor": "Vacations To Go",
@@ -233,15 +264,14 @@
           "hidden": true
         }
       ],
-      "lastRefreshed": "2026-06-14T22:02:50.441Z",
+      "lastRefreshed": "2026-06-14T22:08:38.564Z",
       "bestPrice2": {
         "vendor": "Inside",
         "price": 1658
       },
       "bestPrice3": {
-        "vendor": "Cruisello",
-        "price": 2214,
-        "url": "https://cruisello.com/cruises/atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14"
+        "vendor": "Inside",
+        "price": 2214
       },
       "bestPriceAt": "2026-06-14"
     },
@@ -274,7 +304,98 @@
       "bookUrl": "https://cruisello.com/go/NCL-EPIC-20261101-14?pid=6dd6ff1c-1d23-493b-8e45-1c2bde475741",
       "lineUrl": "https://www.ncl.com/",
       "familyNote": "17 лет = взрослый тариф; US visa обязательна; Canada — проверить CA visa",
-      "hasThirdGuestPromo": false
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Inside",
+          "price2": 1800,
+          "note": "~€900/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Balcony",
+          "price2": 2480,
+          "note": "~€1240/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Suite",
+          "price2": 2890,
+          "note": "~€1445/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/atlantic-crossroads-barcelona-the-caribbean~NCL-EPIC-20261101-14",
+          "price2": 1800,
+          "price3": 2664,
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
+        },
+        {
+          "vendor": "Norwegian Cruise Line (прямо)",
+          "url": "https://www.ncl.com/",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/NCL-EPIC-20261101-14?pid=6dd6ff1c-1d23-493b-8e45-1c2bde475741"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=36580",
+          "price2": 1834,
+          "price3": 2751,
+          "price3Est": true,
+          "pricePP": 917,
+          "currency": "USD",
+          "fastDealId": "36580",
+          "note": "VTG inside · 2026-11-01 · 2ч $1834 · 3ч $2751 (оценка +1pp)",
+          "verifiedAt": "2026-06-14",
+          "manual": false
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
+        }
+      ],
+      "lastRefreshed": "2026-06-14T22:08:49.594Z",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 1834,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=36580"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 2751,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=36580"
+      },
+      "bestPriceAt": "2026-06-14"
     }
   ]
 }
