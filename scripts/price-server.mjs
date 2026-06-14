@@ -14,6 +14,7 @@ import { execSync } from "child_process";
 import { refreshCruisePrices } from "./lib/refresh-cruise.mjs";
 import { loadEnvFile } from "./lib/load-env.mjs";
 import { gitDeploy } from "./git-deploy.mjs";
+import { discoverRegion, discoverAll } from "./lib/discover-cruises.mjs";
 
 loadEnvFile();
 
@@ -149,6 +150,39 @@ async function handleDeploy(url) {
   return deployRegion(region, { vtg, agencies, push });
 }
 
+async function handleDiscover(url) {
+  const region = url.searchParams.get("region") || "all";
+  const push = url.searchParams.get("push") === "1";
+
+  const result = region === "all" ? discoverAll() : discoverRegion(region);
+  if (!result.ok) return result;
+
+  rebuildHtml();
+
+  let deploy = { pushed: false };
+  if (push && result.addedCount > 0) {
+    try {
+      deploy = gitDeploy({
+        message: `chore: discover ${result.addedCount} new cruise(s) ${region} ${new Date().toISOString().slice(0, 10)}`,
+      });
+      lastDeploy = new Date().toISOString();
+    } catch (e) {
+      deploy = { ok: false, error: e.message };
+    }
+  } else if (push && region === "all" && result.totalAdded > 0) {
+    try {
+      deploy = gitDeploy({
+        message: `chore: discover ${result.totalAdded} new cruise(s) ${new Date().toISOString().slice(0, 10)}`,
+      });
+      lastDeploy = new Date().toISOString();
+    } catch (e) {
+      deploy = { ok: false, error: e.message };
+    }
+  }
+
+  return { ...result, htmlRebuilt: true, deploy };
+}
+
 function sendJson(res, code, body) {
   res.writeHead(code);
   res.end(JSON.stringify(body, null, 2));
@@ -174,20 +208,23 @@ const server = http.createServer(async (req, res) => {
       port: PORT,
       apiVersion: API_VERSION,
       vtgPlaywright: true,
+      discover: true,
       deployEnabled: Boolean(process.env.REFRESH_TOKEN),
       lastDeploy,
     });
     return;
   }
 
-  if (url.pathname === "/refresh" || url.pathname === "/deploy") {
+  if (url.pathname === "/refresh" || url.pathname === "/deploy" || url.pathname === "/discover") {
     if (!authOk(url)) {
       sendJson(res, 401, { ok: false, error: "Invalid or missing token" });
       return;
     }
     try {
       const result =
-        url.pathname === "/deploy"
+        url.pathname === "/discover"
+          ? await handleDiscover(url)
+          : url.pathname === "/deploy"
           ? await handleDeploy(url)
           : await (async () => {
               const slug = url.searchParams.get("slug");
@@ -206,7 +243,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  sendJson(res, 404, { ok: false, error: "Use /health, /refresh?slug=, /deploy?region=" });
+  sendJson(res, 404, { ok: false, error: "Use /health, /refresh?slug=, /deploy?region=, /discover?region=" });
 });
 
 server.listen(PORT, "127.0.0.1", () => {

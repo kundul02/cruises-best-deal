@@ -151,7 +151,16 @@ h1 { font-size:22px; margin-bottom:4px; }
 .deploy-btn { font-size:12px; padding:10px 14px; border-radius:10px; border:1px solid var(--purple); background:#F3F0FF; color:var(--purple); cursor:pointer; font-weight:600; min-height:44px; }
 .deploy-btn:hover:not(:disabled) { background:#E8E0FF; }
 .deploy-btn:disabled { opacity:.45; cursor:not-allowed; }
+.discover-btn { font-size:12px; padding:10px 14px; border-radius:10px; border:1px solid var(--green); background:#E8F5E9; color:#1B7A3D; cursor:pointer; font-weight:600; min-height:44px; }
+.discover-btn:hover:not(:disabled) { background:#C8E6C9; }
+.discover-btn:disabled { opacity:.45; cursor:not-allowed; }
 .deploy-status { margin:8px 0 0; color:var(--text2); font-size:12px; min-height:1.2em; }
+.admin-section { margin-top:12px; padding-top:12px; border-top:1px solid var(--sep); }
+.admin-section:first-child { margin-top:0; padding-top:0; border-top:none; }
+.badge.new-badge { background:#1565C0; color:#fff; font-weight:700; letter-spacing:.06em; }
+tr.new-cruise { background:linear-gradient(90deg,#E3F2FD 0%,#F5FAFF 100%); box-shadow:inset 4px 0 0 #1565C0; }
+tr.new-cruise:hover { background:#E3F2FD; }
+.chip.new-filter.on { background:#1565C0; border-color:#1565C0; color:#fff; }
 .chip.nights.on { background:var(--purple, #5856D6); border-color:var(--purple, #5856D6); color:#fff; }
 .table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--sep); background:var(--card); }
 table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
@@ -438,15 +447,30 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </p>
 <div class="admin-bar" id="admin-bar">
   <div class="admin-head">
-    <strong>Выложить на сайт</strong>
+    <strong>Управление с Mac</strong>
     <span id="server-pill" class="server-pill off">проверяем…</span>
   </div>
   <p class="admin-hint" id="admin-hint">Запустите на Mac <code>npm run price-server</code> и откройте эту страницу через <code>npm run preview</code>.</p>
-  <div class="deploy-row">
-    <button type="button" class="deploy-btn" id="deploy-region" disabled>↻ Обновить вкладку и выложить</button>
-    <button type="button" class="deploy-btn" id="deploy-all" disabled>↻ Обновить всё и выложить</button>
+
+  <div class="admin-section">
+    <strong>1. Новые круизы на Cruisello</strong>
+    <p class="admin-hint" style="margin-top:4px">Сканирует агрегатор и добавляет рейсы, которых ещё нет в списке. Новые подсвечиваются синим и меткой <span class="badge new-badge">NEW</span>.</p>
+    <div class="deploy-row">
+      <button type="button" class="discover-btn" id="discover-region" disabled>🔍 Проверить новые (вкладка)</button>
+      <button type="button" class="discover-btn" id="discover-all" disabled>🔍 Проверить все регионы</button>
+    </div>
+    <p id="discover-status" class="deploy-status"></p>
   </div>
-  <p id="deploy-status" class="deploy-status"></p>
+
+  <div class="admin-section">
+    <strong>2. Обновить цены и выложить на GitHub</strong>
+    <p class="admin-hint" style="margin-top:4px">Перезапрашивает Cruisello + VTG и отправляет на сайт.</p>
+    <div class="deploy-row">
+      <button type="button" class="deploy-btn" id="deploy-region" disabled>↻ Обновить цены вкладки → GitHub</button>
+      <button type="button" class="deploy-btn" id="deploy-all" disabled>↻ Обновить все цены → GitHub</button>
+    </div>
+    <p id="deploy-status" class="deploy-status"></p>
+  </div>
 </div>
 <script>
 const REGIONS = ${JSON.stringify(REGIONS.map(({ id, title, subtitle, dates, accent, callout }) => ({ id, title, subtitle, dates, accent, callout })))};
@@ -462,6 +486,16 @@ let openBuySlug = null;
 let refreshFlash = null;
 let hotFilter = false;
 let hideCanadaFilter = false;
+let newFilter = false;
+
+const NEW_DAYS = 30;
+
+function isNewCruise(c) {
+  if (!c.discoveredAt) return false;
+  const t = Date.parse(c.discoveredAt);
+  if (Number.isNaN(t)) return false;
+  return (Date.now() - t) / 86400000 <= NEW_DAYS;
+}
 
 const PUBLIC_API = ${JSON.stringify(publicApi)};
 const CABIN_VENDORS = new Set(["Inside", "Oceanview", "Balcony", "Suite"]);
@@ -493,6 +527,7 @@ function filtered() {
     if (nightsFilter !== "all" && c.nights !== Number(nightsFilter)) return false;
     if (hotFilter && !c.isHot) return false;
     if (hideCanadaFilter && c.visaWarning === "canada") return false;
+    if (newFilter && !isNewCruise(c)) return false;
     return true;
   });
   const dir = sortDir === "asc" ? 1 : -1;
@@ -683,17 +718,21 @@ function formatRefreshFlash(data) {
 
 let serverOnline = false;
 
+function newCount() {
+  return regionCruises().filter(isNewCruise).length;
+}
+
 async function checkServer() {
   const pill = document.getElementById("server-pill");
   const hint = document.getElementById("admin-hint");
-  const deployBtns = document.querySelectorAll(".deploy-btn");
+  const actionBtns = document.querySelectorAll(".deploy-btn, .discover-btn");
   if (!PRICE_API) {
     serverOnline = false;
     if (pill) { pill.textContent = "откройте с Mac"; pill.className = "server-pill local-only"; }
     if (hint) {
       hint.textContent = "Публикация работает только локально. На Mac: npm run price-server && npm run preview → http://127.0.0.1:8765/cruises-europe-2026.html";
     }
-    deployBtns.forEach(b => { b.disabled = true; });
+    actionBtns.forEach(b => { b.disabled = true; });
     return false;
   }
   const health = await fetch(PRICE_API + "/health").then(r => r.json()).catch(() => null);
@@ -704,11 +743,53 @@ async function checkServer() {
   }
   if (hint) {
     hint.textContent = serverOnline
-      ? "Кнопки обновят цены (Cruisello + VTG) и отправят на GitHub Pages. «Вкладка» — только текущий регион, «всё» — все ~68 рейсов (долго)."
+      ? "Сначала «Проверить новые», потом при необходимости «Обновить цены → GitHub»."
       : "В терминале на Mac: cd Projects/cruises-best-deal && npm run price-server";
   }
-  deployBtns.forEach(b => { b.disabled = !serverOnline; });
+  actionBtns.forEach(b => { b.disabled = !serverOnline; });
   return serverOnline;
+}
+
+async function discoverCruises(region) {
+  const el = document.getElementById("discover-status");
+  if (!PRICE_API) {
+    el.textContent = "Откройте страницу через npm run preview на Mac (127.0.0.1:8765).";
+    return;
+  }
+  if (!serverOnline) await checkServer();
+  if (!serverOnline) {
+    el.textContent = "Сначала запустите npm run price-server на Mac.";
+    return;
+  }
+  const health = await fetch(PRICE_API + "/health").then(r => r.json()).catch(() => null);
+  if (!health?.discover) {
+    el.textContent = "Устаревший price-server — перезапустите: npm run server:stop && npm run price-server";
+    return;
+  }
+  const label = region === "all" ? "все регионы" : (REGIONS.find(r => r.id === region)?.title || region);
+  el.textContent = "Сканируем Cruisello: «" + label + "»… (1–5 мин)";
+  const btns = document.querySelectorAll(".discover-btn");
+  btns.forEach(b => { b.disabled = true; });
+  try {
+    const r = await fetch(PRICE_API + "/discover?region=" + encodeURIComponent(region));
+    const data = await r.json();
+    if (!data.ok && data.error) throw new Error(data.error);
+    const added = region === "all" ? data.totalAdded : data.addedCount;
+    if (added > 0) {
+      el.textContent = "✓ Найдено новых: " + added + ". Перезагружаем список…";
+      if (region !== "all" && data.added?.length) {
+        const names = data.added.slice(0, 3).map(c => c.ship + " " + c.sailDate).join(", ");
+        el.textContent += " " + names + (data.added.length > 3 ? "…" : "");
+      }
+      setTimeout(() => location.reload(), 1500);
+    } else {
+      el.textContent = "Новых круизов на Cruisello нет — список актуален.";
+    }
+  } catch (e) {
+    el.textContent = "Ошибка: " + e.message;
+  } finally {
+    btns.forEach(b => { b.disabled = !serverOnline; });
+  }
 }
 
 async function deployPublish(region) {
@@ -800,6 +881,7 @@ function isHighlight(c) {
 function rowClass(c) {
   const cls = [];
   if (c.isHot) cls.push("hot-deal");
+  if (isNewCruise(c)) cls.push("new-cruise");
   if (isHighlight(c)) cls.push("highlight");
   return cls.length ? ' class="' + cls.join(" ") + '"' : "";
 }
@@ -807,6 +889,7 @@ function rowClass(c) {
 function tags(c) {
   const t = [];
   if (c.isHot) t.push('<span class="hot-badge" title="Hot deal · score ' + (c.hotScore||"") + '">HOT</span>');
+  if (isNewCruise(c)) t.push('<span class="badge new-badge" title="Добавлен ' + (c.discoveredAt||"") + '">NEW</span>');
   if (isHighlight(c)) {
     const hl = activeRegion === "med" ? "5 Jul"
       : c.ship === "MSC Preziosa" ? "9 Aug ★"
@@ -867,12 +950,15 @@ function render() {
   ).join("");
 
   const hotN = hotCount();
+  const newN = newCount();
   document.getElementById("sort-filters").innerHTML = [
     ["date","По дате"], ["nights","По ночам"], ["price2","€ 2 чел."], ["price3","€ 3 чел."]
   ].map(([k,l]) => '<button class="chip' + (sortCol===k?" on":"") + '" data-sort="' + k + '">' +
     l + (sortCol===k ? (sortDir==="asc"?" ↑":" ↓") : "") + '</button>').join("") +
     '<button type="button" class="chip hot-filter' + (hotFilter ? " on" : "") + '" data-hot-filter>HOT' +
     (hotN ? " (" + hotN + ")" : "") + '</button>' +
+    '<button type="button" class="chip new-filter' + (newFilter ? " on" : "") + '" data-new-filter>NEW' +
+    (newN ? " (" + newN + ")" : "") + '</button>' +
     '<button type="button" class="chip visa-filter' + (hideCanadaFilter ? " on" : "") + '" data-ca-filter>Без CA</button>';
 
   updateHeaderSort();
@@ -915,7 +1001,7 @@ function render() {
   document.querySelectorAll("[data-region]").forEach(b => b.onclick = () => {
     if (b.dataset.region === activeRegion) return;
     activeRegion = b.dataset.region;
-    portFilter = "all"; nightsFilter = "all"; hotFilter = false; hideCanadaFilter = false;
+    portFilter = "all"; nightsFilter = "all"; hotFilter = false; hideCanadaFilter = false; newFilter = false;
     render();
   });
   document.querySelectorAll("[data-port]").forEach(b => b.onclick = () => { portFilter = b.dataset.port; render(); });
@@ -928,6 +1014,10 @@ function render() {
   });
   document.querySelectorAll("[data-hot-filter]").forEach(b => b.onclick = () => {
     hotFilter = !hotFilter;
+    render();
+  });
+  document.querySelectorAll("[data-new-filter]").forEach(b => b.onclick = () => {
+    newFilter = !newFilter;
     render();
   });
   document.querySelectorAll("[data-ca-filter]").forEach(b => b.onclick = () => {
@@ -956,6 +1046,8 @@ CRUISES.forEach(c => {
 });
 const hash = location.hash.replace("#","");
 if (hash === "med" || hash === "north" || hash === "transatlantic") activeRegion = hash;
+document.getElementById("discover-region")?.addEventListener("click", () => discoverCruises(activeRegion));
+document.getElementById("discover-all")?.addEventListener("click", () => discoverCruises("all"));
 document.getElementById("deploy-region")?.addEventListener("click", () => deployPublish(activeRegion));
 document.getElementById("deploy-all")?.addEventListener("click", () => deployPublish("all"));
 checkServer();
