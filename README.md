@@ -1,306 +1,326 @@
 # Cruise Best Deal
 
-Сбор и сравнение круизных предложений для семьи (2–3 чел., дочка 17 = взрослый тариф). Два основных интерфейса:
+Сбор и сравнение круизных предложений для семьи (2–3 чел., дочка 17 = взрослый тариф).
 
 | Файл | Назначение |
 |------|------------|
-| **`cruises-europe-2026.html`** | **Главная витрина** — Med + North + **Трансатлантика**, live-цены Cruisello + VTG, HOT, visa-фильтры |
-| `index.html` | Редирект на `cruises-europe-2026.html` (корень GitHub Pages) |
-| `cruises.html` | Старые лиды (VTG ticker, transatlantic и т.д.) |
+| **`cruises-europe-2026.html`** | **Главная витрина** — Med + North + Трансатлантика, Cruisello + VTG, HOT, visa, NEW |
+| `index.html` | Редирект на витрину (корень GitHub Pages) |
+| `cruises.html` | Старые глобальные лиды (отдельный pipeline) |
 
-**Публичный сайт (без локальных серверов):** [kundul02.github.io/cruises-best-deal/](https://kundul02.github.io/cruises-best-deal/) — просмотр таблицы и ссылок «Купить». Кнопка ↻ и VTG работают только локально с `npm run price-server`.
+**Публичный сайт:** [kundul02.github.io/cruises-best-deal/](https://kundul02.github.io/cruises-best-deal/) — просмотр таблицы и ссылок «Купить».
+
+**Live-обновления** (↻, проверка новых круизов, публикация на GitHub) работают **только с Mac**, когда запущены `price-server` + `preview`. На GitHub Pages — статичный снимок.
 
 Профиль семьи: [`research/family-profile.json`](research/family-profile.json)
 
 ---
 
-## Быстрый старт (Europe 2026)
+## Быстрый старт
 
 ```bash
-cd /Users/artemsirchenko/Projects/cruises-best-deal
+cd cruises-best-deal
 npm install
 
 # 1) Один раз — VTG (email + Go, пароль не нужен)
-cp .env.example .env          # пропишите VTG_EMAIL=...
+cp .env.example .env          # VTG_EMAIL=your@email.com
 npm run vtg-login             # с .env вход автоматический
 
-# 2) Запустить серверы (два терминала)
-npm run price-server          # терминал A — API обновления цен :3920
-npm run preview               # терминал B — просмотр HTML :8765
+# 2) Два терминала — держать открытыми
+npm run price-server          # терминал A — API :3920
+npm run preview               # терминал B — HTML :8765
 
-# 3) Открыть в браузере
+# 3) Браузер
 open http://127.0.0.1:8765/cruises-europe-2026.html#north
 ```
 
-В таблице: **↻ Обновить Cruisello + VTG** → ~10 сек → цены в строке и в панели «Купить» (перезагрузка страницы не нужна).
+Внизу страницы: индикатор **Mac подключён ✓** — значит `price-server` отвечает.
+
+---
+
+## Как пользоваться витриной
+
+### Одна строка круиза — ↻ Обновить Cruisello + VTG
+
+- Обновляет **один** рейс (~10–30 сек)
+- Пишет цены в `research/*.json`, пересобирает HTML локально
+- **Не** делает `git push` — только ваш Mac
+
+### Блок «Управление с Mac» (внизу страницы)
+
+| Кнопка | Что делает | Время |
+|--------|------------|-------|
+| **🔍 Проверить новые (вкладка)** | Сканирует Cruisello, добавляет рейсы, которых ещё нет в JSON | 1–5 мин |
+| **🔍 Проверить все регионы** | То же для Med + North + Transatlantic | 5–15 мин |
+| **↻ Обновить цены вкладки → GitHub** | Cruisello + VTG для всех круизов вкладки → `git push` | минуты |
+| **↻ Обновить все цены → GitHub** | То же для ~68 круизов | очень долго |
+
+**Типичный порядок:**
+
+1. **🔍 Проверить новые** — если Cruisello добавил рейсы
+2. Новые строки подсвечены синим, бейдж **NEW**, фильтр **NEW (N)** (30 дней)
+3. **↻ Обновить цены → GitHub** — когда готовы выложить актуальные цены на сайт
+
+Токены и Cloudflare Tunnel **не нужны** для работы с Mac через `preview`.
 
 ---
 
 ## Локальные серверы
 
-| Сервис | Порт | Команда запуска | Зачем |
-|--------|------|-----------------|-------|
-| **price-server** | **3920** | `npm run price-server` | Кнопка ↻ в HTML, Cruisello + VTG Playwright |
-| **preview** | **8765** | `npm run preview` | Отдаёт HTML/JSON по HTTP (не `file://`) |
-
-### Статус и остановка
+| Сервис | Порт | Команда | Зачем |
+|--------|------|---------|-------|
+| **price-server** | **3920** | `npm run price-server` | API: refresh, discover, deploy |
+| **preview** | **8765** | `npm run preview` | HTML по HTTP (не `file://`) |
 
 ```bash
-npm run server:status    # что запущено, health price-server, URL preview
-npm run server:stop      # остановить оба (price-server + preview)
+npm run server:status    # что запущено, /health, URL preview
+npm run server:stop      # остановить оба
 ```
 
-Вручную (если нужно):
+**После обновления кода** или ошибки «Use /health, /refresh…» / «Cruise not found» для новых регионов:
 
 ```bash
-# Остановить price-server
-pkill -f "scripts/price-server.mjs"
+npm run server:stop && npm run price-server
+```
 
-# Остановить preview
-pkill -f "http.server 8765"
+Проверка:
 
-# Проверить порт
-lsof -i :3920
+```bash
 curl http://127.0.0.1:3920/health
+# ожидается: "apiVersion": 2, "discover": true
 ```
 
-**Важно:** если кнопка ↻ пишет «no API» / «manual hints» — запущен **старый** price-server. Сделайте `npm run server:stop` и снова `npm run price-server`. Новый сервер отвечает `"apiVersion": 2`.
-
 ---
 
-## Переменные окружения (`.env`)
+## price-server API
 
-Файл **не коммитится** (см. `.gitignore`). Шаблон: [`.env.example`](.env.example)
-
-| Переменная | Назначение |
-|------------|------------|
-| `VTG_EMAIL` | Email для входа на Vacations To Go (Go, без пароля) |
-| `REFRESH_TOKEN` | Опционально: пароль для `/refresh` и `/deploy`, только при публичном tunnel |
-| `PRICE_SERVER_PORT` | Порт API (по умолчанию 3920) |
-| `EUR_USD_RATE` | Опционально: курс €→$ для сравнения VTG vs Cruisello |
-
----
-
-## npm-скрипты (шпаргалка)
-
-### Просмотр и сбор HTML
-
-| Команда | Описание |
-|---------|----------|
-| `npm run preview` | HTTP-сервер на :8765 |
-| `npm run fetch-transatlantic` | Cruisello → transatlantic JSON (Sep–Jan, EU→US/CA, без UK) |
-| `npm run enrich-transatlantic` | buyOptions для transatlantic |
-| `npm run tunnel` | Cloudflare Tunnel → price-server (для GitHub Pages ↻) |
-| `npm run server:status` | Статус серверов |
-| `npm run server:stop` | Остановить серверы |
-| `npm run build-html` | Пересобрать `cruises-europe-2026.html` из JSON |
-
-### Обновление цен (один круиз)
-
-| Команда | Описание |
-|---------|----------|
-| `npm run price-server` | Держать запущенным для кнопки ↻ в браузере |
-| `npm run refresh-price -- --slug=SLUG --rebuild-html` | CLI: Cruisello + VTG + пересборка HTML |
-| `npm run refresh-price -- --slug=SLUG --no-vtg` | Только Cruisello |
-| `npm run refresh-price -- --slug=SLUG --agencies` | + CruiseDirect / iCruise (медленно) |
-
-API (пока `price-server` работает):
+Пока `npm run price-server` работает:
 
 ```bash
-curl "http://127.0.0.1:3920/health"
+curl http://127.0.0.1:3920/health
+
+# один круиз — Cruisello + VTG, локально
 curl "http://127.0.0.1:3920/refresh?slug=YOUR-SLUG"
-curl "http://127.0.0.1:3920/refresh?slug=YOUR-SLUG&vtg=0"      # без VTG
-curl "http://127.0.0.1:3920/refresh?slug=YOUR-SLUG&token=TOKEN"
-curl "http://127.0.0.1:3920/deploy?region=all&token=TOKEN"   # refresh + git push
+
+# без VTG
+curl "http://127.0.0.1:3920/refresh?slug=YOUR-SLUG&vtg=0"
+
+# новые круизы с Cruisello (вкладка или all)
+curl "http://127.0.0.1:3920/discover?region=transatlantic"
+curl "http://127.0.0.1:3920/discover?region=all"
+
+# обновить цены + git push
+curl "http://127.0.0.1:3920/deploy?region=north"
+curl "http://127.0.0.1:3920/deploy?region=all"
 ```
 
-### Batch (все 72 круиза)
+| Endpoint | Назначение |
+|----------|------------|
+| `/health` | Статус, `apiVersion`, `discover` |
+| `/refresh?slug=` | Цены одного круиза |
+| `/discover?region=med\|north\|transatlantic\|all` | Поиск новых на Cruisello |
+| `/deploy?region=` | Batch refresh + `git push` |
 
-| Команда | Описание |
-|---------|----------|
-| `npm run vtg-batch` | VTG цены для всех (нужен `vtg-login`) |
-| `npm run vtg-batch -- --region=transatlantic` | Только Transatlantic |
-| `npm run go-batch` | Affiliate-ссылки с Cruisello `/go/` |
-| `npm run agencies-batch` | CruiseDirect + iCruise Playwright (медленно) |
-
-### Первичный вход (Playwright-профили)
-
-| Команда | Профиль на диске | Когда |
-|---------|------------------|-------|
-| `npm run vtg-login` | `.playwright-vtg-profile/` | **Обязательно** для VTG |
-| `npm run cd-login` | `.playwright-cd-profile/` | Если нужен CruiseDirect (Cloudflare) |
+Если в `.env` задан `REFRESH_TOKEN` — добавьте `&token=...` (нужно только при публичном tunnel).
 
 ---
 
-## Что делает кнопка ↻ в HTML
+## Схема: что куда идёт
+
+### ↻ в строке (один круиз)
 
 ```
-Браузер  →  GET http://127.0.0.1:3920/refresh?slug=...
-              ↓
-         price-server.mjs
-              ↓
-         refresh-cruise.mjs
-              ├── Cruisello (fetch HTML, €2/€3)
-              ├── Cruisello /go/ (ссылки агентств)
-              ├── VTG (Playwright, ~10 с) — MSC/NCL/Celebrity/…
-              └── bestPrice → запись в research/*.json
-              ↓
-         build-html (авто) + ответ → страница перерисовывает строку
+Браузер → GET /refresh?slug=...
+       → Cruisello + VTG (Playwright)
+       → research/*.json
+       → build-html
+       → ответ в браузер (строка обновляется)
 ```
 
-| Линия | VTG при ↻ |
-|-------|-----------|
-| MSC, NCL, Celebrity, RCCL, … | ✅ автоматически |
-| **TUI, AIDA** | ❌ нет на VTG US — только Cruisello + сайт линии |
+### 🔍 Проверить новые
+
+```
+Браузер → GET /discover?region=...
+       → fetch-*-*.mjs (Cruisello)
+       → merge с JSON (старые buyOptions/VTG сохраняются)
+       → новым ставится discoveredAt
+       → build-html → reload страницы
+```
+
+### ↻ Обновить цены → GitHub
+
+```
+Браузер → GET /deploy?region=...
+       → /refresh для каждого круиза региона
+       → build-html
+       → git commit + push origin main
+       → GitHub Pages через 1–2 мин
+```
+
+| Линия | VTG |
+|-------|-----|
+| MSC, NCL, Celebrity, RCCL, … | ✅ |
+| **TUI, AIDA** | ❌ на VTG US — Cruisello + сайт линии |
 
 Подробнее: [`research/PRICE_REFRESH.md`](research/PRICE_REFRESH.md), [`research/AGENCY_SCRAPING.md`](research/AGENCY_SCRAPING.md)
 
 ---
 
+## npm-скрипты
+
+### Ежедневно
+
+| Команда | Описание |
+|---------|----------|
+| `npm run price-server` | API для кнопок в HTML |
+| `npm run preview` | Просмотр на :8765 |
+| `npm run server:status` | Статус серверов |
+| `npm run server:stop` | Остановить серверы |
+| `npm run build-html` | Пересобрать витрину из JSON |
+
+### Обновление данных
+
+| Команда | Описание |
+|---------|----------|
+| `npm run refresh-price -- --slug=SLUG --rebuild-html` | Один круиз (CLI) |
+| `npm run discover-cruises -- --region=med` | Новые круизы (CLI) |
+| `npm run discover-cruises -- --region=all` | Все регионы |
+| `npm run vtg-batch` | VTG для всех (нужен vtg-login) |
+| `npm run vtg-batch -- --region=transatlantic` | VTG только transatlantic |
+| `npm run go-batch` | Affiliate `/go/` с Cruisello |
+
+### Первичный сбор (редко)
+
+| Команда | Описание |
+|---------|----------|
+| `node scripts/fetch-summer-med.mjs` | Cruisello → med JSON |
+| `node scripts/fetch-north-aug-2026.mjs` | Cruisello → north JSON |
+| `npm run fetch-transatlantic` | Cruisello → transatlantic JSON |
+| `node scripts/enrich-north-aug.mjs` | buyOptions north |
+| `npm run normalize-buy-options.mjs` | Почистить notes |
+
+### Вход Playwright
+
+| Команда | Когда |
+|---------|-------|
+| `npm run vtg-login` | **Обязательно** для VTG |
+| `npm run cd-login` | CruiseDirect (Cloudflare) |
+
+### Опционально
+
+| Команда | Описание |
+|---------|----------|
+| `npm run tunnel` | Cloudflare → :3920 (только если нужен ↻ с телефона через интернет) |
+
+---
+
 ## Данные Europe 2026
 
-| JSON | Регион | Рейсов |
-|------|--------|--------|
-| `research/summer-med-july-2026.json` | Средиземноморье, с 5 Jul | 47 |
-| `research/north-aug-2026.json` | North, с 5 Aug | ~18 (без UK-портов) |
-| `research/transatlantic-fall-2026.json` | **Трансатлантика** Sep–Jan, EU→US/CA | Cruisello fetch |
+| JSON | Регион | На витрине |
+|------|--------|------------|
+| `research/summer-med-july-2026.json` | Средиземноморье, Jul–Aug | 47 |
+| `research/north-aug-2026.json` | North, Aug | 18 (UK скрыты) |
+| `research/transatlantic-fall-2026.json` | EU→US/CA, Aug–Jan | 3 |
 
-### Transatlantic (новая вкладка)
+**Итого ~68 рейсов** после `npm run build-html`.
 
-```bash
-npm run fetch-transatlantic      # Hamburg, Lisbon, Istanbul, … → US/Canada
-npm run enrich-transatlantic     # buyOptions
-npm run go-batch -- --region=transatlantic
-npm run vtg-batch -- --region=transatlantic
-```
-
-**Исключено:** UK-порты (Southampton и др.) — нет UK visa. Фильтр **«Без CA»** скрывает Canada-порты (у дочери нет CA visa).
-
-### Пересборка данных с нуля (редко)
-
-```bash
-node scripts/fetch-summer-med.mjs       # Cruisello → med JSON
-node scripts/fetch-north-aug-2026.mjs   # Cruisello → north JSON
-node scripts/enrich-summer-buy.mjs      # buyOptions med
-node scripts/enrich-north-aug.mjs       # buyOptions north
-node scripts/normalize-buy-options.mjs  # почистить notes, VTG/TUI
-npm run go-batch                        # /go/ ссылки
-npm run vtg-batch                       # VTG batch
-npm run build-html                      # HTML
-```
-
-### Дополнительно
-
-```bash
-npm run fetch-extra-lines -- --region=north --dry-run  # Princess/HAL с Cruisello
-node scripts/probe-cruisedirect.mjs --slug=...
-node scripts/probe-icruise.mjs --slug=...
-```
+- **UK-порты** не показываются (нет UK visa) — [`scripts/lib/visa-warnings.mjs`](scripts/lib/visa-warnings.mjs)
+- Фильтр **Без CA** — порты Канады (у дочери нет CA visa)
+- **Transatlantic:** Hamburg→NY, Barcelona→Florida; combo «Карибы + финиш NY» на Cruisello почти нет
 
 ---
 
-## UI: HOT, маршрут, семья
+## UI: бейджи и фильтры
 
-- **HOT** — красная строка, лучшее сочетание цены / ночей / линии (несколько на регион). Фильтр **HOT (N)**.
-- **Маршрут** — порты со страной: `Kiel (Germany)`, `Geiranger (Norway)`. Справочник: `scripts/lib/port-countries.mjs`.
-- **Visa** — UK-рейсы не показываются; **CA ⚠** на Canada; **US visa** на transatlantic. Фильтр **Без CA**.
-- **17 лет** — взрослый тариф; смотреть колонки **€ 2 чел.** и **€ 3 чел.**
-- **EUR vs USD** — VTG ($) и Cruisello (€) сравниваются через ECB-курс в `best-price.mjs`.
+| Элемент | Значение |
+|---------|----------|
+| **HOT** | Лучшее сочетание цены / ночей / линии в регионе |
+| **NEW** | Добавлен через «Проверить новые» (30 дней) |
+| **Norway / 5 Aug / …** | Подсказки по маршруту |
+| **CA ⚠ / US visa** | Визовые ограничения |
+| Фильтры **HOT**, **NEW**, **Без CA** | В строке сортировки |
 
----
-
-## Выложить на GitHub (с Mac, без токенов)
-
-1. Терминал: `npm run price-server` (оставить работать)
-2. Терминал: `npm run preview` → открыть http://127.0.0.1:8765/cruises-europe-2026.html
-3. Внизу страницы — **Mac подключён ✓** → **↻ Обновить вкладку и выложить**
-
-Кнопка обновит цены и сделает `git push` на GitHub Pages (1–2 мин).
-
-Tunnel и `REFRESH_TOKEN` **не нужны**, если работаете только с Mac через preview.
-
-| `REFRESH_TOKEN` | Когда |
-|-----------------|-------|
-| не задан (по умолчанию) | Локально — всё работает без пароля |
-| задан в `.env` | Только если выкладываете price-server в интернет через tunnel и хотите пароль |
+Маршрут: порты со страной (`Kiel (Germany)`). Справочник: `scripts/lib/port-countries.mjs`.
 
 ---
 
-## Витрина лидов (`cruises.html`)
+## Переменные окружения (`.env`)
 
-Отдельный pipeline для глобальных лидов (transatlantic, deal score).
+Не коммитится. Шаблон: [`.env.example`](.env.example)
+
+| Переменная | Назначение |
+|------------|------------|
+| `VTG_EMAIL` | Email для VTG (Go, без пароля) |
+| `REFRESH_TOKEN` | Опционально — пароль API при публичном tunnel |
+| `PRICE_SERVER_PORT` | Порт API (по умолчанию 3920) |
+| `EUR_USD_RATE` | Опционально — курс €→$ для сравнения VTG vs Cruisello |
+
+---
+
+## Deploy на GitHub Pages
+
+**С Mac (рекомендуется):** кнопка **↻ Обновить цены → GitHub** внизу витрины.
+
+**Вручную:**
 
 ```bash
-open cruises.html
-node scripts/compute-deal-score.mjs
-node scripts/inject-verified-registry.mjs
-node scripts/archive-expired-leads.mjs
-node scripts/export-merged-leads.mjs
+npm run build-html
+git add cruises-europe-2026.html research/*.json index.html
+git commit -m "Update cruise vitrine"
+git push
 ```
 
-Промпт «Обновить лиды», deal score, источники: [`research/CRUISE_RESEARCH_WORKFLOW.md`](research/CRUISE_RESEARCH_WORKFLOW.md), [`research/SOURCES_RESEARCH.md`](research/SOURCES_RESEARCH.md)
+Settings → Pages → branch `main`, folder `/`.
 
 ---
 
 ## Структура проекта
 
 ```
-cruises-europe-2026.html     ← главная витрина (npm run build-html)
-cruises.html / index.html    ← лиды (GitHub Pages)
+cruises-europe-2026.html          ← витрина (npm run build-html)
 
 research/
-  summer-med-july-2026.json  ← данные Med
-  north-aug-2026.json        ← данные North
-  transatlantic-fall-2026.json ← EU→US/CA
-  public-api.json            ← URL Cloudflare Tunnel для GitHub Pages
-  PRICE_REFRESH.md           ← VTG / price-server
-  AGENCY_SCRAPING.md         ← CD, iCruise, /go/
+  summer-med-july-2026.json       ← Med
+  north-aug-2026.json             ← North
+  transatlantic-fall-2026.json    ← Transatlantic
+  public-api.json                 ← опционально: tunnel URL для GitHub Pages
   family-profile.json
-  sources-registry.json
-  leads-verified.json        ← для cruises.html
+  PRICE_REFRESH.md
 
 scripts/
-  price-server.mjs           ← API :3920
-  server-status.mjs          ← npm run server:status
-  server-stop.mjs            ← npm run server:stop
+  price-server.mjs                ← API :3920 (refresh, discover, deploy)
+  discover-cruises.mjs            ← CLI discover
+  lib/discover-cruises.mjs        ← merge новых с Cruisello
   build-unified-cruises-html.mjs
-  refresh-cruise-prices.mjs
-  batch-vtg-all.mjs
-  batch-go-all.mjs
-  lib/
-    refresh-cruise.mjs       ← Cruisello + VTG + agencies
-    vtg-search.mjs           ← Playwright VTG
-    hot-deal-score.mjs       ← HOT badges
-    visa-warnings.mjs        ← UK exclude, CA warn
-    fx-rates.mjs             ← EUR/USD для best price
+  git-deploy.mjs                  ← безопасный push артеfactов
+  server-status.mjs / server-stop.mjs
+  fetch-summer-med.mjs
+  fetch-north-aug-2026.mjs
+  fetch-transatlantic-fall.mjs
+  lib/refresh-cruise.mjs          ← Cruisello + VTG
+  lib/visa-warnings.mjs
+  lib/hot-deal-score.mjs
 
-.env                         ← VTG_EMAIL (не в git)
-.playwright-vtg-profile/     ← сессия VTG (не в git)
+.env                              ← VTG_EMAIL (не в git)
+.playwright-vtg-profile/          ← сессия VTG (не в git)
 ```
 
 ---
 
-## Для нового чата / агента (Cursor)
+## Troubleshooting
 
-**Контекст:** семейный шортлист круизов EU 2026; live-цены Cruisello + VTG; HTML статичный, обновление через локальный `price-server`.
-
-**Перед работой с кнопкой ↻:**
-
-1. `npm run server:status` — price-server должен быть v2 на :3920
-2. Если VTG пустой — `npm run vtg-login` (есть `.env` с `VTG_EMAIL`)
-3. Preview: `npm run preview` → `http://127.0.0.1:8765/cruises-europe-2026.html`
-
-**Типичные задачи:**
-
-| Задача | Команда |
-|--------|---------|
-| Обновить один круиз | `npm run refresh-price -- --slug=... --rebuild-html` |
-| Обновить все VTG | `npm run vtg-batch` |
-| Пересобрать HTML | `npm run build-html` |
-| Починить «no API» на ↻ | `npm run server:stop && npm run price-server` |
-| TUI без VTG | ожидаемо; не баг |
-
-**Не коммитить:** `.env`, `.playwright-*-profile/`, `node_modules/`
+| Симптом | Решение |
+|---------|---------|
+| **Mac подключён** не появляется | `npm run price-server` |
+| ↻ «Cruise not found» (transatlantic) | `npm run server:stop && npm run price-server` |
+| 🔍 «Use /health, /refresh…» | Старый price-server — перезапустить |
+| 🔍 «Устаревший price-server» | То же; в `/health` должно быть `"discover": true` |
+| VTG «Нужен вход» | `npm run vtg-login`, проверить `.env` |
+| TUI без VTG | норма — Cruisello + сайт линии |
+| EADDRINUSE :3920 | `npm run server:stop` |
+| Кнопки серые | `server:status` → запустить price-server |
+| На GitHub Pages ↻ не работает | Откройте `127.0.0.1:8765`, не kundul02.github.io |
+| Discover стёр enrichments | `git restore research/*.json` — discover merge сохраняет buyOptions, но не все enrich-поля; при сбое откатить JSON |
 
 ---
 
@@ -311,32 +331,23 @@ scripts/
 | Состав | Пара + дочка **17 лет** (= взрослый тариф) |
 | Паспорта | Украина, биометрические |
 | Шенген | безвиз 90/180 |
-| USA/Canada на борту | виза нужна даже без высадки |
-| Канада (порт) | дочери нужна CA visa → фильтр `visaWarning: canada` в лидах |
+| USA на борту | US visa обязательна (transatlantic) |
+| Canada (порт) | у дочери нет CA visa → фильтр **Без CA** |
+| UK | рейсы скрыты — нет UK visa/ETA |
 
 ---
 
-## Deploy (GitHub Pages)
+## Для Cursor / нового чата
 
-```bash
-npm run build-html
-git add cruises-europe-2026.html research/*.json index.html
-git commit -m "Update cruise vitrine"
-git push
-```
+1. `npm run server:status` — price-server v2, `discover: true`
+2. `npm run preview` → `http://127.0.0.1:8765/cruises-europe-2026.html`
+3. VTG: `npm run vtg-login` + `VTG_EMAIL` в `.env`
 
-Settings → Pages → branch `main`, folder `/`. URL: https://kundul02.github.io/cruises-best-deal/
+| Задача | Команда |
+|--------|---------|
+| Новые круизы | 🔍 в UI или `npm run discover-cruises -- --region=…` |
+| Цены одного | ↻ в строке или `npm run refresh-price -- --slug=…` |
+| Опубликовать | ↻ Обновить цены → GitHub в UI |
+| Пересобрать HTML | `npm run build-html` |
 
----
-
-## Troubleshooting
-
-| Симптом | Решение |
-|---------|---------|
-| ↻ «Сервер не отвечает» | `npm run price-server` |
-| ↻ «no API / manual hints» | `npm run server:stop` → `npm run price-server` (старый процесс) |
-| VTG «Нужен вход» | `npm run vtg-login`, проверить `.env` |
-| VTG «нет на VTG US» для TUI | норма |
-| Кнопка «Купить» не раскрывается | `npm run build-html` + hard refresh |
-| CruiseDirect Cloudflare | `npm run cd-login` |
-| EADDRINUSE :3920 | `npm run server:stop` или `lsof -i :3920` → kill |
+**Не коммитить:** `.env`, `.playwright-*-profile/`, временные tunnel URL в `public-api.json` без необходимости.
