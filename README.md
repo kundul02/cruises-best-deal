@@ -75,7 +75,7 @@ curl http://127.0.0.1:3920/health
 | Переменная | Назначение |
 |------------|------------|
 | `VTG_EMAIL` | Email для входа на Vacations To Go (Go, без пароля) |
-| `REFRESH_TOKEN` | Секрет для `/refresh` и `/deploy` (нужен с tunnel) |
+| `REFRESH_TOKEN` | Опционально: пароль для `/refresh` и `/deploy`, только при публичном tunnel |
 | `PRICE_SERVER_PORT` | Порт API (по умолчанию 3920) |
 | `EUR_USD_RATE` | Опционально: курс €→$ для сравнения VTG vs Cruisello |
 
@@ -209,17 +209,20 @@ node scripts/probe-icruise.mjs --slug=...
 
 ---
 
-## Публикация на GitHub Pages (↻ с телефона/любого места)
+## Выложить на GitHub (с Mac, без токенов)
 
-1. В `.env`: `REFRESH_TOKEN=длинный-секрет`
-2. Терминал A: `npm run price-server`
-3. Терминал B: `npm run tunnel` → скопируйте URL в `research/public-api.json` → `"priceApi": "https://….trycloudflare.com"`
-4. `npm run build-html && git add research/public-api.json cruises-europe-2026.html && git commit && git push`
-5. На сайте: введите token внизу → **↻ Опубликовать регион/всё**
+1. Терминал: `npm run price-server` (оставить работать)
+2. Терминал: `npm run preview` → открыть http://127.0.0.1:8765/cruises-europe-2026.html
+3. Внизу страницы — **Mac подключён ✓** → **↻ Обновить вкладку и выложить**
 
-Кнопка вызывает ваш Mac через tunnel → обновляет JSON → `git push` → Pages через 1–2 мин.
+Кнопка обновит цены и сделает `git push` на GitHub Pages (1–2 мин).
 
-**Named tunnel** (постоянный URL): [Cloudflare Tunnel docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
+Tunnel и `REFRESH_TOKEN` **не нужны**, если работаете только с Mac через preview.
+
+| `REFRESH_TOKEN` | Когда |
+|-----------------|-------|
+| не задан (по умолчанию) | Локально — всё работает без пароля |
+| задан в `.env` | Только если выкладываете price-server в интернет через tunnel и хотите пароль |
 
 ---
 

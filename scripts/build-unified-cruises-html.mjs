@@ -139,11 +139,19 @@ h1 { font-size:22px; margin-bottom:4px; }
 .chip.visa-filter.on { background:#FF9500; border-color:#FF9500; color:#fff; }
 .badge.visa-warn { background:#FFF3E0; color:#B45309; }
 .visa-row-warn { font-size:10px; color:#B45309; margin-top:4px; }
-.admin-bar { margin-top:12px; padding:12px; background:var(--card); border:1px solid var(--sep); border-radius:12px; font-size:12px; }
-.admin-bar input { width:100%; max-width:280px; padding:6px 10px; border-radius:8px; border:1px solid var(--sep); margin:6px 0; font-size:12px; }
-.admin-bar .deploy-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
-.deploy-btn { font-size:11px; padding:8px 12px; border-radius:8px; border:1px solid var(--purple); background:#F3F0FF; color:var(--purple); cursor:pointer; font-weight:600; }
-.deploy-btn:hover { background:#E8E0FF; }
+.admin-bar { margin-top:12px; padding:14px; background:var(--card); border:1px solid var(--sep); border-radius:12px; font-size:12px; line-height:1.5; }
+.admin-head { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px; }
+.server-pill { font-size:11px; padding:3px 10px; border-radius:999px; font-weight:600; }
+.server-pill.ok { background:#E8F5E9; color:#1B7A3D; }
+.server-pill.off { background:#FFF0F0; color:#C62828; }
+.server-pill.local-only { background:#FFF8E1; color:#E65100; }
+.admin-hint { color:var(--text2); margin:0 0 10px; font-size:12px; }
+.admin-hint code { font-size:11px; background:var(--fill); padding:2px 6px; border-radius:4px; }
+.admin-bar .deploy-row { display:flex; flex-wrap:wrap; gap:8px; }
+.deploy-btn { font-size:12px; padding:10px 14px; border-radius:10px; border:1px solid var(--purple); background:#F3F0FF; color:var(--purple); cursor:pointer; font-weight:600; min-height:44px; }
+.deploy-btn:hover:not(:disabled) { background:#E8E0FF; }
+.deploy-btn:disabled { opacity:.45; cursor:not-allowed; }
+.deploy-status { margin:8px 0 0; color:var(--text2); font-size:12px; min-height:1.2em; }
 .chip.nights.on { background:var(--purple, #5856D6); border-color:var(--purple, #5856D6); color:#fff; }
 .table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--sep); background:var(--card); }
 table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
@@ -426,16 +434,19 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </div>
 <p class="foot">
   Cruisello + VTG + агентства. <span class="hot-badge">HOT</span> — лучшая цена в регионе.<br>
-  <strong>↻</strong> — обновить цены (нужен <code>npm run price-server</code> + <code>npm run tunnel</code> для GitHub Pages).
+  <strong>↻</strong> в строке — обновить один круиз. Блок ниже — обновить вкладку и выложить на GitHub.
 </p>
 <div class="admin-bar" id="admin-bar">
-  <strong>Публикация на GitHub</strong> — token из <code>.env REFRESH_TOKEN</code>:
-  <input type="password" id="admin-token" placeholder="Admin token" autocomplete="off">
-  <div class="deploy-row">
-    <button type="button" class="deploy-btn" id="deploy-region">↻ Опубликовать регион</button>
-    <button type="button" class="deploy-btn" id="deploy-all">↻ Опубликовать всё</button>
+  <div class="admin-head">
+    <strong>Выложить на сайт</strong>
+    <span id="server-pill" class="server-pill off">проверяем…</span>
   </div>
-  <p id="deploy-status" style="margin-top:8px;color:var(--text2)"></p>
+  <p class="admin-hint" id="admin-hint">Запустите на Mac <code>npm run price-server</code> и откройте эту страницу через <code>npm run preview</code>.</p>
+  <div class="deploy-row">
+    <button type="button" class="deploy-btn" id="deploy-region" disabled>↻ Обновить вкладку и выложить</button>
+    <button type="button" class="deploy-btn" id="deploy-all" disabled>↻ Обновить всё и выложить</button>
+  </div>
+  <p id="deploy-status" class="deploy-status"></p>
 </div>
 <script>
 const REGIONS = ${JSON.stringify(REGIONS.map(({ id, title, subtitle, dates, accent, callout }) => ({ id, title, subtitle, dates, accent, callout })))};
@@ -459,15 +470,6 @@ const SORT_DEFAULT_DIR = { date: "asc", port: "asc", nights: "desc", price2: "as
 const PRICE_API = (location.hostname === "127.0.0.1" || location.hostname === "localhost")
   ? "http://127.0.0.1:3920"
   : (PUBLIC_API.priceApi || "");
-
-function apiToken() {
-  return localStorage.getItem("cruiseRefreshToken") || document.getElementById("admin-token")?.value || "";
-}
-
-function tokenQs() {
-  const t = apiToken();
-  return t ? "&token=" + encodeURIComponent(t) : "";
-}
 
 function regionCruises() {
   return CRUISES.filter(c => c.regionId === activeRegion);
@@ -679,20 +681,61 @@ function formatRefreshFlash(data) {
   return parts.join(" · ") || data.message || "Цены обновлены — смотрите зелёные карточки.";
 }
 
+let serverOnline = false;
+
+async function checkServer() {
+  const pill = document.getElementById("server-pill");
+  const hint = document.getElementById("admin-hint");
+  const deployBtns = document.querySelectorAll(".deploy-btn");
+  if (!PRICE_API) {
+    serverOnline = false;
+    if (pill) { pill.textContent = "откройте с Mac"; pill.className = "server-pill local-only"; }
+    if (hint) {
+      hint.textContent = "Публикация работает только локально. На Mac: npm run price-server && npm run preview → http://127.0.0.1:8765/cruises-europe-2026.html";
+    }
+    deployBtns.forEach(b => { b.disabled = true; });
+    return false;
+  }
+  const health = await fetch(PRICE_API + "/health").then(r => r.json()).catch(() => null);
+  serverOnline = health?.ok === true;
+  if (pill) {
+    pill.textContent = serverOnline ? "Mac подключён ✓" : "сервер не запущен";
+    pill.className = "server-pill " + (serverOnline ? "ok" : "off");
+  }
+  if (hint) {
+    hint.textContent = serverOnline
+      ? "Кнопки обновят цены (Cruisello + VTG) и отправят на GitHub Pages. «Вкладка» — только текущий регион, «всё» — все ~68 рейсов (долго)."
+      : "В терминале на Mac: cd Projects/cruises-best-deal && npm run price-server";
+  }
+  deployBtns.forEach(b => { b.disabled = !serverOnline; });
+  return serverOnline;
+}
+
 async function deployPublish(region) {
   const el = document.getElementById("deploy-status");
   if (!PRICE_API) {
-    el.textContent = "Нет PRICE_API — настройте research/public-api.json + tunnel";
+    el.textContent = "Откройте страницу через npm run preview на Mac (127.0.0.1:8765).";
     return;
   }
-  localStorage.setItem("cruiseRefreshToken", apiToken());
-  el.textContent = "Публикуем " + region + "… (может занять несколько минут)";
+  if (!serverOnline) await checkServer();
+  if (!serverOnline) {
+    el.textContent = "Сначала запустите npm run price-server на Mac.";
+    return;
+  }
+  const label = region === "all" ? "все регионы" : (REGIONS.find(r => r.id === region)?.title || region);
+  el.textContent = "Обновляем «" + label + "» и отправляем на GitHub… (несколько минут)";
   try {
-    const r = await fetch(PRICE_API + "/deploy?region=" + encodeURIComponent(region) + tokenQs());
+    const r = await fetch(PRICE_API + "/deploy?region=" + encodeURIComponent(region));
     const data = await r.json();
     if (!data.ok && data.error) throw new Error(data.error);
-    el.textContent = (data.deploy?.pushed ? "✓ Push на GitHub. " : "") + (data.message || "Готово");
-    if (data.deploy?.pushed) setTimeout(() => location.reload(), 3000);
+    if (data.deploy?.pushed) {
+      el.textContent = "✓ Готово — изменения на GitHub. Страница обновится через 1–2 мин на kundul02.github.io/cruises-best-deal/";
+      setTimeout(() => location.reload(), 4000);
+    } else if (data.deploy?.message === "Nothing to commit") {
+      el.textContent = "Цены уже актуальны — нечего отправлять на GitHub.";
+    } else {
+      el.textContent = data.message || "Обновлено локально.";
+    }
   } catch (e) {
     el.textContent = "Ошибка: " + e.message;
   }
@@ -700,7 +743,7 @@ async function deployPublish(region) {
 
 async function refreshCruise(slug, btn) {
   if (!PRICE_API) {
-    refreshFlash = { slug, err: true, msg: "Нужен price-server + tunnel (см. README)" };
+    refreshFlash = { slug, err: true, msg: "Откройте через npm run preview на Mac (127.0.0.1:8765)" };
     render();
     return;
   }
@@ -717,7 +760,7 @@ async function refreshCruise(slug, btn) {
       if (btn) { btn.disabled = false; btn.textContent = label; }
       return;
     }
-    const r = await fetch(PRICE_API + "/refresh?slug=" + encodeURIComponent(slug) + tokenQs());
+    const r = await fetch(PRICE_API + "/refresh?slug=" + encodeURIComponent(slug));
     const data = await r.json();
     if (!data.ok) throw new Error(data.error || "refresh failed");
     const idx = CRUISES.findIndex(x => x.slug === slug);
@@ -726,7 +769,7 @@ async function refreshCruise(slug, btn) {
     render();
   } catch (e) {
     const msg = e.message === "no-server"
-      ? (PRICE_API ? "Сервер не отвечает — npm run price-server + npm run tunnel" : "Запустите price-server и tunnel")
+      ? "Запустите на Mac: npm run price-server"
       : "Ошибка: " + e.message;
     refreshFlash = { slug, err: true, msg };
     render();
@@ -913,13 +956,10 @@ CRUISES.forEach(c => {
 });
 const hash = location.hash.replace("#","");
 if (hash === "med" || hash === "north" || hash === "transatlantic") activeRegion = hash;
-const tokEl = document.getElementById("admin-token");
-if (tokEl) {
-  tokEl.value = localStorage.getItem("cruiseRefreshToken") || "";
-  tokEl.onchange = () => localStorage.setItem("cruiseRefreshToken", tokEl.value);
-}
 document.getElementById("deploy-region")?.addEventListener("click", () => deployPublish(activeRegion));
 document.getElementById("deploy-all")?.addEventListener("click", () => deployPublish("all"));
+checkServer();
+setInterval(checkServer, 30000);
 render();
 </script>
 </body>
