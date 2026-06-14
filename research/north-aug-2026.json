@@ -1891,7 +1891,7 @@
         "Stockholm"
       ],
       "price2": 3158,
-      "price3": 4184,
+      "price3": null,
       "pricePP": 1579,
       "cabin3Note": "",
       "thirdGuestDiscount": null,
@@ -1906,23 +1906,27 @@
           "vendor": "MSC Cruises (прямо)",
           "url": "https://www.msccruises.co.uk/",
           "price2": 3158,
-          "price3": 4184,
-          "note": "inside, 2 гостя — сайт линии",
-          "source": "cruisello-go"
+          "price3": null,
+          "note": "inside, 2 гостя — сайт линии · обновлено 2026-06-14",
+          "source": "cruisello-go",
+          "verifiedAt": "2026-06-14"
         },
         {
           "vendor": "Cruisello · Book",
           "url": "https://cruisello.com/go/MSC-MAGNIFICA-20260815-7?pid=51a51a7e-354a-4a21-8241-90dea07d8fd6",
           "price2": 3158,
-          "price3": 4184,
-          "note": "переход к бронированию"
+          "price3": null,
+          "note": "переход к бронированию · обновлено 2026-06-14",
+          "verifiedAt": "2026-06-14"
         },
         {
           "vendor": "Cruisello",
           "url": "https://cruisello.com/cruises/breathtaking-baltic-capitals-stockholm-riga~MSC-MAGNIFICA-20260815-7",
           "price2": 3158,
-          "price3": 4184,
-          "note": "сравнение цен"
+          "price3": null,
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14",
+          "manual": false
         },
         {
           "vendor": "Oceanview",
@@ -1930,7 +1934,10 @@
           "price2": 3578,
           "price3": null,
           "note": "~€1789/чел × 2",
-          "cabin": "Oceanview"
+          "cabin": "Oceanview",
+          "verifiedAt": "2026-06-14",
+          "source": "Cruisello",
+          "manual": false
         },
         {
           "vendor": "Balcony",
@@ -1938,7 +1945,10 @@
           "price2": 4398,
           "price3": null,
           "note": "~€2199/чел × 2",
-          "cabin": "Balcony"
+          "cabin": "Balcony",
+          "verifiedAt": "2026-06-14",
+          "source": "Cruisello",
+          "manual": false
         },
         {
           "vendor": "CruiseDirect",
@@ -1947,17 +1957,8 @@
           "price3": null,
           "note": "ссылка Cruisello /go/ · цена на сайте",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
-          "source": "cruisello-go"
-        },
-        {
-          "vendor": "CruiseCompete",
-          "url": "https://www.cruisecompete.com",
-          "price2": null,
-          "price3": null,
-          "note": "котировка по email (1–2 дня)",
-          "hidden": true,
-          "affiliateUrl": "https://www.cruisecompete.com",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "hidden": false
         },
         {
           "vendor": "iCruise",
@@ -1966,24 +1967,38 @@
           "price3": null,
           "note": "ссылка Cruisello /go/ · цена на сайте",
           "affiliateUrl": "https://www.icruise.com",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "hidden": false
+        },
+        {
+          "vendor": "Inside",
+          "price2": 3158,
+          "note": "~€1579/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
         },
         {
           "ok": true,
           "vendor": "Vacations To Go",
-          "url": "https://www.vacationstogo.com",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=15720",
           "price2": 4448,
           "price3": 6672,
           "price3Est": true,
           "pricePP": 2224,
           "currency": "USD",
           "fastDealId": "15720",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "note": "VTG inside · 2026-08-15 · 2ч $4448 · 3ч $6672 (оценка +1pp)",
           "verifiedAt": "2026-06-14",
-          "manual": false,
-          "affiliateUrl": "https://www.vacationstogo.com",
-          "source": "cruisello-go",
-          "hidden": false
+          "manual": false
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
         }
       ],
       "family17": {
@@ -2006,11 +2021,12 @@
         "url": "https://www.msccruises.co.uk/"
       },
       "bestPrice3": {
-        "vendor": "MSC Cruises (прямо)",
-        "price": 4184,
-        "url": "https://www.msccruises.co.uk/"
+        "vendor": "Vacations To Go",
+        "price": 6672,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=15720"
       },
-      "bestPriceAt": "2026-06-14"
+      "bestPriceAt": "2026-06-14",
+      "lastRefreshed": "2026-06-14T21:24:53.222Z"
     },
     {
       "slug": "norwegian-fjords-haugesund-bergen~CEL-CELEBRITY_APEX-20260815-7",
