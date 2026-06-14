@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const outPath = path.join(root, "research", "transatlantic-fall-2026.json");
 
-const START = "2026-09-01";
+const START = "2026-08-01";
 const END = "2027-01-31";
 
 const PORTS = [
@@ -35,6 +35,17 @@ const LINE_BOOK = {
 
 const CARIBBEAN_ONLY =
   /\b(Nassau|CocoCay|Coco Cay|Ocean Cay|Bahamas|Grand Bahama|Stirrup Cay|Caribbean only|Southern Caribbean)\b/i;
+
+/** Repositioning EU→US/Canada may call Bahamas/Caribbean — keep if it ends on mainland Americas */
+const AMERICAS_END_RE =
+  /\b(New York|Brooklyn|Boston|Manhattan|Bayonne|Cape Liberty|Miami|Fort Lauderdale|Port Canaveral|San Juan|Halifax|Quebec|Québec|Montreal|Montréal|Vancouver|Charleston|Baltimore|Galveston|Los Angeles|San Francisco|Seattle|New Orleans|Tampa)\b/i;
+
+function isCaribbeanOnlyLoop(c) {
+  const blob = [c.title, ...(c.itinerary || [])].join(" ");
+  if (!CARIBBEAN_ONLY.test(blob)) return false;
+  const last = c.itinerary?.at(-1) || "";
+  return !AMERICAS_END_RE.test(last);
+}
 
 async function fetchText(url) {
   const res = await fetch(url, {
@@ -132,7 +143,7 @@ function parseDetail(html, html3, slugPath, portMeta) {
   };
 
   if (visaExcludeUk(c)) return null;
-  if (CARIBBEAN_ONLY.test([c.title, ...itinerary].join(" "))) return null;
+  if (isCaribbeanOnlyLoop(c)) return null;
   if (!isWestboundTransatlantic(c)) return null;
   if (c.nights < 5) return null;
   return c;

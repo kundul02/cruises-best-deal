@@ -2,8 +2,7 @@
   "meta": {
     "fetchedAt": "2026-06-14",
     "source": "Cruisello.com",
-    "dateRange": "2026-09-01 — 2027-01-31",
-    "region": "Transatlantic westbound EU → US/Canada",
+    "dateRange": "2026-08-01 — 2027-01-31",
     "ports": [
       "Hamburg, Germany",
       "Lisbon, Portugal",
@@ -15,9 +14,116 @@
     ],
     "family": "2–3 adults (daughter 17 = adult fare); UK ports excluded",
     "note": "US visa required; CA ports flagged; price2/price3 EUR from Cruisello",
-    "enrichedAt": "2026-06-14"
+    "lastPriceRefresh": "2026-06-14"
   },
   "cruises": [
+    {
+      "slug": "15-nights-transatlantic-cruise-usa-from-hamburg-to-bayonne-new-york~TUI-MEINS1-20260824-15",
+      "title": "15 nights - Transatlantic Cruise USA - from Hamburg/to Bayonne (New York)",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 1",
+      "sailDate": "2026-08-24",
+      "nights": 15,
+      "port": "Hamburg",
+      "country": "Germany",
+      "region": "Transatlantic",
+      "direction": "westbound",
+      "itinerary": [
+        "Hamburg",
+        "Akureyri",
+        "Reykjavik",
+        "Sydney",
+        "Halifax",
+        "New York"
+      ],
+      "price2": 3198,
+      "price3": 4947,
+      "currency": "EUR",
+      "pricePP": 1599,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/15-nights-transatlantic-cruise-usa-from-hamburg-to-bayonne-new-york~TUI-MEINS1-20260824-15",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS1-20260824-15?pid=7d665313-dd91-44f8-beb6-9b5c9c335a7f",
+      "lineUrl": "https://www.cruisecheap.com/cruises/transatlantic-cruises.html",
+      "familyNote": "17 лет = взрослый тариф; US visa обязательна; Canada — проверить CA visa",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Inside",
+          "price2": 3198,
+          "note": "~€1599/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Balcony",
+          "price2": 4398,
+          "note": "~€2199/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Suite",
+          "price2": 11998,
+          "note": "~€5999/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/15-nights-transatlantic-cruise-usa-from-hamburg-to-bayonne-new-york~TUI-MEINS1-20260824-15",
+          "price2": 3198,
+          "price3": 4947,
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
+        },
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.cruisecheap.com/cruises/transatlantic-cruises.html",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS1-20260824-15?pid=7d665313-dd91-44f8-beb6-9b5c9c335a7f"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
+        }
+      ],
+      "lastRefreshed": "2026-06-14T22:02:19.957Z",
+      "bestPrice2": {
+        "vendor": "Inside",
+        "price": 3198
+      },
+      "bestPrice3": {
+        "vendor": "Cruisello",
+        "price": 4947,
+        "url": "https://cruisello.com/cruises/15-nights-transatlantic-cruise-usa-from-hamburg-to-bayonne-new-york~TUI-MEINS1-20260824-15"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
     {
       "slug": "atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14",
       "title": "Atlantic Grandeur – Barcelona to San Juan",
@@ -49,99 +155,126 @@
       "hasThirdGuestPromo": true,
       "buyOptions": [
         {
-          "vendor": "MSC Cruises (прямо)",
-          "url": "https://www.msccruises.co.uk/",
+          "vendor": "Inside",
           "price2": 1658,
-          "price3": 2214,
-          "note": "inside, 2 гостя — сайт линии",
-          "source": "cruisello-go"
+          "note": "~€829/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
         },
         {
-          "vendor": "Cruisello · Book",
-          "url": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c",
-          "price2": 1658,
-          "price3": 2214,
-          "note": "переход к бронированию",
-          "source": "cruisello-go"
+          "vendor": "Oceanview",
+          "price2": 1960,
+          "note": "~€980/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Balcony",
+          "price2": 2350,
+          "note": "~€1175/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Suite",
+          "price2": 4724,
+          "note": "~€2362/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14"
         },
         {
           "vendor": "Cruisello",
           "url": "https://cruisello.com/cruises/atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14",
           "price2": 1658,
           "price3": 2214,
-          "note": "сравнение цен"
-        },
-        {
-          "vendor": "Oceanview",
-          "url": "https://www.msccruises.co.uk/",
-          "price2": 1960,
-          "price3": null,
-          "note": "~€980/чел × 2",
-          "cabin": "Oceanview"
-        },
-        {
-          "vendor": "Balcony",
-          "url": "https://www.msccruises.co.uk/",
-          "price2": 2350,
-          "price3": null,
-          "note": "~€1175/чел × 2",
-          "cabin": "Balcony"
-        },
-        {
-          "vendor": "Suite",
-          "url": "https://www.msccruises.co.uk/",
-          "price2": 4724,
-          "price3": null,
-          "note": "~€2362/чел × 2",
-          "cabin": "Suite"
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14"
         },
         {
           "vendor": "CruiseDirect",
           "url": "https://www.cruisedirect.com/search-results",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
-          "price2": null,
-          "price3": null,
-          "note": "ссылка с Cruisello /go/ · цена на сайте",
-          "source": "cruisello-go"
-        },
-        {
-          "vendor": "Vacations To Go",
-          "url": "https://www.vacationstogo.com",
-          "affiliateUrl": "https://www.vacationstogo.com",
-          "price2": null,
-          "price3": null,
-          "note": "ссылка с Cruisello /go/ · цена на сайте",
-          "source": "cruisello-go"
-        },
-        {
-          "vendor": "CruiseCompete",
-          "url": "https://www.cruisecompete.com",
-          "affiliateUrl": "https://www.cruisecompete.com",
-          "price2": null,
-          "price3": null,
-          "note": "ссылка с Cruisello /go/ · цена на сайте",
-          "source": "cruisello-go"
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
         },
         {
           "vendor": "iCruise",
           "url": "https://www.icruise.com",
           "affiliateUrl": "https://www.icruise.com",
-          "price2": null,
-          "price3": null,
-          "note": "ссылка с Cruisello /go/ · цена на сайте",
+          "source": "cruisello-go",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "hidden": false
+        },
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
           "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "manual": true,
+          "note": "Sailing not found on VTG",
+          "verifiedAt": null
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
         }
       ],
-      "family17": {
-        "summary": "Дочка 17 лет — взрослый; US visa обязательна на transatlantic",
-        "steps": [
-          "Бронируйте 3 взрослых",
-          "Сравните € 2 чел. и € 3 чел.",
-          "Проверьте CA порты — у дочери нет CA visa"
-        ],
-        "discountHint": "3-й гость дешевле",
-        "policyUrl": "https://www.msccruises.co.uk/"
-      }
+      "lastRefreshed": "2026-06-14T22:02:50.441Z",
+      "bestPrice2": {
+        "vendor": "Inside",
+        "price": 1658
+      },
+      "bestPrice3": {
+        "vendor": "Cruisello",
+        "price": 2214,
+        "url": "https://cruisello.com/cruises/atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "atlantic-crossroads-barcelona-the-caribbean~NCL-EPIC-20261101-14",
+      "title": "Atlantic Crossroads – Barcelona & the Caribbean",
+      "line": "Norwegian Cruise Line",
+      "ship": "Norwegian Epic",
+      "sailDate": "2026-11-01",
+      "nights": 14,
+      "port": "Barcelona",
+      "country": "Spain",
+      "region": "Transatlantic",
+      "direction": "westbound",
+      "itinerary": [
+        "Barcelona",
+        "Cádiz",
+        "Santa Cruz de Tenerife",
+        "St. Thomas",
+        "Great Stirrup Cay",
+        "Port Canaveral"
+      ],
+      "price2": 1800,
+      "price3": 2664,
+      "currency": "EUR",
+      "pricePP": 900,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/atlantic-crossroads-barcelona-the-caribbean~NCL-EPIC-20261101-14",
+      "bookUrl": "https://cruisello.com/go/NCL-EPIC-20261101-14?pid=6dd6ff1c-1d23-493b-8e45-1c2bde475741",
+      "lineUrl": "https://www.ncl.com/",
+      "familyNote": "17 лет = взрослый тариф; US visa обязательна; Canada — проверить CA visa",
+      "hasThirdGuestPromo": false
     }
   ]
 }

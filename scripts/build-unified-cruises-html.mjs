@@ -750,6 +750,7 @@ function familyTip(c) {
 function isHighlight(c) {
   if (activeRegion === "med" && c.port === "Cannes" && c.sailDate === "2026-07-05") return true;
   if (activeRegion === "north" && c.sailDate === "2026-08-05") return true;
+  if (activeRegion === "north" && c.ship === "MSC Preziosa" && c.sailDate === "2026-08-09") return true;
   return false;
 }
 
@@ -763,8 +764,13 @@ function rowClass(c) {
 function tags(c) {
   const t = [];
   if (c.isHot) t.push('<span class="hot-badge" title="Hot deal · score ' + (c.hotScore||"") + '">HOT</span>');
-  if (isHighlight(c)) t.push('<span class="badge best">' + (activeRegion === "med" ? "5 Jul" : "5 Aug") + '</span>');
-  if (activeRegion === "north" && c.itinerary?.some(p => /Bergen|Geiranger|Flåm|Norway|Oslo|Tromsø|North Cape/i.test(p)))
+  if (isHighlight(c)) {
+    const hl = activeRegion === "med" ? "5 Jul"
+      : c.ship === "MSC Preziosa" ? "9 Aug ★"
+      : "5 Aug";
+    t.push('<span class="badge best">' + hl + '</span>');
+  }
+  if (activeRegion === "north" && c.itinerary?.some(p => /Bergen|Geiranger|Flåm|Norway|Oslo|Tromsø|North Cape|Longyearbyen|Honningsvåg/i.test(p)))
     t.push('<span class="badge best">Norway</span>');
   if (c.thirdGuestDiscount) t.push('<span class="badge child">3-й гость дешевле</span>');
   if (c.price3Est) t.push('<span class="badge est">оценка 3 чел.</span>');
@@ -827,7 +833,18 @@ function render() {
     '<button type="button" class="chip visa-filter' + (hideCanadaFilter ? " on" : "") + '" data-ca-filter>Без CA</button>';
 
   updateHeaderSort();
-  document.getElementById("count").textContent = "Показано " + list.length + " из " + pool.length;
+  let countText = "Показано " + list.length + " из " + pool.length;
+  if (!list.length && (hotFilter || nightsFilter !== "all" || portFilter !== "all" || hideCanadaFilter)) {
+    const withoutHot = hotFilter ? pool.filter(c => {
+      if (portFilter !== "all" && c.port !== portFilter) return false;
+      if (nightsFilter !== "all" && c.nights !== Number(nightsFilter)) return false;
+      if (hideCanadaFilter && c.visaWarning === "canada") return false;
+      return true;
+    }).length : 0;
+    if (hotFilter && withoutHot) countText += " — снимите HOT, есть ещё " + withoutHot;
+    else countText += " — ослабьте фильтры";
+  }
+  document.getElementById("count").textContent = countText;
 
   document.getElementById("tbody").innerHTML = list.map(c => {
     const p3note = (c.cabin3Note||"").trim();
