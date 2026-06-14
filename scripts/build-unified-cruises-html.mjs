@@ -73,7 +73,7 @@ const html = `<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Круизы Европа 2026 — Med & North</title>
 <style>
 :root { --blue:#007AFF; --green:#34C759; --orange:#FF9500; --teal:#5AC8FA; --bg:#F2F2F7; --card:#fff; --text:#1C1C1E; --text2:#636366; --sep:#E5E5EA; }
@@ -186,7 +186,170 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 .buy-section { font-size:10px; text-transform:uppercase; color:var(--text2); letter-spacing:.04em; margin:12px 0 6px; }
 .buy-section:first-child { margin-top:0; }
 .status-na { color:#8e8e93; font-style:italic; }
-@media (max-width:640px) { .stats { grid-template-columns:repeat(2,1fr); } .region-cards { grid-template-columns:1fr; } .buy-grid { grid-template-columns:1fr; } }
+.m-nights { display:none; }
+.chip, .region-card, .buy-toggle, .refresh-btn { touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
+@media (max-width:768px) {
+  body {
+    padding:12px max(12px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    max-width:none;
+  }
+  h1 { font-size:20px; }
+  .sub { font-size:12px; margin-bottom:12px; }
+  .region-cards { grid-template-columns:1fr; gap:10px; margin-bottom:12px; }
+  .region-card { padding:14px 16px; }
+  .callout { font-size:12px; padding:10px 12px; margin-bottom:12px; }
+  .stats { grid-template-columns:repeat(2,1fr); gap:6px; margin-bottom:12px; }
+  .stat { padding:10px 8px; }
+  .stat b { font-size:16px; }
+  .filter-label { margin:10px 0 6px; font-size:10px; }
+  .filters {
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:6px;
+    padding-bottom:6px;
+    margin-bottom:6px;
+  }
+  .filters::-webkit-scrollbar { display:none; }
+  .chip {
+    flex-shrink:0;
+    min-height:40px;
+    padding:8px 16px;
+    font-size:14px;
+  }
+  .table-wrap { overflow:visible; border:none; background:transparent; border-radius:0; }
+  table, tbody { display:block; width:100%; }
+  thead { display:none; }
+  tbody tr:not(.buy-detail) {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:8px;
+    background:var(--card);
+    border:1px solid var(--sep);
+    border-radius:16px;
+    padding:14px 14px 12px;
+    margin-bottom:12px;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+  }
+  tbody tr:not(.buy-detail):has(+ tr.buy-detail) {
+    margin-bottom:0;
+    border-radius:16px 16px 0 0;
+    border-bottom:none;
+  }
+  tbody tr.buy-detail {
+    display:block;
+    margin:-1px 0 12px;
+    border:1px solid var(--sep);
+    border-top:1px dashed var(--sep);
+    border-radius:0 0 16px 16px;
+    overflow:hidden;
+    box-shadow:0 2px 4px rgba(0,0,0,.05);
+  }
+  tr.hot-deal:not(.buy-detail) {
+    box-shadow:0 1px 4px rgba(198,40,40,.12), inset 4px 0 0 #C62828;
+  }
+  tbody tr:not(.buy-detail) td {
+    display:grid;
+    grid-template-columns:minmax(68px, 36%) 1fr;
+    align-items:start;
+    gap:2px 8px;
+    width:100%;
+    padding:8px 0;
+    border-bottom:1px solid var(--sep);
+  }
+  tbody tr:not(.buy-detail) td::before {
+    content:attr(data-label);
+    font-size:10px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--text2);
+    letter-spacing:.04em;
+    padding-top:2px;
+  }
+  tbody tr:not(.buy-detail) td.col-date,
+  tbody tr:not(.buy-detail) td.col-port {
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    border-bottom:none;
+    padding:0;
+  }
+  tbody tr:not(.buy-detail) td.col-date::before,
+  tbody tr:not(.buy-detail) td.col-port::before { display:none; }
+  td.col-date {
+    font-size:17px;
+    font-weight:700;
+    padding-bottom:6px !important;
+    border-bottom:1px solid var(--sep) !important;
+    margin-bottom:0;
+  }
+  .m-nights {
+    display:inline-block;
+    font-size:12px;
+    font-weight:600;
+    color:var(--text2);
+    background:var(--bg);
+    padding:4px 10px;
+    border-radius:12px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  td.col-port {
+    flex-direction:column;
+    align-items:flex-start !important;
+    padding:8px 0 10px !important;
+    border-bottom:1px solid var(--sep) !important;
+  }
+  td.col-port strong { font-size:16px; }
+  td.col-nights { display:none !important; }
+  tbody tr:not(.buy-detail) td.col-ship,
+  tbody tr:not(.buy-detail) td.col-route,
+  tbody tr:not(.buy-detail) td.col-buy {
+    grid-column:1 / -1;
+  }
+  tbody tr:not(.buy-detail) td.col-price2,
+  tbody tr:not(.buy-detail) td.col-price3 {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    background:#f8f9fb;
+    border-radius:10px;
+    padding:10px !important;
+    border:none !important;
+    margin-top:4px;
+    min-height:56px;
+  }
+  tbody tr:not(.buy-detail) td.col-price2::before,
+  tbody tr:not(.buy-detail) td.col-price3::before {
+    display:block;
+    margin-bottom:4px;
+  }
+  td.col-price2 { grid-column:1; }
+  td.col-price3 { grid-column:2; }
+  td.col-price2, td.col-price3 { font-size:16px; font-weight:700; }
+  td.col-buy { border-bottom:none !important; padding-top:10px !important; }
+  td.col-buy::before { display:none; }
+  td.col-buy .buy-compact, td.col-buy .buy-toggle { width:100%; }
+  .buy-toggle, .refresh-btn { min-height:44px; font-size:13px; padding:10px 12px; }
+  .buy-panel { padding:12px; }
+  .buy-panel-head { flex-direction:column; align-items:stretch; }
+  .buy-panel-head .refresh-btn.primary { width:100%; text-align:center; }
+  .buy-grid { grid-template-columns:1fr; gap:8px; }
+  .buy-card { padding:12px; font-size:12px; }
+  .buy-card-head { flex-direction:column; gap:6px; }
+  .buy-card-price { white-space:normal; }
+  .buy-intro { font-size:11px; }
+  tr.buy-detail td { display:block; padding:0; border:none; }
+  .foot { font-size:11px; }
+  details.fold ul { font-size:12px; }
+  details.fold li { padding:6px 0; }
+}
+@media (max-width:768px) and (min-width:520px) {
+  .stats { grid-template-columns:repeat(4,1fr); }
+}
 </style>
 </head>
 <body>
@@ -581,14 +744,14 @@ function render() {
         labels.map(p => "<li>" + p + "</li>").join("") + '</ul></details>'
       : "—";
     const main = '<tr' + rowClass(c) + '>' +
-      '<td class="date col-date">' + (c._fmtDate||"") + '</td>' +
-      '<td class="port col-port"><strong>' + c.port + '</strong><small>' + c.country + '</small></td>' +
-      '<td class="col-nights">' + c.nights + '</td>' +
-      '<td class="col-ship">' + tags(c) + c.line + '<br><small>' + c.ship + '</small>' + familyTip(c) + '</td>' +
-      '<td class="col-route">' + route + '</td>' +
-      '<td class="price col-price">' + fmtEur(c.price2) + bestBadge(c, 2) + '</td>' +
-      '<td class="price col-price">' + fmtEur(c.price3) + bestBadge(c, 3) + (p3note ? '<br><span class="price-note">'+p3note.replace(/^\\s*\\(/,"").replace(/\\)$/,"")+'</span>' : "") + '</td>' +
-      '<td class="col-buy">' + buyCell(c) + '</td></tr>';
+      '<td class="date col-date" data-label="Дата">' + (c._fmtDate||"") + '<span class="m-nights">' + c.nights + ' н.</span></td>' +
+      '<td class="port col-port" data-label="Порт"><strong>' + c.port + '</strong><small>' + c.country + '</small></td>' +
+      '<td class="col-nights" data-label="Ночей">' + c.nights + '</td>' +
+      '<td class="col-ship" data-label="Корабль">' + tags(c) + c.line + '<br><small>' + c.ship + '</small>' + familyTip(c) + '</td>' +
+      '<td class="col-route" data-label="Маршрут">' + route + '</td>' +
+      '<td class="price col-price col-price2" data-label="2 чел.">' + fmtEur(c.price2) + bestBadge(c, 2) + '</td>' +
+      '<td class="price col-price col-price3" data-label="3 чел.">' + fmtEur(c.price3) + bestBadge(c, 3) + (p3note ? '<br><span class="price-note">'+p3note.replace(/^\\s*\\(/,"").replace(/\\)$/,"")+'</span>' : "") + '</td>' +
+      '<td class="col-buy" data-label="Купить">' + buyCell(c) + '</td></tr>';
     const detail = openBuySlug === c.slug
       ? '<tr class="buy-detail"><td colspan="8">' + buyPanel(c) + '</td></tr>'
       : "";
