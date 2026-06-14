@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { annotateHotDeals } from "./lib/hot-deal-score.mjs";
 import { formatPortLabel } from "./lib/port-countries.mjs";
+import { annotateVisa, visaExcludeUk } from "./lib/visa-warnings.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -39,6 +40,19 @@ const REGIONS = [
     statLabel: "DE / DK",
     statFilter: (c) => c.country === "Germany" || c.country === "Denmark",
   },
+  {
+    id: "transatlantic",
+    title: "Трансатлантика",
+    subtitle: "Из Европы в США и Канаду · осень — зима",
+    dates: "Sep 2026 — Jan 2027",
+    json: "research/transatlantic-fall-2026.json",
+    accent: "purple",
+    callout:
+      "US visa обязательна на борту. Порты Canada — ⚠ у дочери нет CA visa. UK-порты исключены — нет визы в Англию.",
+    highlightPorts: new Set(["Hamburg", "Lisbon", "Istanbul", "Cherbourg"]),
+    statLabel: "EU → Americas",
+    statFilter: (c) => c.direction === "westbound",
+  },
 ];
 
 function sanitize(c) {
@@ -57,9 +71,23 @@ function sanitize(c) {
 }
 
 function loadRegion(reg) {
-  const raw = JSON.parse(fs.readFileSync(path.join(root, reg.json), "utf8"));
-  const cruises = raw.cruises.map(sanitize).map((c) => ({ ...c, regionId: reg.id }));
+  const rawPath = path.join(root, reg.json);
+  if (!fs.existsSync(rawPath)) {
+    return { meta: { fetchedAt: "—", count: 0 }, cruises: [], reg };
+  }
+  const raw = JSON.parse(fs.readFileSync(rawPath, "utf8"));
+  const cruises = raw.cruises
+    .map(sanitize)
+    .filter((c) => !visaExcludeUk(c))
+    .map((c) => ({ ...c, regionId: reg.id, ...annotateVisa(c, { regionId: reg.id }) }));
   return { meta: raw.meta, cruises, reg };
+}
+
+let publicApi = { priceApi: "", apiVersion: 2 };
+try {
+  publicApi = JSON.parse(fs.readFileSync(path.join(root, "research/public-api.json"), "utf8"));
+} catch {
+  /* optional */
 }
 
 const loaded = REGIONS.map(loadRegion);
@@ -68,24 +96,30 @@ const allCruises = annotateHotDeals(loaded.flatMap((l) => l.cruises)).map((c) =>
   itineraryLabels: (c.itinerary || []).map(formatPortLabel),
 }));
 const regionMeta = Object.fromEntries(loaded.map((l) => [l.reg.id, { ...l.reg, meta: l.meta, count: l.cruises.length }]));
+const lastPriceRefresh = loaded
+  .map((l) => l.meta.lastPriceRefresh || l.meta.fetchedAt)
+  .filter(Boolean)
+  .sort()
+  .pop();
 
 const html = `<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Круизы Европа 2026 — Med & North</title>
+<title>Круизы Европа 2026 — Med, North & Transatlantic</title>
 <style>
-:root { --blue:#007AFF; --green:#34C759; --orange:#FF9500; --teal:#5AC8FA; --bg:#F2F2F7; --card:#fff; --text:#1C1C1E; --text2:#636366; --sep:#E5E5EA; }
+:root { --blue:#007AFF; --green:#34C759; --orange:#FF9500; --teal:#5AC8FA; --purple:#5856D6; --bg:#F2F2F7; --card:#fff; --text:#1C1C1E; --text2:#636366; --sep:#E5E5EA; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); color:var(--text); padding:16px; max-width:1280px; margin:0 auto; }
 h1 { font-size:22px; margin-bottom:4px; }
 .sub { font-size:13px; color:var(--text2); margin-bottom:16px; line-height:1.5; }
-.region-cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.region-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
 .region-card { text-align:left; border:2px solid var(--sep); background:var(--card); border-radius:16px; padding:16px; cursor:pointer; transition:border-color .15s, box-shadow .15s; }
 .region-card:hover { border-color:var(--blue); }
 .region-card.on.med { border-color:var(--orange); background:#FFF8F0; }
 .region-card.on.north { border-color:var(--teal); background:#F0FAFF; }
+.region-card.on.transatlantic { border-color:var(--purple); background:#F3F0FF; }
 .region-card h2 { font-size:17px; margin-bottom:4px; }
 .region-card p { font-size:12px; color:var(--text2); margin-bottom:8px; line-height:1.4; }
 .region-card .count { font-size:13px; font-weight:600; color:var(--blue); }
@@ -101,6 +135,15 @@ h1 { font-size:22px; margin-bottom:4px; }
 .chip.on { background:var(--blue); color:#fff; border-color:var(--blue); }
 .chip.accent-med.on { background:var(--orange); border-color:var(--orange); }
 .chip.accent-north.on { background:var(--teal); border-color:var(--teal); }
+.chip.accent-transatlantic.on { background:var(--purple); border-color:var(--purple); color:#fff; }
+.chip.visa-filter.on { background:#FF9500; border-color:#FF9500; color:#fff; }
+.badge.visa-warn { background:#FFF3E0; color:#B45309; }
+.visa-row-warn { font-size:10px; color:#B45309; margin-top:4px; }
+.admin-bar { margin-top:12px; padding:12px; background:var(--card); border:1px solid var(--sep); border-radius:12px; font-size:12px; }
+.admin-bar input { width:100%; max-width:280px; padding:6px 10px; border-radius:8px; border:1px solid var(--sep); margin:6px 0; font-size:12px; }
+.admin-bar .deploy-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+.deploy-btn { font-size:11px; padding:8px 12px; border-radius:8px; border:1px solid var(--purple); background:#F3F0FF; color:var(--purple); cursor:pointer; font-weight:600; }
+.deploy-btn:hover { background:#E8E0FF; }
 .chip.nights.on { background:var(--purple, #5856D6); border-color:var(--purple, #5856D6); color:#fff; }
 .table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--sep); background:var(--card); }
 table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
@@ -354,7 +397,7 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </head>
 <body>
 <h1>Круизы из Европы · 2026</h1>
-<p class="sub">Выберите регион · данные Cruisello · ${allCruises.length} рейсов · обновлено ${regionMeta.med.meta.fetchedAt}</p>
+<p class="sub" id="page-sub">Выберите регион · ${allCruises.length} рейсов · цены на ${lastPriceRefresh || regionMeta.med?.meta?.fetchedAt || "—"}</p>
 
 <div class="region-cards" id="region-cards"></div>
 <div class="callout" id="callout"></div>
@@ -382,11 +425,18 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </table>
 </div>
 <p class="foot">
-  Cruisello + сайты линий + агентства. Цены inside, 2 гостя. <span class="badge est">оценка</span> — расчёт для 3 гостей.
-  <span class="hot-badge">HOT</span> — лучшее сочетание цены, ночей и уровня линии/корабля в регионе (может быть несколько).<br>
-  <strong>Лучшая цена:</strong> запустите <code>npm run price-server</code> (и один раз <code>npm run vtg-login</code> для VTG).<br>
-  В строке круиза → <strong>↻ Лучшая цена</strong>. CLI: <code>npm run refresh-price -- --slug=… --rebuild-html</code>
+  Cruisello + VTG + агентства. <span class="hot-badge">HOT</span> — лучшая цена в регионе.<br>
+  <strong>↻</strong> — обновить цены (нужен <code>npm run price-server</code> + <code>npm run tunnel</code> для GitHub Pages).
 </p>
+<div class="admin-bar" id="admin-bar">
+  <strong>Публикация на GitHub</strong> — token из <code>.env REFRESH_TOKEN</code>:
+  <input type="password" id="admin-token" placeholder="Admin token" autocomplete="off">
+  <div class="deploy-row">
+    <button type="button" class="deploy-btn" id="deploy-region">↻ Опубликовать регион</button>
+    <button type="button" class="deploy-btn" id="deploy-all">↻ Опубликовать всё</button>
+  </div>
+  <p id="deploy-status" style="margin-top:8px;color:var(--text2)"></p>
+</div>
 <script>
 const REGIONS = ${JSON.stringify(REGIONS.map(({ id, title, subtitle, dates, accent, callout }) => ({ id, title, subtitle, dates, accent, callout })))};
 const REGION_META = ${JSON.stringify(regionMeta)};
@@ -400,11 +450,24 @@ let sortDir = "asc";
 let openBuySlug = null;
 let refreshFlash = null;
 let hotFilter = false;
+let hideCanadaFilter = false;
 
-const CABIN_VENDORS = new Set(["Inside", "Oceanview", "Balcony", "Suite"]); // не показываем — только inside в колонках €2/€3
+const PUBLIC_API = ${JSON.stringify(publicApi)};
+const CABIN_VENDORS = new Set(["Inside", "Oceanview", "Balcony", "Suite"]);
 
 const SORT_DEFAULT_DIR = { date: "asc", port: "asc", nights: "desc", price2: "asc", price3: "asc" };
-const PRICE_API = "http://127.0.0.1:3920";
+const PRICE_API = (location.hostname === "127.0.0.1" || location.hostname === "localhost")
+  ? "http://127.0.0.1:3920"
+  : (PUBLIC_API.priceApi || "");
+
+function apiToken() {
+  return localStorage.getItem("cruiseRefreshToken") || document.getElementById("admin-token")?.value || "";
+}
+
+function tokenQs() {
+  const t = apiToken();
+  return t ? "&token=" + encodeURIComponent(t) : "";
+}
 
 function regionCruises() {
   return CRUISES.filter(c => c.regionId === activeRegion);
@@ -427,6 +490,7 @@ function filtered() {
     if (portFilter !== "all" && c.port !== portFilter) return false;
     if (nightsFilter !== "all" && c.nights !== Number(nightsFilter)) return false;
     if (hotFilter && !c.isHot) return false;
+    if (hideCanadaFilter && c.visaWarning === "canada") return false;
     return true;
   });
   const dir = sortDir === "asc" ? 1 : -1;
@@ -615,7 +679,31 @@ function formatRefreshFlash(data) {
   return parts.join(" · ") || data.message || "Цены обновлены — смотрите зелёные карточки.";
 }
 
+async function deployPublish(region) {
+  const el = document.getElementById("deploy-status");
+  if (!PRICE_API) {
+    el.textContent = "Нет PRICE_API — настройте research/public-api.json + tunnel";
+    return;
+  }
+  localStorage.setItem("cruiseRefreshToken", apiToken());
+  el.textContent = "Публикуем " + region + "… (может занять несколько минут)";
+  try {
+    const r = await fetch(PRICE_API + "/deploy?region=" + encodeURIComponent(region) + tokenQs());
+    const data = await r.json();
+    if (!data.ok && data.error) throw new Error(data.error);
+    el.textContent = (data.deploy?.pushed ? "✓ Push на GitHub. " : "") + (data.message || "Готово");
+    if (data.deploy?.pushed) setTimeout(() => location.reload(), 3000);
+  } catch (e) {
+    el.textContent = "Ошибка: " + e.message;
+  }
+}
+
 async function refreshCruise(slug, btn) {
+  if (!PRICE_API) {
+    refreshFlash = { slug, err: true, msg: "Нужен price-server + tunnel (см. README)" };
+    render();
+    return;
+  }
   btn.disabled = true;
   const label = btn.textContent;
   btn.textContent = "… обновляем";
@@ -629,7 +717,7 @@ async function refreshCruise(slug, btn) {
       if (btn) { btn.disabled = false; btn.textContent = label; }
       return;
     }
-    const r = await fetch(PRICE_API + "/refresh?slug=" + encodeURIComponent(slug));
+    const r = await fetch(PRICE_API + "/refresh?slug=" + encodeURIComponent(slug) + tokenQs());
     const data = await r.json();
     if (!data.ok) throw new Error(data.error || "refresh failed");
     const idx = CRUISES.findIndex(x => x.slug === slug);
@@ -638,7 +726,7 @@ async function refreshCruise(slug, btn) {
     render();
   } catch (e) {
     const msg = e.message === "no-server"
-      ? "Сервер не отвечает — в терминале: npm run price-server"
+      ? (PRICE_API ? "Сервер не отвечает — npm run price-server + npm run tunnel" : "Запустите price-server и tunnel")
       : "Ошибка: " + e.message;
     refreshFlash = { slug, err: true, msg };
     render();
@@ -680,6 +768,8 @@ function tags(c) {
     t.push('<span class="badge best">Norway</span>');
   if (c.thirdGuestDiscount) t.push('<span class="badge child">3-й гость дешевле</span>');
   if (c.price3Est) t.push('<span class="badge est">оценка 3 чел.</span>');
+  if (c.visaWarning === "canada") t.push('<span class="badge visa-warn">CA ⚠</span>');
+  if (activeRegion === "transatlantic") t.push('<span class="badge visa-warn">US visa</span>');
   return t.join(" ");
 }
 
@@ -703,8 +793,10 @@ function render() {
 
   const statFn = activeRegion === "med"
     ? c => c.country === "France"
-    : c => c.country === "Germany" || c.country === "Denmark";
-  const statLabel = activeRegion === "med" ? "из Франции" : "DE / DK";
+    : activeRegion === "north"
+    ? c => c.country === "Germany" || c.country === "Denmark"
+    : c => c.direction === "westbound";
+  const statLabel = activeRegion === "med" ? "из Франции" : activeRegion === "north" ? "DE / DK" : "EU → US/CA";
   const best = [...pool].filter(c => c.price2).sort((a,b) => a.price2 - b.price2)[0];
   const earliest = [...pool].sort((a,b) => a.sailDate.localeCompare(b.sailDate))[0];
 
@@ -731,7 +823,8 @@ function render() {
   ].map(([k,l]) => '<button class="chip' + (sortCol===k?" on":"") + '" data-sort="' + k + '">' +
     l + (sortCol===k ? (sortDir==="asc"?" ↑":" ↓") : "") + '</button>').join("") +
     '<button type="button" class="chip hot-filter' + (hotFilter ? " on" : "") + '" data-hot-filter>HOT' +
-    (hotN ? " (" + hotN + ")" : "") + '</button>';
+    (hotN ? " (" + hotN + ")" : "") + '</button>' +
+    '<button type="button" class="chip visa-filter' + (hideCanadaFilter ? " on" : "") + '" data-ca-filter>Без CA</button>';
 
   updateHeaderSort();
   document.getElementById("count").textContent = "Показано " + list.length + " из " + pool.length;
@@ -747,7 +840,8 @@ function render() {
       '<td class="date col-date" data-label="Дата">' + (c._fmtDate||"") + '<span class="m-nights">' + c.nights + ' н.</span></td>' +
       '<td class="port col-port" data-label="Порт"><strong>' + c.port + '</strong><small>' + c.country + '</small></td>' +
       '<td class="col-nights" data-label="Ночей">' + c.nights + '</td>' +
-      '<td class="col-ship" data-label="Корабль">' + tags(c) + c.line + '<br><small>' + c.ship + '</small>' + familyTip(c) + '</td>' +
+      '<td class="col-ship" data-label="Корабль">' + tags(c) + c.line + '<br><small>' + c.ship + '</small>' +
+        (c.visaNotes ? '<div class="visa-row-warn">' + c.visaNotes + '</div>' : '') + familyTip(c) + '</td>' +
       '<td class="col-route" data-label="Маршрут">' + route + '</td>' +
       '<td class="price col-price col-price2" data-label="2 чел.">' + fmtEur(c.price2) + bestBadge(c, 2) + '</td>' +
       '<td class="price col-price col-price3" data-label="3 чел.">' + fmtEur(c.price3) + bestBadge(c, 3) + (p3note ? '<br><span class="price-note">'+p3note.replace(/^\\s*\\(/,"").replace(/\\)$/,"")+'</span>' : "") + '</td>' +
@@ -761,7 +855,7 @@ function render() {
   document.querySelectorAll("[data-region]").forEach(b => b.onclick = () => {
     if (b.dataset.region === activeRegion) return;
     activeRegion = b.dataset.region;
-    portFilter = "all"; nightsFilter = "all"; hotFilter = false;
+    portFilter = "all"; nightsFilter = "all"; hotFilter = false; hideCanadaFilter = false;
     render();
   });
   document.querySelectorAll("[data-port]").forEach(b => b.onclick = () => { portFilter = b.dataset.port; render(); });
@@ -774,6 +868,10 @@ function render() {
   });
   document.querySelectorAll("[data-hot-filter]").forEach(b => b.onclick = () => {
     hotFilter = !hotFilter;
+    render();
+  });
+  document.querySelectorAll("[data-ca-filter]").forEach(b => b.onclick = () => {
+    hideCanadaFilter = !hideCanadaFilter;
     render();
   });
   document.querySelectorAll("[data-refresh]").forEach(b => b.onclick = () => refreshCruise(b.dataset.refresh, b));
@@ -797,7 +895,14 @@ CRUISES.forEach(c => {
   c._fmtDate = String(d).padStart(2,"0") + " " + ${JSON.stringify(MONTHS)}[m-1] + " " + y;
 });
 const hash = location.hash.replace("#","");
-if (hash === "med" || hash === "north") activeRegion = hash;
+if (hash === "med" || hash === "north" || hash === "transatlantic") activeRegion = hash;
+const tokEl = document.getElementById("admin-token");
+if (tokEl) {
+  tokEl.value = localStorage.getItem("cruiseRefreshToken") || "";
+  tokEl.onchange = () => localStorage.setItem("cruiseRefreshToken", tokEl.value);
+}
+document.getElementById("deploy-region")?.addEventListener("click", () => deployPublish(activeRegion));
+document.getElementById("deploy-all")?.addEventListener("click", () => deployPublish("all"));
 render();
 </script>
 </body>
@@ -814,6 +919,7 @@ const redirect = (target, title) => `<!DOCTYPE html>
 
 fs.writeFileSync(path.join(root, "med-summer-july-2026.html"), redirect("cruises-europe-2026.html#med", "Redirect"));
 fs.writeFileSync(path.join(root, "north-aug-2026.html"), redirect("cruises-europe-2026.html#north", "Redirect"));
+fs.writeFileSync(path.join(root, "transatlantic-fall-2026.html"), redirect("cruises-europe-2026.html#transatlantic", "Redirect"));
 
 const indexRedirect = `<!DOCTYPE html>
 <html lang="ru"><head><meta charset="UTF-8">
@@ -823,7 +929,7 @@ const indexRedirect = `<!DOCTYPE html>
 <link rel="canonical" href="cruises-europe-2026.html">
 <script>location.replace("cruises-europe-2026.html" + location.hash);</script>
 </head>
-<body><p><a href="cruises-europe-2026.html">Круизы Европа 2026 — Med &amp; North</a></p></body></html>`;
+<body><p><a href="cruises-europe-2026.html">Круизы Европа 2026 — Med, North &amp; Transatlantic</a></p></body></html>`;
 fs.writeFileSync(path.join(root, "index.html"), indexRedirect);
 
-console.log(`Built ${outPath} (${allCruises.length} cruises: med ${regionMeta.med.count}, north ${regionMeta.north.count})`);
+console.log(`Built ${outPath} (${allCruises.length} cruises: med ${regionMeta.med?.count || 0}, north ${regionMeta.north?.count || 0}, transatlantic ${regionMeta.transatlantic?.count || 0})`);

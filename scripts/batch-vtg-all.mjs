@@ -18,6 +18,7 @@ const root = path.join(__dirname, "..");
 const FILES = {
   med: path.join(root, "research", "summer-med-july-2026.json"),
   north: path.join(root, "research", "north-aug-2026.json"),
+  transatlantic: path.join(root, "research", "transatlantic-fall-2026.json"),
 };
 
 const args = process.argv.slice(2);

@@ -6,7 +6,7 @@
   },
   "party": {
     "size": 3,
-    "composition": "пара + дочка 16 лет",
+    "composition": "пара + дочка 17 лет",
     "preferredCabin": ["triple", "connecting", "oceanview", "balcony"],
     "budgetNotes": "Ищем лучшую цену за ночь на человека; готовы к repositioning и last-minute"
   },
@@ -28,7 +28,7 @@
     {
       "id": "daughter",
       "role": "teen",
-      "age": 16,
+      "age": 17,
       "passport": "UA biometric",
       "visas": ["US", "Schengen"],
       "schengenRule": "90/180 visa-free",
@@ -47,7 +47,7 @@
   },
   "visaRules": {
     "schengen": "Биопаспорт UA — безвиз 90/180; EES с окт 2025; ETIAS ожидается конец 2026",
-    "uk": "UK ETA обязателен при портах UK (Southampton, Dover, Liverpool)",
+    "uk": "Исключено — нет UK visa/ETA; Southampton/Dover/Liverpool не рассматриваем",
     "us": "Виза US обязательна на борту даже без высадки",
     "canada": "Виза CA обязательна на борту — у дочери нет; маршруты с CA embark/disembark помечать warning",
     "israel": "Проверять per-port; часто безвиз или visa on arrival для туристов"

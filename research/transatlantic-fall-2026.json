@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "fetchedAt": "2026-06-14",
+    "source": "Cruisello.com",
+    "dateRange": "2026-09-01 — 2027-01-31",
+    "region": "Transatlantic westbound EU → US/Canada",
+    "ports": [
+      "Hamburg, Germany",
+      "Lisbon, Portugal",
+      "Barcelona, Spain",
+      "Civitavecchia, Italy",
+      "Cherbourg, France",
+      "Copenhagen, Denmark",
+      "Istanbul, Turkey"
+    ],
+    "family": "2–3 adults (daughter 17 = adult fare); UK ports excluded",
+    "note": "US visa required; CA ports flagged; price2/price3 EUR from Cruisello",
+    "enrichedAt": "2026-06-14"
+  },
+  "cruises": [
+    {
+      "slug": "atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14",
+      "title": "Atlantic Grandeur – Barcelona to San Juan",
+      "line": "MSC Cruises",
+      "ship": "MSC Grandiosa",
+      "sailDate": "2026-10-31",
+      "nights": 14,
+      "port": "Barcelona",
+      "country": "Spain",
+      "region": "Transatlantic",
+      "direction": "westbound",
+      "itinerary": [
+        "Barcelona",
+        "Funchal",
+        "San Juan",
+        "Miami",
+        "Port Canaveral"
+      ],
+      "price2": 1658,
+      "price3": 2214,
+      "currency": "EUR",
+      "pricePP": 829,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14",
+      "bookUrl": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф; US visa обязательна; Canada — проверить CA visa",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 1658,
+          "price3": 2214,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-GRANDIOSA-20261031-14?pid=26df7dec-f6a0-4bda-bd04-a6e1d411ba9c",
+          "price2": 1658,
+          "price3": 2214,
+          "note": "переход к бронированию",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/atlantic-grandeur-barcelona-to-san-juan~MSC-GRANDIOSA-20261031-14",
+          "price2": 1658,
+          "price3": 2214,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 1960,
+          "price3": null,
+          "note": "~€980/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2350,
+          "price3": null,
+          "note": "~€1175/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 4724,
+          "price3": null,
+          "note": "~€2362/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка с Cruisello /go/ · цена на сайте",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка с Cruisello /go/ · цена на сайте",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка с Cruisello /go/ · цена на сайте",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "affiliateUrl": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка с Cruisello /go/ · цена на сайте",
+          "source": "cruisello-go"
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — взрослый; US visa обязательна на transatlantic",
+        "steps": [
+          "Бронируйте 3 взрослых",
+          "Сравните € 2 чел. и € 3 чел.",
+          "Проверьте CA порты — у дочери нет CA visa"
+        ],
+        "discountHint": "3-й гость дешевле",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      }
+    }
+  ]
+}

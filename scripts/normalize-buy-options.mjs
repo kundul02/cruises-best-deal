@@ -9,6 +9,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const files = [
   path.join(root, "research", "summer-med-july-2026.json"),
   path.join(root, "research", "north-aug-2026.json"),
+  path.join(root, "research", "transatlantic-fall-2026.json"),
 ];
 
 const STATIC_AGENCIES = ["CruiseDirect", "iCruise"];

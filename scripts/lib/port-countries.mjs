@@ -120,8 +120,17 @@ export const PORT_COUNTRY = {
   Akureyri: "Iceland",
   // Ireland
   Dublin: "Ireland",
-  // Misc med
-  Bar: "Montenegro",
+  // Americas
+  Brooklyn: "USA",
+  "New York": "USA",
+  Miami: "USA",
+  "Fort Lauderdale": "USA",
+  Boston: "USA",
+  Tampa: "USA",
+  Halifax: "Canada",
+  Quebec: "Canada",
+  Montréal: "Canada",
+  Montreal: "Canada",
   Alicante: "Spain",
   Motril: "Spain",
   "Port Mahon": "Spain",

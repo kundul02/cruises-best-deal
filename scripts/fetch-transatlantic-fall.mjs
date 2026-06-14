@@ -1,26 +1,25 @@
 #!/usr/bin/env node
-/** Northern Europe cruises Aug 2026 (from 5 Aug) → research/north-aug-2026.json */
+/** Transatlantic westbound EU→US/Canada Sep 2026 — Jan 2027 → research/transatlantic-fall-2026.json */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { isWestboundTransatlantic, visaExcludeUk } from "./lib/visa-warnings.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const outPath = path.join(root, "research", "north-aug-2026.json");
+const outPath = path.join(root, "research", "transatlantic-fall-2026.json");
 
-const START = "2026-08-05";
-const END = "2026-08-31";
+const START = "2026-09-01";
+const END = "2027-01-31";
 
 const PORTS = [
-  { slug: "copenhagen", city: "Copenhagen", country: "Denmark" },
   { slug: "hamburg", city: "Hamburg", country: "Germany" },
-  { slug: "kiel", city: "Kiel", country: "Germany" },
-  { slug: "warnemunde", city: "Warnemünde", country: "Germany" },
-  { slug: "bremerhaven", city: "Bremerhaven", country: "Germany" },
-  { slug: "amsterdam", city: "Amsterdam", country: "Netherlands" },
-  { slug: "stockholm", city: "Stockholm", country: "Sweden" },
-  { slug: "helsinki", city: "Helsinki", country: "Finland" },
-  { slug: "bergen", city: "Bergen", country: "Norway" },
+  { slug: "lisbon", city: "Lisbon", country: "Portugal" },
+  { slug: "barcelona", city: "Barcelona", country: "Spain" },
+  { slug: "civitavecchia", city: "Civitavecchia", country: "Italy" },
+  { slug: "cherbourg", city: "Cherbourg", country: "France" },
+  { slug: "copenhagen", city: "Copenhagen", country: "Denmark" },
+  { slug: "istanbul", city: "Istanbul", country: "Turkey" },
 ];
 
 const LINE_BOOK = {
@@ -32,27 +31,10 @@ const LINE_BOOK = {
   "Princess Cruises": "https://www.princess.com/",
   "Cunard Line": "https://www.cunard.com/",
   "Costa Cruises": "https://www.costacruises.com/",
-  "AIDA Cruises": "https://www.aida.de/",
-  "TUI Cruises": "https://www.tuicruises.com/",
-  "Viking": "https://www.vikingcruises.com/",
-  "Hurtigruten": "https://www.hurtigruten.com/",
 };
 
-const EXCLUDE_RE =
-  /\b(Miami|Nassau|CocoCay|Coco Cay|Ocean Cay|Bahamas|Grand Bahama|Stirrup Cay|Port Canaveral|Fort Lauderdale|Caribbean|Ensenada|Los Angeles|L\.A\.|Barcelona|Mallorca|Palma de Mallorca|Lisbon|Cádiz|Cadiz|Civitavecchia|Ibiza|Tenerife|Málaga|Malaga|Canary)\b/i;
-
-const NORTH_RE =
-  /Norway|Bergen|Geiranger|Flåm|Flam|Stavanger|Oslo|Tromsø|Tromso|Ålesund|Aalesund|North Cape|Honningsvåg|Baltic|Stockholm|Helsinki|Copenhagen|Kiel|Hamburg|Bremerhaven|Warnem|Skagen|Visby|Tallinn|Riga|Hellesylt|Nordfjordeid|Molde|Trondheim|Edinburgh|Dublin|British Isles|Iceland|Reykjavik|Gothenburg|Southampton|Amsterdam|Kristiansand|Olden|Nordic|Fjord/i;
-
-function isNorthernEurope(c) {
-  const blob = [c.title, c.port, ...(c.itinerary || [])].join(" ");
-  if (EXCLUDE_RE.test(blob)) return false;
-  if (c.nights <= 5 && !NORTH_RE.test(blob)) return false;
-  return (
-    NORTH_RE.test(blob) ||
-    ["Germany", "Denmark", "Norway", "Sweden", "Finland", "Netherlands"].includes(c.country)
-  );
-}
+const CARIBBEAN_ONLY =
+  /\b(Nassau|CocoCay|Coco Cay|Ocean Cay|Bahamas|Grand Bahama|Stirrup Cay|Caribbean only|Southern Caribbean)\b/i;
 
 async function fetchText(url) {
   const res = await fetch(url, {
@@ -93,18 +75,6 @@ function parseCabinPrices(html, guests) {
   return out;
 }
 
-function parseCabinHeaders(html, guests) {
-  const cabins = ["Inside", "Oceanview", "Balcony", "Suite"];
-  const out = [];
-  for (const cabin of cabins) {
-    const m = html.match(new RegExp(`>${cabin}</span>[\\s\\S]{0,600}?€([\\d,]+)`, "i"));
-    if (!m) continue;
-    const pp = eurNum(m[1]);
-    out.push({ cabin, pp, total: pp * guests });
-  }
-  return out;
-}
-
 function parseDetail(html, html3, slugPath, portMeta) {
   const trip = parseJsonLd(html);
   if (!trip?.departureTime) return null;
@@ -136,7 +106,7 @@ function parseDetail(html, html3, slugPath, portMeta) {
   const thirdGuestDiscount =
     price2 && price3 && price3 / 3 < (inside2?.pp || price2 / 2) * 0.95;
 
-  return {
+  const c = {
     slug: slugPath.replace(/^\/cruises\//, ""),
     title: trip.name,
     line,
@@ -145,19 +115,27 @@ function parseDetail(html, html3, slugPath, portMeta) {
     nights,
     port: portMeta?.city || itinerary[0] || "",
     country: portMeta?.country || "",
-    region: "Northern Europe",
+    region: "Transatlantic",
+    direction: "westbound",
     itinerary,
     price2,
     price3,
-    pricePP: inside2?.pp || parseCabinHeaders(html, 2).find((c) => c.cabin === "Inside")?.pp || null,
+    currency: "EUR",
+    pricePP: inside2?.pp || null,
     cabin3Note,
     thirdGuestDiscount,
     cruiselloUrl,
     bookUrl,
-    lineUrl: LINE_BOOK[line] || "https://www.cruisecritic.com/cruise-deals",
-    familyNote: "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+    lineUrl: LINE_BOOK[line] || "https://www.cruisecheap.com/cruises/transatlantic-cruises.html",
+    familyNote: "17 лет = взрослый тариф; US visa обязательна; Canada — проверить CA visa",
     hasThirdGuestPromo: Boolean(thirdGuestDiscount),
   };
+
+  if (visaExcludeUk(c)) return null;
+  if (CARIBBEAN_ONLY.test([c.title, ...itinerary].join(" "))) return null;
+  if (!isWestboundTransatlantic(c)) return null;
+  if (c.nights < 5) return null;
+  return c;
 }
 
 async function main() {
@@ -179,13 +157,10 @@ async function main() {
     const base = `https://cruisello.com${slugPath}`;
     const [html, html3] = await Promise.all([fetchText(base), fetchText(`${base}?guests=3`)]);
     const c = parseDetail(html, html3, slugPath, slugToPort.get(slugPath));
-    if (!c) {
-      console.log(`SKIP ${slugPath}`);
-      continue;
-    }
+    if (!c) continue;
     if (c.sailDate >= START && c.sailDate <= END) {
       cruises.push(c);
-      console.log(`OK ${c.sailDate} ${c.port} ${c.nights}n €${c.price2}/${c.price3}`);
+      console.log(`OK ${c.sailDate} ${c.port} → ${c.itinerary.at(-1)} ${c.nights}n €${c.price2}`);
     }
     await new Promise((r) => setTimeout(r, 150));
   }
@@ -195,7 +170,7 @@ async function main() {
     if (seen.has(c.slug)) return false;
     seen.add(c.slug);
     return true;
-  }).filter(isNorthernEurope);
+  });
 
   for (const c of deduped) {
     if (c.price2 && c.price3 && c.price3 > c.price2 * 2.8) c.price3 = null;
@@ -215,10 +190,10 @@ async function main() {
           fetchedAt: new Date().toISOString().slice(0, 10),
           source: "Cruisello.com",
           dateRange: `${START} — ${END}`,
-          region: "Northern Europe / Norway / Baltic",
+          region: "Transatlantic westbound EU → US/Canada",
           ports: PORTS.map((p) => `${p.city}, ${p.country}`),
-          family: "2–3 adults (daughter 17 = adult fare)",
-          note: "price2/price3 = total EUR inside cabin; verify before booking",
+          family: "2–3 adults (daughter 17 = adult fare); UK ports excluded",
+          note: "US visa required; CA ports flagged; price2/price3 EUR from Cruisello",
         },
         cruises: deduped,
       },

@@ -4,6 +4,7 @@
 import { fetchCruiselloPrices } from "./cruisello-price.mjs";
 import { searchVtgPrice, isVtgLineSupported } from "./vtg-search.mjs";
 import { computeBestPrice, mergeBuyOption } from "./best-price.mjs";
+import { getEurUsdRate } from "./fx-rates.mjs";
 import { refreshAgencyPrices } from "./agency-search.mjs";
 
 const MANUAL_VENDORS = ["CruiseCompete"];
@@ -135,7 +136,8 @@ export async function refreshCruisePrices(
     hidden: true,
   });
 
-  const bestPrice = computeBestPrice({ ...cruise, buyOptions });
+  const eurUsd = await getEurUsdRate();
+  const bestPrice = computeBestPrice({ ...cruise, buyOptions }, [], eurUsd);
 
   const patch = {
     price2: live.price2,
