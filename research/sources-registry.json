@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "version": 1,
+    "lastFullCheck": "2026-06-14",
+    "nextCheckRecommended": "VTG Ticker — ежедневно; остальное — каждые 2–3 дня",
+    "primaryAggregator": "VacationsToGo",
+    "regions": ["mediterranean", "norway", "uk", "transatlantic", "americas"],
+    "excludedRegions": ["asia", "pacific", "australia"]
+  },
+  "aggregators": [
+    {
+      "id": "vtg",
+      "name": "Vacations To Go",
+      "tier": 1,
+      "url": "https://www.vacationstogo.com/",
+      "searchUrls": [
+        "https://www.vacationstogo.com/ticker.cfm",
+        "https://www.vacationstogo.com/europe_cruises.cfm",
+        "https://www.vacationstogo.com/custom.cfm"
+      ],
+      "frequency": "daily",
+      "notes": "90-Day Ticker — last-minute до 85%; Wave Season янв–мар; 75–90 дней — второй пик"
+    },
+    {
+      "id": "cruiseplum",
+      "name": "CruisePlum",
+      "tier": 1,
+      "url": "https://www.cruiseplum.com/",
+      "searchUrls": ["https://www.cruiseplum.com/deals/price-drops"],
+      "frequency": "2-3days",
+      "notes": "17+ lines, price history, solo fares; watchlist email alerts"
+    },
+    {
+      "id": "cruisecompete",
+      "name": "CruiseCompete",
+      "tier": 1,
+      "url": "https://www.cruisecompete.com/",
+      "frequency": "on-demand",
+      "notes": "Submit sailing → compare agent quotes"
+    },
+    {
+      "id": "getcruises",
+      "name": "GET.cruises",
+      "tier": 2,
+      "url": "https://get.cruises/",
+      "frequency": "weekly",
+      "notes": "UK meta-search, price history"
+    },
+    {
+      "id": "hellocruise",
+      "name": "Hello Cruise",
+      "tier": 2,
+      "url": "https://hellocruise.co.uk/",
+      "frequency": "weekly",
+      "notes": "UK agent comparison"
+    },
+    {
+      "id": "cruisello",
+      "name": "Cruisello",
+      "tier": 2,
+      "url": "https://cruisello.com/cruises",
+      "searchUrls": [
+        "https://cruisello.com/cruises?regions=MEDITERRANEAN&sortBy=price_per_night",
+        "https://cruisello.com/cruises?regions=NORTHERN_EUROPE&sortBy=price_per_night"
+      ],
+      "frequency": "weekly",
+      "notes": "Public URL filters — candidate for fetch script"
+    },
+    {
+      "id": "choosecruise",
+      "name": "ChooseCruise",
+      "tier": 2,
+      "url": "https://choose-cruise.com/",
+      "frequency": "weekly",
+      "notes": "App price drop alerts → manual import"
+    },
+    {
+      "id": "cruisecritic",
+      "name": "Cruise Critic Deals",
+      "tier": 2,
+      "url": "https://www.cruisecritic.com/cruise-deals",
+      "frequency": "2-3days",
+      "notes": "Deal Score; filter Med, Norway, Transatlantic"
+    },
+    {
+      "id": "cruisealert",
+      "name": "CruiseAlert",
+      "tier": 2,
+      "url": "https://www.cruisealert.com/",
+      "frequency": "weekly",
+      "notes": "32 lines, price history"
+    },
+    {
+      "id": "cruisecheap",
+      "name": "CruiseCheap",
+      "tier": 3,
+      "url": "https://www.cruisecheap.com/",
+      "searchUrls": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html",
+        "https://www.cruisecheap.com/cruises/europe-cruises.html"
+      ],
+      "frequency": "weekly",
+      "notes": "Transatlantic from ~$558 pp"
+    },
+    {
+      "id": "cruisedirect",
+      "name": "CruiseDirect",
+      "tier": 3,
+      "url": "https://www.cruisedirect.com/destination/europe",
+      "frequency": "weekly"
+    },
+    {
+      "id": "bestprice",
+      "name": "BestPriceCruises",
+      "tier": 3,
+      "url": "https://www.bestpricecruises.com/",
+      "frequency": "weekly",
+      "notes": "Norway, Med, Baltic filters"
+    },
+    {
+      "id": "seascanner",
+      "name": "Seascanner",
+      "tier": 3,
+      "url": "https://www.seascanner.co.uk/",
+      "frequency": "weekly",
+      "notes": "UK/EU agent"
+    },
+    {
+      "id": "cruise118",
+      "name": "Cruise118",
+      "tier": 3,
+      "url": "https://www.cruise118.com/",
+      "frequency": "weekly",
+      "notes": "Norwegian Fjords, Med, Transatlantic"
+    }
+  ],
+  "cruiseLines": [
+    {
+      "id": "hurtigruten",
+      "name": "Hurtigruten",
+      "regions": ["norway"],
+      "url": "https://www.hurtigruten.com/en-gb/cruises",
+      "notes": "Coastal Express, fjords"
+    },
+    {
+      "id": "princess",
+      "name": "Princess Cruises",
+      "regions": ["mediterranean", "norway", "uk", "transatlantic", "americas"],
+      "url": "https://www.princess.com/cruise-destinations/european-cruises"
+    },
+    {
+      "id": "celebrity",
+      "name": "Celebrity Cruises",
+      "regions": ["mediterranean", "norway", "transatlantic"],
+      "url": "https://www.celebritycruises.com/destinations/european-cruises"
+    },
+    {
+      "id": "msc",
+      "name": "MSC Cruises",
+      "regions": ["mediterranean", "norway", "transatlantic"],
+      "url": "https://www.msccruises.co.uk/"
+    },
+    {
+      "id": "ncl",
+      "name": "Norwegian Cruise Line",
+      "regions": ["mediterranean", "norway", "transatlantic", "americas"],
+      "url": "https://www.ncl.com/"
+    },
+    {
+      "id": "royal",
+      "name": "Royal Caribbean",
+      "regions": ["mediterranean", "norway", "transatlantic", "americas"],
+      "url": "https://www.royalcaribbean.com/"
+    },
+    {
+      "id": "holland",
+      "name": "Holland America",
+      "regions": ["mediterranean", "norway", "transatlantic", "americas"],
+      "url": "https://www.hollandamerica.com/"
+    },
+    {
+      "id": "cunard",
+      "name": "Cunard",
+      "regions": ["uk", "transatlantic"],
+      "url": "https://www.cunard.com/",
+      "notes": "QM2 year-round transatlantic"
+    },
+    {
+      "id": "costa",
+      "name": "Costa Cruises",
+      "regions": ["mediterranean"],
+      "url": "https://www.costacruises.com/"
+    },
+    {
+      "id": "azamara",
+      "name": "Azamara",
+      "regions": ["mediterranean"],
+      "url": "https://www.azamara.com/"
+    },
+    {
+      "id": "celestyal",
+      "name": "Celestyal",
+      "regions": ["mediterranean"],
+      "url": "https://celestyal.com/",
+      "notes": "Greece-focused"
+    },
+    {
+      "id": "po",
+      "name": "P&O Cruises",
+      "regions": ["uk", "mediterranean"],
+      "url": "https://www.pocruises.com/"
+    },
+    {
+      "id": "fredolsen",
+      "name": "Fred. Olsen",
+      "regions": ["uk", "norway"],
+      "url": "https://www.fredolsencruises.com/"
+    },
+    {
+      "id": "ambassador",
+      "name": "Ambassador Cruise Line",
+      "regions": ["uk", "norway", "mediterranean"],
+      "url": "https://www.ambassadorcruiseline.com/"
+    },
+    {
+      "id": "virgin",
+      "name": "Virgin Voyages",
+      "regions": ["mediterranean"],
+      "url": "https://www.virginvoyages.com/"
+    },
+    {
+      "id": "disney",
+      "name": "Disney Cruise Line",
+      "regions": ["americas", "mediterranean"],
+      "url": "https://disneycruise.disney.go.com/",
+      "notes": "Family-friendly, premium pricing"
+    }
+  ],
+  "forums": [
+    {
+      "id": "cc-forums",
+      "name": "Cruise Critic Forums",
+      "url": "https://boards.cruisecritic.com/",
+      "boards": ["Saving Money on Your Cruise", "Europe", "Transatlantic"]
+    },
+    {
+      "id": "reddit-cruise",
+      "name": "r/Cruise",
+      "url": "https://www.reddit.com/r/Cruise/"
+    },
+    {
+      "id": "cruisevoices",
+      "name": "CruiseVoices",
+      "url": "https://cruisevoices.com/"
+    },
+    {
+      "id": "cruisefever",
+      "name": "CruiseFever",
+      "url": "https://cruisefever.net/"
+    },
+    {
+      "id": "travel-arbitrage",
+      "name": "Travel Arbitrage",
+      "url": "https://www.travelarbitrage.net/en/cruise/"
+    }
+  ],
+  "searchQueries": [
+    "Mediterranean cruise deals 7 night balcony",
+    "Norwegian fjords cruise 2026",
+    "transatlantic repositioning October 2026",
+    "Southampton cruise deals",
+    "Greece Turkey cruise Celebrity MSC",
+    "British Isles cruise Princess",
+    "Cunard QM2 transatlantic price",
+    "last minute Europe cruise VacationsToGo"
+  ],
+  "checkLog": [
+    {
+      "date": "2026-06-14",
+      "checker": "initial-setup",
+      "notes": "Project bootstrap; 20 seed leads from Cruise Critic + CruiseCheap + line sites",
+      "activeCount": 20
+    }
+  ]
+}

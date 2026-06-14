@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "version": 1,
+    "updatedAt": "2026-06-14"
+  },
+  "leads": {
+    "1": {
+      "summary": "9 ночей Celebrity — Италия, Франция, Испания от $952/чел (Inside)",
+      "desc": "Inside · 9 ночей · Western Med · до $175 OBC + free shore event · Шенген OK",
+      "sailDate": "2026-08-25",
+      "nights": 9,
+      "pricePerPerson": 952,
+      "currency": "USD",
+      "inclusions": [
+        "до $175 OBC",
+        "Free Shore Event"
+      ],
+      "visaNotes": "Шенген OK · порты EU",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка",
+        "Подтверждение брони"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 105.78,
+      "priceTotalEstimate": 2380,
+      "dealScore": 59
+    },
+    "2": {
+      "summary": "7 ночей Princess Eastern Med — $1599/чел + $1000 airfare credit",
+      "desc": "Inside · 7 ночей · Eastern Mediterranean · $1000 airfare credit pp · $50 OBC · 3rd/4th guest discount",
+      "sailDate": "2026-10-14",
+      "nights": 7,
+      "pricePerPerson": 1599,
+      "currency": "USD",
+      "inclusions": [
+        "$1000 Airfare Credit pp",
+        "$50 OBC",
+        "Reduced Deposit",
+        "3rd/4th Guest Discount"
+      ],
+      "visaNotes": "Шенген OK · порты Greece/Turkey/Croatia",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 228.43,
+      "priceTotalEstimate": 3998,
+      "dealScore": 38
+    },
+    "3": {
+      "summary": "7 ночей Princess Sun Princess — Mediterranean от $940/чел",
+      "desc": "Inside · 7 ночей · Mediterranean · до $100 OBC",
+      "sailDate": "2026-08-11",
+      "nights": 7,
+      "pricePerPerson": 940,
+      "currency": "USD",
+      "inclusions": [
+        "до $100 OBC"
+      ],
+      "visaNotes": "Шенген OK",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 134.29,
+      "priceTotalEstimate": 2350,
+      "dealScore": 44
+    },
+    "4": {
+      "summary": "7 ночей Azamara — Италия и Греция от $1375/чел (all-inclusive perks)",
+      "desc": "Inside · 7 ночей · Italy & Greece · Free gratuities · Drinks · до $200 OBC",
+      "sailDate": "2026-12-05",
+      "nights": 7,
+      "pricePerPerson": 1375,
+      "currency": "USD",
+      "inclusions": [
+        "Free Gratuities",
+        "Free Drinks",
+        "до $200 OBC"
+      ],
+      "visaNotes": "Шенген OK",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 196.43,
+      "priceTotalEstimate": 3438,
+      "dealScore": 45
+    },
+    "5": {
+      "summary": "7 ночей Cunard QM2 — Southampton → Brooklyn от $599/чел",
+      "desc": "Inside · 7 ночей · Classic transatlantic · UK ETA + US visa required",
+      "sailDate": "2026-10-20",
+      "nights": 7,
+      "pricePerPerson": 599,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "UK ETA · US visa обязательна (все ✓) · Шенген не нужен на борту",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 85.57,
+      "priceTotalEstimate": 1498,
+      "dealScore": 53
+    },
+    "6": {
+      "summary": "7 ночей Cunard QM2 — Brooklyn → Southampton от $799/чел",
+      "desc": "Inside · 7 ночей · Eastbound transatlantic · US embark",
+      "sailDate": "2026-09-02",
+      "nights": 7,
+      "pricePerPerson": 799,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "US visa для embark · UK ETA для disembark Southampton",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 114.14,
+      "priceTotalEstimate": 1998,
+      "dealScore": 46
+    },
+    "7": {
+      "summary": "12 ночей Cunard Queen Elizabeth — Miami → Southampton от $729/чел",
+      "desc": "Inside · 12 ночей · Repositioning · Azores stop · отличная $/ночь",
+      "sailDate": "2027-01-07",
+      "nights": 12,
+      "pricePerPerson": 729,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "US visa · UK ETA · Ponta Delgada Schengen",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 60.75,
+      "priceTotalEstimate": 1823,
+      "dealScore": 65
+    },
+    "8": {
+      "summary": "9 ночей QM2 — Hamburg → Brooklyn от $1649/чел",
+      "desc": "Inside · 9 ночей · Westbound via Southampton · Germany embark",
+      "sailDate": "2026-10-04",
+      "nights": 9,
+      "pricePerPerson": 1649,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "Шенген (Hamburg) · US visa · UK port call",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 183.22,
+      "priceTotalEstimate": 4123,
+      "dealScore": 34
+    },
+    "9": {
+      "summary": "10 ночей QM2 — Hamburg → Brooklyn (via Zeebrugge) от $1569/чел",
+      "desc": "Inside · 10 ночей · Repositioning · Belgium + UK ports",
+      "sailDate": "2026-09-02",
+      "nights": 10,
+      "pricePerPerson": 1569,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "Шенген · US visa · UK ETA",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 156.9,
+      "priceTotalEstimate": 3923,
+      "dealScore": 42
+    },
+    "10": {
+      "summary": "8 ночей QM2 — Brooklyn → Southampton от $1039/чел",
+      "desc": "Inside · 8 ночей · Eastbound · shoulder season value",
+      "sailDate": "2027-01-03",
+      "nights": 8,
+      "pricePerPerson": 1039,
+      "currency": "USD",
+      "inclusions": [],
+      "visaNotes": "US visa · UK ETA",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "UK ETA"
+      ],
+      "sources": [
+        "https://www.cruisecheap.com/cruises/transatlantic-cruises.html"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 129.88,
+      "priceTotalEstimate": 2598,
+      "dealScore": 46
+    },
+    "11": {
+      "summary": "7 ночей Holland America Eastern Med — $1599/чел + airfare credit",
+      "desc": "Inside · 7 ночей · Eastern Mediterranean · Princess competitor deal tier",
+      "sailDate": "2026-10-14",
+      "nights": 7,
+      "pricePerPerson": 1599,
+      "currency": "USD",
+      "inclusions": [
+        "Airfare Credit",
+        "OBC",
+        "Reduced Deposit"
+      ],
+      "visaNotes": "Шенген OK",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 228.43,
+      "priceTotalEstimate": 3998,
+      "dealScore": 35
+    },
+    "12": {
+      "summary": "7 ночей Cunard Queen Elizabeth — Alaska от $753/чел",
+      "desc": "Inside · 7 ночей · Alaska · Champagne breakfast · shore event",
+      "sailDate": "2026-09-17",
+      "nights": 7,
+      "pricePerPerson": 753,
+      "currency": "USD",
+      "inclusions": [
+        "Shore Event",
+        "Champagne Breakfast",
+        "OBC"
+      ],
+      "visaNotes": "US visa · Canada ports possible — дочери нет CA visa",
+      "visaWarning": "canada",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 107.57,
+      "priceTotalEstimate": 1883,
+      "dealScore": 27
+    },
+    "13": {
+      "summary": "7 ночей NCL Encore — Mexico от $568/чел",
+      "desc": "Inside · 7 ночей · Mexico · 2nd guest free · $25 cashback",
+      "sailDate": "2026-12-27",
+      "nights": 7,
+      "pricePerPerson": 568,
+      "currency": "USD",
+      "inclusions": [
+        "2nd Guest Free",
+        "$25 Cash Back"
+      ],
+      "visaNotes": "US embark likely · US visa",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 81.14,
+      "priceTotalEstimate": 1420,
+      "dealScore": 56
+    },
+    "14": {
+      "summary": "7 ночей Royal Caribbean — Western Caribbean от $418/чел",
+      "desc": "Inside · 7 ночей · Enchantment of the Seas · Kids Sail Free · $75 OBC",
+      "sailDate": "2027-03-07",
+      "nights": 7,
+      "pricePerPerson": 418,
+      "currency": "USD",
+      "inclusions": [
+        "Kids Sail Free",
+        "до $75 OBC"
+      ],
+      "visaNotes": "US embark · US visa",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 59.71,
+      "priceTotalEstimate": 1045,
+      "dealScore": 67
+    },
+    "15": {
+      "summary": "Celebrity — Scandinavia & Norwegian Fjords (сезон май–август)",
+      "desc": "7–14 ночей · Fjords · Amsterdam/Barcelona/Rome departures · проверить цены на сайте",
+      "sailDate": "2026-07-15",
+      "nights": 7,
+      "pricePerPerson": 1200,
+      "currency": "USD",
+      "inclusions": [
+        "Проверить drinks/WiFi promos на сайте"
+      ],
+      "visaNotes": "Шенген OK · UK ETA если Southampton",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.celebritycruises.com/destinations/european-cruises"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 171.43,
+      "priceTotalEstimate": 3000,
+      "dealScore": 40
+    },
+    "16": {
+      "summary": "Princess — Norway & Iceland Escapes от 7+ ночей",
+      "desc": "7+ ночей · Norwegian fjords · Copenhagen/Southampton ports",
+      "sailDate": "2026-08-01",
+      "nights": 7,
+      "pricePerPerson": 1100,
+      "currency": "USD",
+      "inclusions": [
+        "Wave Season promos возможны"
+      ],
+      "visaNotes": "Шенген · UK ETA для Southampton",
+      "documents": [
+        "Биопаспорт UA",
+        "UK ETA если UK port"
+      ],
+      "sources": [
+        "https://www.princess.com/cruise-destinations/european-cruises"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 157.14,
+      "priceTotalEstimate": 2750,
+      "dealScore": 38
+    },
+    "17": {
+      "summary": "Hurtigruten Coastal Express — Bergen–Kirkenes 12 дней",
+      "desc": "Classic coastal voyage · fjords · midnight sun season · цены на hurtigruten.com",
+      "sailDate": "2026-07-01",
+      "nights": 12,
+      "pricePerPerson": 2500,
+      "currency": "EUR",
+      "inclusions": [
+        "Питание включено на Coastal Express"
+      ],
+      "visaNotes": "Шенген не нужен · Norway visa-free для UA biometric",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.hurtigruten.com/en-gb/cruises/complete-norway"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 208.33,
+      "priceTotalEstimate": 6250,
+      "dealScore": 30
+    },
+    "18": {
+      "summary": "MSC — Western Mediterranean короткие круизы от 3–7 ночей",
+      "desc": "Value line · Barcelona/Genoa/Rome · часто лучшая цена в Med",
+      "sailDate": "2026-09-01",
+      "nights": 7,
+      "pricePerPerson": 650,
+      "currency": "EUR",
+      "inclusions": [
+        "Проверить drinks packages"
+      ],
+      "visaNotes": "Шенген OK",
+      "documents": [
+        "Биопаспорт UA",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.msccruises.co.uk/cruise-destinations/western-mediterranean"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 92.86,
+      "priceTotalEstimate": 1625,
+      "dealScore": 59
+    },
+    "19": {
+      "summary": "7 ночей Virgin Voyages — Mexico от $834/чел + balcony upgrade",
+      "desc": "Inside · 7 ночей · Adults-focused · до $200 OBC · free balcony upgrade",
+      "sailDate": "2026-09-19",
+      "nights": 7,
+      "pricePerPerson": 834,
+      "currency": "USD",
+      "inclusions": [
+        "до $200 OBC",
+        "Free Balcony Upgrade",
+        "2nd Guest Discount"
+      ],
+      "visaNotes": "US embark · дочь 16 — проверить age policy Virgin (18+)",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa"
+      ],
+      "sources": [
+        "https://www.cruisecritic.com/cruise-deals"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 119.14,
+      "priceTotalEstimate": 2085,
+      "dealScore": 55
+    },
+    "20": {
+      "summary": "NCL — Repositioning Europe (Barcelona → US ports) осень 2026",
+      "desc": "12–15 ночей · Repositioning · проверить ncl.com Europe to Caribbean",
+      "sailDate": "2026-10-30",
+      "nights": 14,
+      "pricePerPerson": 899,
+      "currency": "USD",
+      "inclusions": [
+        "Free at Sea promos возможны"
+      ],
+      "visaNotes": "Шенген embark · US visa disembark",
+      "documents": [
+        "Биопаспорт UA",
+        "US Visa",
+        "Страховка"
+      ],
+      "sources": [
+        "https://www.ncl.com/cruise-destinations/europe-cruises"
+      ],
+      "verifiedAt": "2026-06-14",
+      "closed": false,
+      "pricePerNight": 64.21,
+      "priceTotalEstimate": 2248,
+      "dealScore": 68
+    }
+  }
+}

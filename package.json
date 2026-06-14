@@ -1,0 +1,24 @@
+{
+  "name": "cruises-best-deal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "price-server": "node scripts/price-server.mjs",
+    "preview": "python3 -m http.server 8765",
+    "server:status": "node scripts/server-status.mjs",
+    "server:stop": "node scripts/server-stop.mjs",
+    "refresh-price": "node scripts/refresh-cruise-prices.mjs",
+    "vtg-batch": "node scripts/batch-vtg-all.mjs",
+    "vtg-login": "node scripts/vtg-login.mjs",
+    "cd-login": "node scripts/cd-login.mjs",
+    "go-batch": "node scripts/batch-go-all.mjs",
+    "agencies-batch": "node scripts/batch-agencies-all.mjs",
+    "fetch-extra-lines": "node scripts/fetch-extra-lines.mjs",
+    "enrich-go": "node scripts/batch-go-all.mjs",
+    "build-html": "node scripts/build-unified-cruises-html.mjs",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}

@@ -1,0 +1,3538 @@
+{
+  "meta": {
+    "fetchedAt": "2026-06-14",
+    "source": "Cruisello.com",
+    "dateRange": "2026-08-05 — 2026-08-31",
+    "region": "Northern Europe / Norway / Baltic",
+    "ports": [
+      "Copenhagen, Denmark",
+      "Hamburg, Germany",
+      "Kiel, Germany",
+      "Warnemünde, Germany",
+      "Bremerhaven, Germany",
+      "Amsterdam, Netherlands",
+      "Stockholm, Sweden",
+      "Helsinki, Finland",
+      "Bergen, Norway",
+      "Southampton, UK"
+    ],
+    "family": "2–3 adults (daughter 17 = adult fare)",
+    "note": "price2/price3 = total EUR inside cabin; verify before booking",
+    "enrichedAt": "2026-06-14",
+    "lastPriceRefresh": "2026-06-14",
+    "vtgBatchAt": "2026-06-14T15:44:28.635Z",
+    "goBatchAt": "2026-06-14T16:28:51.374Z"
+  },
+  "cruises": [
+    {
+      "slug": "12-nights-norway-s-fjords-with-north-cape-from-to-bremerhaven~TUI-MEINS1-20260805-12",
+      "title": "12 nights - Norway's Fjords with North Cape - from/to Bremerhaven",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 1",
+      "sailDate": "2026-08-05",
+      "nights": 12,
+      "port": "Bremerhaven",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Bremerhaven",
+        "Ålesund",
+        "Trondheim",
+        "Tromsø",
+        "Honningsvåg",
+        "Molde",
+        "Nordfjordeid"
+      ],
+      "price2": 4398,
+      "price3": 6096,
+      "pricePP": 2199,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/12-nights-norway-s-fjords-with-north-cape-from-to-bremerhaven~TUI-MEINS1-20260805-12",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS1-20260805-12?pid=cf680034-3f94-49f9-a8aa-060763160cb9",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 4398,
+          "price3": 6096,
+          "note": "inside, 2 гостя — сайт линии",
+          "verifiedAt": "2026-06-14",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS1-20260805-12?pid=cf680034-3f94-49f9-a8aa-060763160cb9",
+          "price2": 4398,
+          "price3": 6096,
+          "note": "переход к бронированию",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/12-nights-norway-s-fjords-with-north-cape-from-to-bremerhaven~TUI-MEINS1-20260805-12",
+          "price2": 4398,
+          "price3": 6096,
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 6498,
+          "price3": 6096,
+          "note": "~€3249/чел × 2",
+          "cabin": "Balcony",
+          "verifiedAt": "2026-06-14",
+          "source": "Cruisello"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 10998,
+          "price3": 6096,
+          "note": "~€5499/чел × 2",
+          "cabin": "Suite",
+          "verifiedAt": "2026-06-14",
+          "source": "Cruisello"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Inside",
+          "price2": 4398,
+          "note": "~€2199/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14",
+          "price3": 6096
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "steps": [
+            "Open custom.cfm",
+            "Select line: TUI Cruises",
+            "Select ship: Mein Schiff 1",
+            "Departure around 2026-08-05 (±3 days)",
+            "2 or 3 guests → compare Inside total"
+          ],
+          "verifiedAt": null,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false,
+          "vtgStatus": "unavailable"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email (1–2 дня)",
+          "steps": [
+            "TUI Cruises · Mein Schiff 1 · 2026-08-05 · Bremerhaven"
+          ],
+          "verifiedAt": null,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go",
+          "hidden": true
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "lastRefreshed": "2026-06-14T16:22:00.581Z",
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4398,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 6096,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14",
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null
+    },
+    {
+      "slug": "mystic-fjords-eidfjord-bergen~MSC-MAGNIFICA-20260806-8",
+      "title": "Mystic Fjords – Eidfjord & Bergen",
+      "line": "MSC Cruises",
+      "ship": "MSC Magnifica",
+      "sailDate": "2026-08-06",
+      "nights": 8,
+      "port": "Stockholm",
+      "country": "Sweden",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Stockholm",
+        "Copenhagen",
+        "Warnemünde (Rostock)",
+        "Eidfjord",
+        "Bergen",
+        "Kristiansand",
+        "Oslo"
+      ],
+      "price2": 3338,
+      "price3": 7341,
+      "pricePP": 1669,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/mystic-fjords-eidfjord-bergen~MSC-MAGNIFICA-20260806-8",
+      "bookUrl": "https://cruisello.com/go/MSC-MAGNIFICA-20260806-8?pid=3fd534c1-c4d0-485a-bdaa-09c249e6fe60",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3338,
+          "price3": 7341,
+          "note": "inside, 2 гостя — сайт линии · обновлено 2026-06-14",
+          "source": "cruisello-go",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-MAGNIFICA-20260806-8?pid=3fd534c1-c4d0-485a-bdaa-09c249e6fe60",
+          "price2": 3338,
+          "price3": 7341,
+          "note": "переход к бронированию · обновлено 2026-06-14",
+          "verifiedAt": "2026-06-14"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/mystic-fjords-eidfjord-bergen~MSC-MAGNIFICA-20260806-8",
+          "price2": 3338,
+          "price3": 7341,
+          "note": "inside, live fetch",
+          "verifiedAt": "2026-06-14",
+          "manual": false
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go",
+          "hidden": false
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go",
+          "hidden": false
+        },
+        {
+          "vendor": "Inside",
+          "price2": 3338,
+          "note": "~€1669/чел × 2",
+          "source": "Cruisello",
+          "verifiedAt": "2026-06-14",
+          "price3": 7341,
+          "manual": false
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=26341",
+          "price2": 3506,
+          "price3": 5259,
+          "price3Est": true,
+          "pricePP": 1753,
+          "currency": "USD",
+          "fastDealId": "26341",
+          "note": "VTG inside · 2026-08-06 · 2ч $3506 · 3ч $5259 (оценка +1pp)",
+          "verifiedAt": "2026-06-14",
+          "manual": false
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "manual": true,
+          "note": "котировка по email",
+          "verifiedAt": null,
+          "hidden": true
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 3506,
+      "vtgPrice3": 5259,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3338,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 5259,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=26341"
+      },
+      "bestPriceAt": "2026-06-14",
+      "lastRefreshed": "2026-06-14T16:51:10.805Z"
+    },
+    {
+      "slug": "nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260808-7",
+      "title": "Nordic Fjords – Copenhagen & Geiranger",
+      "line": "MSC Cruises",
+      "ship": "MSC Euribia",
+      "sailDate": "2026-08-08",
+      "nights": 7,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Copenhagen",
+        "Hellesylt",
+        "Geiranger",
+        "Ålesund",
+        "Flåm"
+      ],
+      "price2": 2978,
+      "price3": 4146,
+      "pricePP": 1489,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260808-7",
+      "bookUrl": "https://cruisello.com/go/MSC-EURIBIA-20260808-7?pid=936e248c-2c9b-4877-b5a3-000db8e779ab",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2978,
+          "price3": 4146,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-EURIBIA-20260808-7?pid=936e248c-2c9b-4877-b5a3-000db8e779ab",
+          "price2": 2978,
+          "price3": 4146,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260808-7",
+          "price2": 2978,
+          "price3": 4146,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 4038,
+          "price3": null,
+          "note": "~€2019/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 4898,
+          "price3": null,
+          "note": "~€2449/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 6278,
+          "price3": null,
+          "note": "~€3139/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 3090,
+          "price3": 4635,
+          "price3Est": true,
+          "pricePP": 1545,
+          "currency": "USD",
+          "fastDealId": "35199",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 3090,
+      "vtgPrice3": 4635,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 2978,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 4146,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "epic-nordic-fjords-bergen-oslo~MSC-MAGNIFICA-20260808-7",
+      "title": "Epic Nordic Fjords – Bergen & Oslo",
+      "line": "MSC Cruises",
+      "ship": "MSC Magnifica",
+      "sailDate": "2026-08-08",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Warnemünde (Rostock)",
+        "Eidfjord",
+        "Bergen",
+        "Kristiansand",
+        "Oslo"
+      ],
+      "price2": 3278,
+      "price3": 3789,
+      "pricePP": 1639,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/epic-nordic-fjords-bergen-oslo~MSC-MAGNIFICA-20260808-7",
+      "bookUrl": "https://cruisello.com/go/MSC-MAGNIFICA-20260808-7?pid=0a80697f-4a5a-4ce1-8c57-b483b57b13af",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3278,
+          "price3": 3789,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-MAGNIFICA-20260808-7?pid=0a80697f-4a5a-4ce1-8c57-b483b57b13af",
+          "price2": 3278,
+          "price3": 3789,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/epic-nordic-fjords-bergen-oslo~MSC-MAGNIFICA-20260808-7",
+          "price2": 3278,
+          "price3": 3789,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3458,
+          "price3": null,
+          "note": "~€1729/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3898,
+          "price3": null,
+          "note": "~€1949/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 3428,
+          "price3": 5142,
+          "price3Est": true,
+          "pricePP": 1714,
+          "currency": "USD",
+          "fastDealId": "25103",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 3428,
+      "vtgPrice3": 5142,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3278,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3789,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "10-nights-west-coast-of-great-britain-and-scotland-from-to-bremerhaven~TUI-MEINS3-20260808-10",
+      "title": "10 nights - West Coast of Great Britain and Scotland - from/to Bremerhaven",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 3",
+      "sailDate": "2026-08-08",
+      "nights": 10,
+      "port": "Bremerhaven",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Bremerhaven",
+        "Dover",
+        "Isle of Portland",
+        "Belfast",
+        "Greenock (Glasgow)",
+        "Invergordon"
+      ],
+      "price2": 3598,
+      "price3": 4698,
+      "pricePP": 1799,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/10-nights-west-coast-of-great-britain-and-scotland-from-to-bremerhaven~TUI-MEINS3-20260808-10",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS3-20260808-10?pid=40177ecc-c989-48a4-9476-7c71089444f9",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 3598,
+          "price3": 4698,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS3-20260808-10?pid=40177ecc-c989-48a4-9476-7c71089444f9",
+          "price2": 3598,
+          "price3": 4698,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/10-nights-west-coast-of-great-britain-and-scotland-from-to-bremerhaven~TUI-MEINS3-20260808-10",
+          "price2": 3598,
+          "price3": 4698,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 6358,
+          "price3": null,
+          "note": "~€3179/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 11798,
+          "price3": null,
+          "note": "~€5899/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 3598,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4698,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "british-isles-discovery-edinburgh-dublin~NCL-SKY-20260809-11",
+      "title": "British Isles Discovery – Edinburgh & Dublin",
+      "line": "Norwegian Cruise Line",
+      "ship": "Norwegian Sky",
+      "sailDate": "2026-08-09",
+      "nights": 11,
+      "port": "Southampton",
+      "country": "UK",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Southampton",
+        "Invergordon",
+        "Leith (Edinburgh)",
+        "Stornoway",
+        "Belfast",
+        "Dublin",
+        "IJmuiden (Amsterdam)",
+        "Zeebrugge",
+        "Le Havre (Paris)"
+      ],
+      "price2": 2598,
+      "price3": 3687,
+      "pricePP": 1299,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/british-isles-discovery-edinburgh-dublin~NCL-SKY-20260809-11",
+      "bookUrl": "https://cruisello.com/go/NCL-SKY-20260809-11?pid=e2f2e677-2635-4de2-84f6-886e92a3ff95",
+      "lineUrl": "https://www.ncl.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "Norwegian Cruise Line (прямо)",
+          "url": "https://www.ncl.com/",
+          "price2": 2598,
+          "price3": 3687,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/NCL-SKY-20260809-11?pid=e2f2e677-2635-4de2-84f6-886e92a3ff95",
+          "price2": 2598,
+          "price3": 3687,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/british-isles-discovery-edinburgh-dublin~NCL-SKY-20260809-11",
+          "price2": 2598,
+          "price3": 3687,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.ncl.com/",
+          "price2": 3900,
+          "price3": null,
+          "note": "~€1950/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.ncl.com/",
+          "price2": 7554,
+          "price3": null,
+          "note": "~€3777/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 2948,
+          "price3": 4422,
+          "price3Est": true,
+          "pricePP": 1474,
+          "currency": "USD",
+          "fastDealId": "18351",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.ncl.com/"
+      },
+      "vtgPrice2": 2948,
+      "vtgPrice3": 4422,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Norwegian Cruise Line (прямо)",
+        "price": 2598,
+        "url": "https://www.ncl.com/"
+      },
+      "bestPrice3": {
+        "vendor": "Norwegian Cruise Line (прямо)",
+        "price": 3687,
+        "url": "https://www.ncl.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260809-7",
+      "title": "Fjord Explorer – Hellesylt & Geiranger",
+      "line": "MSC Cruises",
+      "ship": "MSC Euribia",
+      "sailDate": "2026-08-09",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Hellesylt",
+        "Geiranger",
+        "Ålesund",
+        "Flåm",
+        "Kiel"
+      ],
+      "price2": 2598,
+      "price3": 3966,
+      "pricePP": 1299,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260809-7",
+      "bookUrl": "https://cruisello.com/go/MSC-EURIBIA-20260809-7?pid=b4235e9b-7b12-48cf-8a95-a23e0dac3eb6",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2598,
+          "price3": 3966,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-EURIBIA-20260809-7?pid=b4235e9b-7b12-48cf-8a95-a23e0dac3eb6",
+          "price2": 2598,
+          "price3": 3966,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260809-7",
+          "price2": 2598,
+          "price3": 3966,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3818,
+          "price3": null,
+          "note": "~€1909/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 5218,
+          "price3": null,
+          "note": "~€2609/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 2840,
+          "price3": 4260,
+          "price3Est": true,
+          "pricePP": 1420,
+          "currency": "USD",
+          "fastDealId": "35278",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 2840,
+      "vtgPrice3": 4260,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 2598,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3966,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "frozen-frontier-molde-troms~MSC-PREZIOSA-20260809-14",
+      "title": "Frozen Frontier – Molde & Tromsø",
+      "line": "MSC Cruises",
+      "ship": "MSC Preziosa",
+      "sailDate": "2026-08-09",
+      "nights": 14,
+      "port": "Hamburg",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Hamburg",
+        "Molde",
+        "Tromsø",
+        "Longyearbyen",
+        "Honningsvåg",
+        "Olden",
+        "Stavanger"
+      ],
+      "price2": 3858,
+      "price3": 5946,
+      "pricePP": 1929,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/frozen-frontier-molde-troms~MSC-PREZIOSA-20260809-14",
+      "bookUrl": "https://cruisello.com/go/MSC-PREZIOSA-20260809-14?pid=15863ff0-2656-4262-990a-5e3e6e814a87",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3858,
+          "price3": 5946,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-PREZIOSA-20260809-14?pid=15863ff0-2656-4262-990a-5e3e6e814a87",
+          "price2": 3858,
+          "price3": 5946,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/frozen-frontier-molde-troms~MSC-PREZIOSA-20260809-14",
+          "price2": 3858,
+          "price3": 5946,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 4638,
+          "price3": null,
+          "note": "~€2319/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 5378,
+          "price3": null,
+          "note": "~€2689/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 7898,
+          "price3": null,
+          "note": "~€3949/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 4320,
+          "price3": 6480,
+          "price3Est": true,
+          "pricePP": 2160,
+          "currency": "USD",
+          "fastDealId": "38410",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 4320,
+      "vtgPrice3": 6480,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3858,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 5946,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "11-nights-pure-nature-in-norway-s-fjords-from-to-kiel~TUI-MEINSR-20260812-11",
+      "title": "11 nights - Pure Nature in Norway’s Fjords - from/to Kiel",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff Relax",
+      "sailDate": "2026-08-12",
+      "nights": 11,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Stavanger",
+        "Bergen",
+        "Flåm",
+        "Nordfjordeid",
+        "Ålesund",
+        "Hellesylt",
+        "Oslo"
+      ],
+      "price2": 4898,
+      "price3": 6198,
+      "pricePP": 2449,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/11-nights-pure-nature-in-norway-s-fjords-from-to-kiel~TUI-MEINSR-20260812-11",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINSR-20260812-11?pid=7cd63fde-4078-41d7-b3e8-1a4b5a407797",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 4898,
+          "price3": 6198,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINSR-20260812-11?pid=7cd63fde-4078-41d7-b3e8-1a4b5a407797",
+          "price2": 4898,
+          "price3": 6198,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/11-nights-pure-nature-in-norway-s-fjords-from-to-kiel~TUI-MEINSR-20260812-11",
+          "price2": 4898,
+          "price3": 6198,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 5198,
+          "price3": null,
+          "note": "~€2599/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 9198,
+          "price3": null,
+          "note": "~€4599/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4898,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 6198,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "11-nights-summer-dreams-in-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260813-11",
+      "title": "11 nights - Summer Dreams in the Baltic Sea - from/to Kiel",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 7",
+      "sailDate": "2026-08-13",
+      "nights": 11,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Gdynia (Gdansk)",
+        "Klaipeda",
+        "Riga",
+        "Tallinn",
+        "Helsinki",
+        "Stockholm",
+        "Visby"
+      ],
+      "price2": 4598,
+      "price3": 9897,
+      "pricePP": 2299,
+      "cabin3Note": " (oceanview)",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/11-nights-summer-dreams-in-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260813-11",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS7-20260813-11?pid=189d18c2-f881-4879-833d-4822262f73a5",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 4598,
+          "price3": 9897,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS7-20260813-11?pid=189d18c2-f881-4879-833d-4822262f73a5",
+          "price2": 4598,
+          "price3": 9897,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/11-nights-summer-dreams-in-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260813-11",
+          "price2": 4598,
+          "price3": 9897,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 10098,
+          "price3": null,
+          "note": "~€5049/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 17198,
+          "price3": null,
+          "note": "~€8599/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4598,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 9897,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "timeless-baltic-jewels-helsinki-to-copenhagen~NCL-SUN-20260813-9",
+      "title": "Timeless Baltic Jewels – Helsinki to Copenhagen",
+      "line": "Norwegian Cruise Line",
+      "ship": "Norwegian Sun",
+      "sailDate": "2026-08-13",
+      "nights": 9,
+      "port": "Helsinki",
+      "country": "Finland",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Helsinki",
+        "Tallinn",
+        "Nynashamn",
+        "Riga",
+        "Klaipeda",
+        "Gdynia (Gdansk)",
+        "Warnemünde (Rostock)",
+        "Kiel",
+        "Copenhagen"
+      ],
+      "price2": 5600,
+      "price3": 6546,
+      "pricePP": 2800,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/timeless-baltic-jewels-helsinki-to-copenhagen~NCL-SUN-20260813-9",
+      "bookUrl": "https://cruisello.com/go/NCL-SUN-20260813-9?pid=f417c570-497a-41e5-aced-4472e1d925e9",
+      "lineUrl": "https://www.ncl.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "Norwegian Cruise Line (прямо)",
+          "url": "https://www.ncl.com/",
+          "price2": 5600,
+          "price3": 6546,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/NCL-SUN-20260813-9?pid=f417c570-497a-41e5-aced-4472e1d925e9",
+          "price2": 5600,
+          "price3": 6546,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/timeless-baltic-jewels-helsinki-to-copenhagen~NCL-SUN-20260813-9",
+          "price2": 5600,
+          "price3": 6546,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.ncl.com/",
+          "price2": 5800,
+          "price3": null,
+          "note": "~€2900/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.ncl.com/",
+          "price2": 8590,
+          "price3": null,
+          "note": "~€4295/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.ncl.com/",
+          "price2": 10650,
+          "price3": null,
+          "note": "~€5325/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 4618,
+          "price3": 6927,
+          "price3Est": true,
+          "pricePP": 2309,
+          "currency": "USD",
+          "fastDealId": "30370",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.ncl.com/"
+      },
+      "vtgPrice2": 4618,
+      "vtgPrice3": 6927,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 4618,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=30370"
+      },
+      "bestPrice3": {
+        "vendor": "Norwegian Cruise Line (прямо)",
+        "price": 6546,
+        "url": "https://www.ncl.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "12-nights-iceland-s-natural-wonders-from-to-hamburg~TUI-MEINS2-20260814-12",
+      "title": "12 nights - Iceland's Natural Wonders - from/to Hamburg",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 2",
+      "sailDate": "2026-08-14",
+      "nights": 12,
+      "port": "Hamburg",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Hamburg",
+        "Kirkwall",
+        "Reykjavik",
+        "Akureyri",
+        "Invergordon"
+      ],
+      "price2": 4398,
+      "price3": 5827,
+      "pricePP": 2199,
+      "cabin3Note": "",
+      "thirdGuestDiscount": null,
+      "cruiselloUrl": "https://cruisello.com/cruises/12-nights-iceland-s-natural-wonders-from-to-hamburg~TUI-MEINS2-20260814-12",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS2-20260814-12?pid=46a57da2-9eb7-410e-8b5c-2e282d85ae3f",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "price3Est": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 4398,
+          "price3": 5827,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS2-20260814-12?pid=46a57da2-9eb7-410e-8b5c-2e282d85ae3f",
+          "price2": 4398,
+          "price3": 5827,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/12-nights-iceland-s-natural-wonders-from-to-hamburg~TUI-MEINS2-20260814-12",
+          "price2": 4398,
+          "price3": 5827,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 6398,
+          "price3": null,
+          "note": "~€3199/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 11558,
+          "price3": null,
+          "note": "~€5779/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость ~€1942/чел vs €2199/чел",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4398,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 5827,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "nordic-capital-oslo-stockholm-helsinki~CEL-CELEBRITY_ECLIPSE-20260814-12",
+      "title": "Nordic Capital – Oslo, Stockholm & Helsinki",
+      "line": "Celebrity Cruises",
+      "ship": "Celebrity Eclipse",
+      "sailDate": "2026-08-14",
+      "nights": 12,
+      "port": "Amsterdam",
+      "country": "Netherlands",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Amsterdam",
+        "Oslo",
+        "Aarhus",
+        "Stockholm",
+        "Tallinn",
+        "Helsinki",
+        "Copenhagen"
+      ],
+      "price2": 6698,
+      "price3": 10602,
+      "pricePP": 3349,
+      "cabin3Note": " (balcony)",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/nordic-capital-oslo-stockholm-helsinki~CEL-CELEBRITY_ECLIPSE-20260814-12",
+      "bookUrl": "https://cruisello.com/go/CEL-CELEBRITY_ECLIPSE-20260814-12?pid=8b190306-5354-4ce4-9a1c-0562b5122bc4",
+      "lineUrl": "https://www.celebritycruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Celebrity Cruises (прямо)",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 6698,
+          "price3": 10602,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/CEL-CELEBRITY_ECLIPSE-20260814-12?pid=8b190306-5354-4ce4-9a1c-0562b5122bc4",
+          "price2": 6698,
+          "price3": 10602,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/nordic-capital-oslo-stockholm-helsinki~CEL-CELEBRITY_ECLIPSE-20260814-12",
+          "price2": 6698,
+          "price3": 10602,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 10872,
+          "price3": null,
+          "note": "~€5436/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 8688,
+          "price3": null,
+          "note": "~€4344/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 5576,
+          "price3": 8364,
+          "price3Est": true,
+          "pricePP": 2788,
+          "currency": "USD",
+          "fastDealId": "31691",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.celebritycruises.com/"
+      },
+      "vtgPrice2": 5576,
+      "vtgPrice3": 8364,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 5576,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=31691"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 8364,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=31691"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "breathtaking-baltic-capitals-stockholm-riga~MSC-MAGNIFICA-20260815-7",
+      "title": "Breathtaking Baltic Capitals – Stockholm & Riga",
+      "line": "MSC Cruises",
+      "ship": "MSC Magnifica",
+      "sailDate": "2026-08-15",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Warnemünde (Rostock)",
+        "Gdynia (Gdansk)",
+        "Klaipeda",
+        "Riga",
+        "Stockholm"
+      ],
+      "price2": 3158,
+      "price3": 4184,
+      "pricePP": 1579,
+      "cabin3Note": "",
+      "thirdGuestDiscount": null,
+      "cruiselloUrl": "https://cruisello.com/cruises/breathtaking-baltic-capitals-stockholm-riga~MSC-MAGNIFICA-20260815-7",
+      "bookUrl": "https://cruisello.com/go/MSC-MAGNIFICA-20260815-7?pid=51a51a7e-354a-4a21-8241-90dea07d8fd6",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "price3Est": true,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3158,
+          "price3": 4184,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-MAGNIFICA-20260815-7?pid=51a51a7e-354a-4a21-8241-90dea07d8fd6",
+          "price2": 3158,
+          "price3": 4184,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/breathtaking-baltic-capitals-stockholm-riga~MSC-MAGNIFICA-20260815-7",
+          "price2": 3158,
+          "price3": 4184,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3578,
+          "price3": null,
+          "note": "~€1789/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 4398,
+          "price3": null,
+          "note": "~€2199/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 4448,
+          "price3": 6672,
+          "price3Est": true,
+          "pricePP": 2224,
+          "currency": "USD",
+          "fastDealId": "15720",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость ~€1395/чел vs €1579/чел",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 4448,
+      "vtgPrice3": 6672,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3158,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 4184,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "norwegian-fjords-haugesund-bergen~CEL-CELEBRITY_APEX-20260815-7",
+      "title": "Norwegian Fjords – Haugesund & Bergen",
+      "line": "Celebrity Cruises",
+      "ship": "Celebrity Apex",
+      "sailDate": "2026-08-15",
+      "nights": 7,
+      "port": "Southampton",
+      "country": "UK",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Southampton",
+        "Haugesund",
+        "Ålesund",
+        "Flåm",
+        "Bergen"
+      ],
+      "price2": 3930,
+      "price3": 4686,
+      "pricePP": 1965,
+      "cabin3Note": " (oceanview)",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/norwegian-fjords-haugesund-bergen~CEL-CELEBRITY_APEX-20260815-7",
+      "bookUrl": "https://cruisello.com/go/CEL-CELEBRITY_APEX-20260815-7?pid=20350f10-7994-4435-bfbf-19e3a4797d52",
+      "lineUrl": "https://www.celebritycruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "Celebrity Cruises (прямо)",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 3930,
+          "price3": 4686,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/CEL-CELEBRITY_APEX-20260815-7?pid=20350f10-7994-4435-bfbf-19e3a4797d52",
+          "price2": 3930,
+          "price3": 4686,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/norwegian-fjords-haugesund-bergen~CEL-CELEBRITY_APEX-20260815-7",
+          "price2": 3930,
+          "price3": 4686,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 4552,
+          "price3": null,
+          "note": "~€2276/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 11628,
+          "price3": null,
+          "note": "~€5814/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 2992,
+          "price3": 4488,
+          "price3Est": true,
+          "pricePP": 1496,
+          "currency": "USD",
+          "fastDealId": "30333",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.celebritycruises.com/"
+      },
+      "vtgPrice2": 2992,
+      "vtgPrice3": 4488,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 2992,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=30333"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 4488,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=30333"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "norwegian-fjords-escape-olden-skjolden~RCL-LIBERTY-20260816-7",
+      "title": "Norwegian Fjords Escape – Olden & Skjolden",
+      "line": "Royal Caribbean",
+      "ship": "Liberty Of The Seas",
+      "sailDate": "2026-08-16",
+      "nights": 7,
+      "port": "Southampton",
+      "country": "UK",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Southampton",
+        "Zeebrugge",
+        "Olden",
+        "Skjolden",
+        "Haugesund"
+      ],
+      "price2": 2696,
+      "price3": 6435,
+      "pricePP": 1348,
+      "cabin3Note": " (oceanview)",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/norwegian-fjords-escape-olden-skjolden~RCL-LIBERTY-20260816-7",
+      "bookUrl": "https://cruisello.com/go/RCL-LIBERTY-20260816-7?pid=594ef0e7-7303-4f99-83d0-e679fc23b0b1",
+      "lineUrl": "https://www.royalcaribbean.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Royal Caribbean (прямо)",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 2696,
+          "price3": 6435,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/RCL-LIBERTY-20260816-7?pid=594ef0e7-7303-4f99-83d0-e679fc23b0b1",
+          "price2": 2696,
+          "price3": 6435,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/norwegian-fjords-escape-olden-skjolden~RCL-LIBERTY-20260816-7",
+          "price2": 2696,
+          "price3": 6435,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 4222,
+          "price3": null,
+          "note": "~€2111/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 3552,
+          "price3": null,
+          "note": "~€1776/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 6632,
+          "price3": null,
+          "note": "~€3316/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 1958,
+          "price3": 2937,
+          "price3Est": true,
+          "pricePP": 979,
+          "currency": "USD",
+          "fastDealId": "43059",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.royalcaribbean.com/"
+      },
+      "vtgPrice2": 1958,
+      "vtgPrice3": 2937,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 1958,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=43059"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 2937,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=43059"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260816-7",
+      "title": "Fjord Explorer – Hellesylt & Geiranger",
+      "line": "MSC Cruises",
+      "ship": "MSC Euribia",
+      "sailDate": "2026-08-16",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Geiranger",
+        "Hellesylt",
+        "Ålesund",
+        "Flåm",
+        "Kiel"
+      ],
+      "price2": 2798,
+      "price3": 6657,
+      "pricePP": 1399,
+      "cabin3Note": " (balcony)",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260816-7",
+      "bookUrl": "https://cruisello.com/go/MSC-EURIBIA-20260816-7?pid=eacf387e-4ed2-4cae-8852-cf779d8a9f71",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2798,
+          "price3": 6657,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-EURIBIA-20260816-7?pid=eacf387e-4ed2-4cae-8852-cf779d8a9f71",
+          "price2": 2798,
+          "price3": 6657,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/fjord-explorer-hellesylt-geiranger~MSC-EURIBIA-20260816-7",
+          "price2": 2798,
+          "price3": 6657,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3498,
+          "price3": null,
+          "note": "~€1749/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 5198,
+          "price3": null,
+          "note": "~€2599/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 6758,
+          "price3": null,
+          "note": "~€3379/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 2390,
+          "price3": 3585,
+          "price3Est": true,
+          "pricePP": 1195,
+          "currency": "USD",
+          "fastDealId": "35280",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 2390,
+      "vtgPrice3": 3585,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 2390,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=35280"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 3585,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=35280"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "7-nights-norway-land-of-the-fjords-from-bremerhaven-to-hamburg~TUI-MEINS1-20260817-7",
+      "title": "7 nights - Norway, Land of the Fjords - from Bremerhaven/ to Hamburg",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 1",
+      "sailDate": "2026-08-17",
+      "nights": 7,
+      "port": "Bremerhaven",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Bremerhaven",
+        "Bergen",
+        "Hellesylt",
+        "Ålesund",
+        "Haugesund",
+        "Hamburg"
+      ],
+      "price2": 2698,
+      "price3": 3575,
+      "pricePP": 1349,
+      "cabin3Note": "",
+      "thirdGuestDiscount": null,
+      "cruiselloUrl": "https://cruisello.com/cruises/7-nights-norway-land-of-the-fjords-from-bremerhaven-to-hamburg~TUI-MEINS1-20260817-7",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS1-20260817-7?pid=1c4af6ae-2ce2-4800-a485-18cbf303ae41",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "price3Est": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 2698,
+          "price3": 3575,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS1-20260817-7?pid=1c4af6ae-2ce2-4800-a485-18cbf303ae41",
+          "price2": 2698,
+          "price3": 3575,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/7-nights-norway-land-of-the-fjords-from-bremerhaven-to-hamburg~TUI-MEINS1-20260817-7",
+          "price2": 2698,
+          "price3": 3575,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 3398,
+          "price3": null,
+          "note": "~€1699/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 5198,
+          "price3": null,
+          "note": "~€2599/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость ~€1192/чел vs €1349/чел",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 2698,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 3575,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260822-7",
+      "title": "Nordic Fjords – Copenhagen & Geiranger",
+      "line": "MSC Cruises",
+      "ship": "MSC Euribia",
+      "sailDate": "2026-08-22",
+      "nights": 7,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Copenhagen",
+        "Hellesylt",
+        "Geiranger",
+        "Ålesund",
+        "Flåm"
+      ],
+      "price2": 2058,
+      "price3": 3657,
+      "pricePP": 1029,
+      "cabin3Note": "",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260822-7",
+      "bookUrl": "https://cruisello.com/go/MSC-EURIBIA-20260822-7?pid=206f24ca-d5ad-4cf9-bcde-f1ced08ca848",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2058,
+          "price3": 3657,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/MSC-EURIBIA-20260822-7?pid=206f24ca-d5ad-4cf9-bcde-f1ced08ca848",
+          "price2": 2058,
+          "price3": 3657,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/nordic-fjords-copenhagen-geiranger~MSC-EURIBIA-20260822-7",
+          "price2": 2058,
+          "price3": 3657,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2858,
+          "price3": null,
+          "note": "~€1429/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3698,
+          "price3": null,
+          "note": "~€1849/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 3030,
+          "price3": 4545,
+          "price3Est": true,
+          "pricePP": 1515,
+          "currency": "USD",
+          "fastDealId": "35203",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 3030,
+      "vtgPrice3": 4545,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 2058,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 3657,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "baltic-discovery-helsinki-tallinn~NCL-SUN-20260822-7",
+      "title": "Baltic Discovery – Helsinki & Tallinn",
+      "line": "Norwegian Cruise Line",
+      "ship": "Norwegian Sun",
+      "sailDate": "2026-08-22",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Kiel",
+        "Warnemünde (Rostock)",
+        "Gdynia (Gdansk)",
+        "Klaipeda",
+        "Nynashamn",
+        "Tallinn",
+        "Helsinki"
+      ],
+      "price2": 3184,
+      "price3": 3993,
+      "pricePP": 1592,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/baltic-discovery-helsinki-tallinn~NCL-SUN-20260822-7",
+      "bookUrl": "https://cruisello.com/go/NCL-SUN-20260822-7?pid=dc8b094e-bb28-4c69-b9d4-97b5e33c3c03",
+      "lineUrl": "https://www.ncl.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "Norwegian Cruise Line (прямо)",
+          "url": "https://www.ncl.com/",
+          "price2": 3184,
+          "price3": 3993,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/NCL-SUN-20260822-7?pid=dc8b094e-bb28-4c69-b9d4-97b5e33c3c03",
+          "price2": 3184,
+          "price3": 3993,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/baltic-discovery-helsinki-tallinn~NCL-SUN-20260822-7",
+          "price2": 3184,
+          "price3": 3993,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.ncl.com/",
+          "price2": 3310,
+          "price3": null,
+          "note": "~€1655/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.ncl.com/",
+          "price2": 4410,
+          "price3": null,
+          "note": "~€2205/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.ncl.com/",
+          "price2": 7040,
+          "price3": null,
+          "note": "~€3520/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 3578,
+          "price3": 5367,
+          "price3Est": true,
+          "pricePP": 1789,
+          "currency": "USD",
+          "fastDealId": "30500",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.ncl.com/"
+      },
+      "vtgPrice2": 3578,
+      "vtgPrice3": 5367,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Norwegian Cruise Line (прямо)",
+        "price": 3184,
+        "url": "https://www.ncl.com/"
+      },
+      "bestPrice3": {
+        "vendor": "Norwegian Cruise Line (прямо)",
+        "price": 3993,
+        "url": "https://www.ncl.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "fjord-explorer-stavanger-geiranger~CEL-CELEBRITY_APEX-20260822-7",
+      "title": "Fjord Explorer – Stavanger & Geiranger",
+      "line": "Celebrity Cruises",
+      "ship": "Celebrity Apex",
+      "sailDate": "2026-08-22",
+      "nights": 7,
+      "port": "Southampton",
+      "country": "UK",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Southampton",
+        "Stavanger",
+        "Nordfjordeid",
+        "Geiranger",
+        "Zeebrugge"
+      ],
+      "price2": null,
+      "price3": 14328,
+      "pricePP": null,
+      "cabin3Note": " (balcony)",
+      "thirdGuestDiscount": null,
+      "cruiselloUrl": "https://cruisello.com/cruises/fjord-explorer-stavanger-geiranger~CEL-CELEBRITY_APEX-20260822-7",
+      "bookUrl": "https://cruisello.com/cruises/fjord-explorer-stavanger-geiranger~CEL-CELEBRITY_APEX-20260822-7",
+      "lineUrl": "https://www.celebritycruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Celebrity Cruises (прямо)",
+          "url": "https://www.celebritycruises.com/",
+          "price2": null,
+          "price3": 14328,
+          "note": "inside, 2 гостя — сайт линии"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/cruises/fjord-explorer-stavanger-geiranger~CEL-CELEBRITY_APEX-20260822-7",
+          "price2": null,
+          "price3": 14328,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/fjord-explorer-stavanger-geiranger~CEL-CELEBRITY_APEX-20260822-7",
+          "price2": null,
+          "price3": 14328,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.celebritycruises.com/",
+          "price2": 12652,
+          "price3": null,
+          "note": "~€6326/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/",
+          "price2": null,
+          "price3": null,
+          "note": "не подключено — только ссылка",
+          "hidden": true
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com/",
+          "price2": null,
+          "price3": null,
+          "note": "не подключено — только ссылка",
+          "hidden": true
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=30422",
+          "price2": 15354,
+          "price3": 23031,
+          "price3Est": true,
+          "pricePP": 7677,
+          "currency": "USD",
+          "fastDealId": "30422",
+          "note": "VTG inside · 2026-08-22 · 2ч $15354 · 3ч $23031 (оценка +1pp)",
+          "verifiedAt": "2026-06-14",
+          "manual": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.celebritycruises.com/"
+      },
+      "vtgPrice2": 15354,
+      "vtgPrice3": 23031,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Suite",
+        "price": 12652,
+        "url": "https://www.celebritycruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "Celebrity Cruises (прямо)",
+        "price": 14328,
+        "url": "https://www.celebritycruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "nordic-fjords-stavanger-oslo~MSC-MAGNIFICA-20260822-7",
+      "title": "Nordic Fjords – Stavanger & Oslo",
+      "line": "MSC Cruises",
+      "ship": "MSC Magnifica",
+      "sailDate": "2026-08-22",
+      "nights": 7,
+      "port": "Copenhagen",
+      "country": "Denmark",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Copenhagen",
+        "Warnemünde (Rostock)",
+        "Stavanger",
+        "Eidfjord",
+        "Kristiansand",
+        "Oslo"
+      ],
+      "price2": null,
+      "price3": 2736,
+      "pricePP": null,
+      "cabin3Note": "",
+      "thirdGuestDiscount": null,
+      "cruiselloUrl": "https://cruisello.com/cruises/nordic-fjords-stavanger-oslo~MSC-MAGNIFICA-20260822-7",
+      "bookUrl": "https://cruisello.com/cruises/nordic-fjords-stavanger-oslo~MSC-MAGNIFICA-20260822-7",
+      "lineUrl": "https://www.msccruises.co.uk/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "MSC Cruises (прямо)",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": null,
+          "price3": 2736,
+          "note": "inside, 2 гостя — сайт линии"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/cruises/nordic-fjords-stavanger-oslo~MSC-MAGNIFICA-20260822-7",
+          "price2": null,
+          "price3": 2736,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/nordic-fjords-stavanger-oslo~MSC-MAGNIFICA-20260822-7",
+          "price2": null,
+          "price3": 2736,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 2838,
+          "price3": null,
+          "note": "~€1419/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.msccruises.co.uk/",
+          "price2": 3438,
+          "price3": null,
+          "note": "~€1719/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/",
+          "price2": null,
+          "price3": null,
+          "note": "не подключено — только ссылка",
+          "hidden": true
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com/",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com/",
+          "price2": null,
+          "price3": null,
+          "note": "не подключено — только ссылка",
+          "hidden": true
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=11914",
+          "price2": 2274,
+          "price3": 3411,
+          "price3Est": true,
+          "pricePP": 1137,
+          "currency": "USD",
+          "fastDealId": "11914",
+          "note": "VTG inside · 2026-08-22 · 2ч $2274 · 3ч $3411 (оценка +1pp)",
+          "verifiedAt": "2026-06-14",
+          "manual": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.msccruises.co.uk/"
+      },
+      "vtgPrice2": 2274,
+      "vtgPrice3": 3411,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 2274,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=11914"
+      },
+      "bestPrice3": {
+        "vendor": "MSC Cruises (прямо)",
+        "price": 2736,
+        "url": "https://www.msccruises.co.uk/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "7-nights-norway-with-alesund-from-to-kiel~TUI-MEINSR-20260823-7",
+      "title": "7 nights - Norway with Alesund - from/to Kiel",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff Relax",
+      "sailDate": "2026-08-23",
+      "nights": 7,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Ålesund",
+        "Molde",
+        "Nordfjordeid",
+        "Haugesund"
+      ],
+      "price2": 3258,
+      "price3": 4107,
+      "pricePP": 1629,
+      "cabin3Note": "",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/7-nights-norway-with-alesund-from-to-kiel~TUI-MEINSR-20260823-7",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINSR-20260823-7?pid=5119fcc9-361a-46f7-babb-26c818225f17",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 3258,
+          "price3": 4107,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINSR-20260823-7?pid=5119fcc9-361a-46f7-babb-26c818225f17",
+          "price2": 3258,
+          "price3": 4107,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/7-nights-norway-with-alesund-from-to-kiel~TUI-MEINSR-20260823-7",
+          "price2": 3258,
+          "price3": 4107,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 3198,
+          "price3": null,
+          "note": "~€1599/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 5498,
+          "price3": null,
+          "note": "~€2749/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "Balcony",
+        "price": 3198,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 4107,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "nordic-hanseatic-kristiansand-copenhagen~RCL-LIBERTY-20260823-8",
+      "title": "Nordic & Hanseatic – Kristiansand & Copenhagen",
+      "line": "Royal Caribbean",
+      "ship": "Liberty Of The Seas",
+      "sailDate": "2026-08-23",
+      "nights": 8,
+      "port": "Southampton",
+      "country": "UK",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Southampton",
+        "Kristiansand",
+        "Copenhagen",
+        "Hamburg",
+        "Rotterdam"
+      ],
+      "price2": 3292,
+      "price3": 4977,
+      "pricePP": 1646,
+      "cabin3Note": " (oceanview)",
+      "thirdGuestDiscount": false,
+      "cruiselloUrl": "https://cruisello.com/cruises/nordic-hanseatic-kristiansand-copenhagen~RCL-LIBERTY-20260823-8",
+      "bookUrl": "https://cruisello.com/go/RCL-LIBERTY-20260823-8?pid=ff8f347c-e520-4982-b473-a48a74a2b51a",
+      "lineUrl": "https://www.royalcaribbean.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": false,
+      "buyOptions": [
+        {
+          "vendor": "Royal Caribbean (прямо)",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 3292,
+          "price3": 4977,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/RCL-LIBERTY-20260823-8?pid=ff8f347c-e520-4982-b473-a48a74a2b51a",
+          "price2": 3292,
+          "price3": 4977,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/nordic-hanseatic-kristiansand-copenhagen~RCL-LIBERTY-20260823-8",
+          "price2": 3292,
+          "price3": 4977,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Oceanview",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 4068,
+          "price3": null,
+          "note": "~€2034/чел × 2",
+          "cabin": "Oceanview"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 3982,
+          "price3": null,
+          "note": "~€1991/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.royalcaribbean.com/",
+          "price2": 6900,
+          "price3": null,
+          "note": "~€3450/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "ok": true,
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com",
+          "price2": 2488,
+          "price3": 3732,
+          "price3Est": true,
+          "pricePP": 1244,
+          "currency": "USD",
+          "fastDealId": "43060",
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "verifiedAt": "2026-06-14",
+          "manual": false,
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "17 лет = взрослый на всех линиях; детских скидок нет",
+        "policyUrl": "https://www.royalcaribbean.com/"
+      },
+      "vtgPrice2": 2488,
+      "vtgPrice3": 3732,
+      "vtgCurrency": "USD",
+      "vtgAt": "2026-06-14",
+      "bestPrice2": {
+        "vendor": "Vacations To Go",
+        "price": 2488,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=43060"
+      },
+      "bestPrice3": {
+        "vendor": "Vacations To Go",
+        "price": 3732,
+        "url": "https://www.vacationstogo.com/fastdeal.cfm?deal=43060"
+      },
+      "bestPriceAt": "2026-06-14"
+    },
+    {
+      "slug": "7-nights-cities-of-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260824-7",
+      "title": "7 nights - Cities of the Baltic Sea - from/to Kiel",
+      "line": "TUI Cruises",
+      "ship": "Mein Schiff 7",
+      "sailDate": "2026-08-24",
+      "nights": 7,
+      "port": "Kiel",
+      "country": "Germany",
+      "region": "Northern Europe",
+      "itinerary": [
+        "Kiel",
+        "Tallinn",
+        "Helsinki",
+        "Stockholm",
+        "Visby"
+      ],
+      "price2": 4198,
+      "price3": 5286,
+      "pricePP": 2099,
+      "cabin3Note": " (oceanview)",
+      "thirdGuestDiscount": true,
+      "cruiselloUrl": "https://cruisello.com/cruises/7-nights-cities-of-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260824-7",
+      "bookUrl": "https://cruisello.com/go/TUI-MEINS7-20260824-7?pid=c4f36f15-e296-42fe-9cb3-ffa798232bfa",
+      "lineUrl": "https://www.tuicruises.com/",
+      "familyNote": "17 лет = взрослый тариф на всех линиях; смотрите € 3 чел. и промо 3-го гостя",
+      "hasThirdGuestPromo": true,
+      "buyOptions": [
+        {
+          "vendor": "TUI Cruises (прямо)",
+          "url": "https://www.tuicruises.com/",
+          "price2": 4198,
+          "price3": 5286,
+          "note": "inside, 2 гостя — сайт линии",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Cruisello · Book",
+          "url": "https://cruisello.com/go/TUI-MEINS7-20260824-7?pid=c4f36f15-e296-42fe-9cb3-ffa798232bfa",
+          "price2": 4198,
+          "price3": 5286,
+          "note": "переход к бронированию"
+        },
+        {
+          "vendor": "Cruisello",
+          "url": "https://cruisello.com/cruises/7-nights-cities-of-the-baltic-sea-from-to-kiel~TUI-MEINS7-20260824-7",
+          "price2": 4198,
+          "price3": 5286,
+          "note": "сравнение цен"
+        },
+        {
+          "vendor": "Balcony",
+          "url": "https://www.tuicruises.com/",
+          "price2": 3998,
+          "price3": null,
+          "note": "~€1999/чел × 2",
+          "cabin": "Balcony"
+        },
+        {
+          "vendor": "Suite",
+          "url": "https://www.tuicruises.com/",
+          "price2": 6998,
+          "price3": null,
+          "note": "~€3499/чел × 2",
+          "cabin": "Suite"
+        },
+        {
+          "vendor": "CruiseDirect",
+          "url": "https://www.cruisedirect.com/search-results",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "CruiseCompete",
+          "url": "https://www.cruisecompete.com",
+          "price2": null,
+          "price3": null,
+          "note": "котировка по email (1–2 дня)",
+          "hidden": true,
+          "affiliateUrl": "https://www.cruisecompete.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "iCruise",
+          "url": "https://www.icruise.com",
+          "price2": null,
+          "price3": null,
+          "note": "ссылка Cruisello /go/ · цена на сайте",
+          "affiliateUrl": "https://www.icruise.com",
+          "source": "cruisello-go"
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null,
+          "vtgStatus": "unavailable",
+          "affiliateUrl": "https://www.vacationstogo.com",
+          "source": "cruisello-go",
+          "hidden": false
+        }
+      ],
+      "family17": {
+        "summary": "Дочка 17 лет — полный взрослый тариф",
+        "steps": [
+          "Бронируйте 3 взрослых (или 2 + проверьте 3-й гость promo)",
+          "Сравните «€ 2 чел.» и «€ 3 чел.»",
+          "На сайте линии укажите 3 гостей"
+        ],
+        "discountHint": "3-й гость дешевле — смотрите «€ 3 чел.»",
+        "policyUrl": "https://www.tuicruises.com/"
+      },
+      "vtgPrice2": null,
+      "vtgPrice3": null,
+      "vtgCurrency": null,
+      "vtgAt": null,
+      "bestPrice2": {
+        "vendor": "Balcony",
+        "price": 3998,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPrice3": {
+        "vendor": "TUI Cruises (прямо)",
+        "price": 5286,
+        "url": "https://www.tuicruises.com/"
+      },
+      "bestPriceAt": "2026-06-14"
+    }
+  ]
+}

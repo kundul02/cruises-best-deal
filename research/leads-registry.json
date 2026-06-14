@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "version": 1,
+    "lastFullCheck": "2026-06-14",
+    "lastSiteSync": "2026-06-14"
+  },
+  "leads": {
+    "active": [
+      { "id": 1, "registryKey": "celebrity-med-9nt-952", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 2, "registryKey": "princess-eastern-med-1599", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 3, "registryKey": "princess-med-sun-940", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 4, "registryKey": "azamara-italy-greece-1375", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 5, "registryKey": "qm2-southampton-brooklyn-599", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 6, "registryKey": "qm2-brooklyn-southampton-799", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 7, "registryKey": "qe-miami-southampton-729", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 8, "registryKey": "qm2-hamburg-brooklyn-1649", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 9, "registryKey": "qm2-hamburg-brooklyn-10nt-1569", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 10, "registryKey": "qm2-brooklyn-southampton-8nt-1039", "source": "CruiseCheap", "addedAt": "2026-06-14" },
+      { "id": 11, "registryKey": "holland-med-1599", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 12, "registryKey": "cunard-alaska-753", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 13, "registryKey": "ncl-mexico-568", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 14, "registryKey": "rccl-caribbean-418", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 15, "registryKey": "celebrity-norway-direct", "source": "Celebrity", "addedAt": "2026-06-14" },
+      { "id": 16, "registryKey": "princess-norway-direct", "source": "Princess", "addedAt": "2026-06-14" },
+      { "id": 17, "registryKey": "hurtigruten-coastal", "source": "Hurtigruten", "addedAt": "2026-06-14" },
+      { "id": 18, "registryKey": "msc-med-value", "source": "MSC", "addedAt": "2026-06-14" },
+      { "id": 19, "registryKey": "virgin-med-834", "source": "Cruise Critic", "addedAt": "2026-06-14" },
+      { "id": 20, "registryKey": "ncl-repositioning-eu", "source": "NCL", "addedAt": "2026-06-14" }
+    ],
+    "watch": [
+      { "id": "vtg-europe", "notes": "VacationsToGo Europe — проверять 90-Day Ticker ежедневно", "url": "https://www.vacationstogo.com/europe_cruises.cfm" },
+      { "id": "cruiseplum-drops", "notes": "CruisePlum price drops 15%+", "url": "https://www.cruiseplum.com/deals/price-drops" }
+    ],
+    "archive": []
+  },
+  "checkLog": [
+    {
+      "date": "2026-06-14",
+      "checker": "initial-seed",
+      "added": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "activeCount": 20,
+      "notes": "Seed leads from Cruise Critic + CruiseCheap + line destination pages"
+    }
+  ]
+}

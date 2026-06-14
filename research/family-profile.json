@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "version": 1,
+    "updatedAt": "2026-06-14",
+    "notes": "Профиль семьи для фильтрации маршрутов и visa-check на витрине"
+  },
+  "party": {
+    "size": 3,
+    "composition": "пара + дочка 16 лет",
+    "preferredCabin": ["triple", "connecting", "oceanview", "balcony"],
+    "budgetNotes": "Ищем лучшую цену за ночь на человека; готовы к repositioning и last-minute"
+  },
+  "members": [
+    {
+      "id": "adult1",
+      "role": "adult",
+      "passport": "UA biometric",
+      "visas": ["US", "CA", "Schengen"],
+      "schengenRule": "90/180 visa-free"
+    },
+    {
+      "id": "adult2",
+      "role": "adult",
+      "passport": "UA biometric",
+      "visas": ["US", "CA", "Schengen"],
+      "schengenRule": "90/180 visa-free"
+    },
+    {
+      "id": "daughter",
+      "role": "teen",
+      "age": 16,
+      "passport": "UA biometric",
+      "visas": ["US", "Schengen"],
+      "schengenRule": "90/180 visa-free",
+      "missingVisas": ["CA"]
+    }
+  ],
+  "regions": {
+    "priority": [
+      "mediterranean",
+      "norway",
+      "uk",
+      "transatlantic",
+      "americas"
+    ],
+    "excluded": ["asia", "pacific", "australia"]
+  },
+  "visaRules": {
+    "schengen": "Биопаспорт UA — безвиз 90/180; EES с окт 2025; ETIAS ожидается конец 2026",
+    "uk": "UK ETA обязателен при портах UK (Southampton, Dover, Liverpool)",
+    "us": "Виза US обязательна на борту даже без высадки",
+    "canada": "Виза CA обязательна на борту — у дочери нет; маршруты с CA embark/disembark помечать warning",
+    "israel": "Проверять per-port; часто безвиз или visa on arrival для туристов"
+  },
+  "searchDefaults": {
+    "pax": 3,
+    "minNights": 7,
+    "preferredMonths": ["2026-09", "2026-10", "2026-11", "2027-04", "2027-05"]
+  }
+}
