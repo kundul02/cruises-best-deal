@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import { annotateHotDeals } from "./lib/hot-deal-score.mjs";
 import { formatPortLabel } from "./lib/port-countries.mjs";
 import { annotateVisa, visaExcludeUk } from "./lib/visa-warnings.mjs";
+import { SITE_NAV_CSS, siteNavHtml } from "./lib/site-nav.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -112,6 +113,7 @@ const html = `<!DOCTYPE html>
 :root { --blue:#007AFF; --green:#34C759; --orange:#FF9500; --teal:#5AC8FA; --purple:#5856D6; --bg:#F2F2F7; --card:#fff; --text:#1C1C1E; --text2:#636366; --sep:#E5E5EA; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); color:var(--text); padding:16px; max-width:1280px; margin:0 auto; }
+${SITE_NAV_CSS}
 h1 { font-size:22px; margin-bottom:4px; }
 .sub { font-size:13px; color:var(--text2); margin-bottom:16px; line-height:1.5; }
 .region-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
@@ -421,6 +423,7 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </style>
 </head>
 <body>
+${siteNavHtml("europe")}
 <h1>Круизы из Европы · 2026</h1>
 <p class="sub" id="page-sub">Выберите регион · ${allCruises.length} рейсов · цены на ${lastPriceRefresh || regionMeta.med?.meta?.fetchedAt || "—"}</p>
 
@@ -1108,16 +1111,5 @@ const redirect = (target, title) => `<!DOCTYPE html>
 fs.writeFileSync(path.join(root, "med-summer-july-2026.html"), redirect("cruises-europe-2026.html#med", "Redirect"));
 fs.writeFileSync(path.join(root, "north-aug-2026.html"), redirect("cruises-europe-2026.html#north", "Redirect"));
 fs.writeFileSync(path.join(root, "transatlantic-fall-2026.html"), redirect("cruises-europe-2026.html#transatlantic", "Redirect"));
-
-const indexRedirect = `<!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Круизы Европа 2026</title>
-<meta http-equiv="refresh" content="0;url=cruises-europe-2026.html">
-<link rel="canonical" href="cruises-europe-2026.html">
-<script>location.replace("cruises-europe-2026.html" + location.hash);</script>
-</head>
-<body><p><a href="cruises-europe-2026.html">Круизы Европа 2026 — Med, North &amp; Transatlantic</a></p></body></html>`;
-fs.writeFileSync(path.join(root, "index.html"), indexRedirect);
 
 console.log(`Built ${outPath} (${allCruises.length} cruises: med ${regionMeta.med?.count || 0}, north ${regionMeta.north?.count || 0}, transatlantic ${regionMeta.transatlantic?.count || 0})`);

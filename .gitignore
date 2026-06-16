@@ -5,4 +5,6 @@ node_modules/
 .playwright-vtg-profile/
 .playwright-cd-profile/
 .playwright-icruise-profile/
+.navimba-cookies.json
+.playwright-navimba-profile/
 package-lock.json

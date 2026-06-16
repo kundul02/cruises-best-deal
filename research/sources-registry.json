@@ -262,6 +262,19 @@
       "id": "travel-arbitrage",
       "name": "Travel Arbitrage",
       "url": "https://www.travelarbitrage.net/en/cruise/"
+    },
+    {
+      "id": "navimba",
+      "name": "Navimba (RU cruise forum)",
+      "url": "https://navimba.com/",
+      "boards": [
+        "Выбор круиза f=14",
+        "Дешёвые круизы t=6",
+        "Отдам каюту t=149"
+      ],
+      "frequency": "weekly",
+      "fetchMethod": "cursor-webfetch",
+      "notes": "phpBB + Cloudflare; локальный IP часто блокируется — собирать через Cursor. JSON: research/navimba-latest.json"
     }
   ],
   "searchQueries": [

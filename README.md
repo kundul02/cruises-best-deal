@@ -4,9 +4,10 @@
 
 | Файл | Назначение |
 |------|------------|
-| **`cruises-europe-2026.html`** | **Главная витрина** — Med + North + Трансатлантика, Cruisello + VTG, HOT, visa, NEW |
-| `index.html` | Редирект на витрину (корень GitHub Pages) |
-| `cruises.html` | Старые глобальные лиды (отдельный pipeline) |
+| **`index.html`** | **Главная** — хаб с тремя разделами |
+| **`cruises-europe-2026.html`** | **Европа 2026** — Med + North + Трансатлантика, Cruisello + VTG, HOT, visa, NEW |
+| **`navimba.html`** | **Navimba** — сделки и темы с русскоязычного форума |
+| `cruises.html` | **VTG Leads** — глобальные hot deals (отдельный pipeline) |
 
 **Публичный сайт:** [kundul02.github.io/cruises-best-deal/](https://kundul02.github.io/cruises-best-deal/) — просмотр таблицы и ссылок «Купить».
 
@@ -31,7 +32,7 @@ npm run price-server          # терминал A — API :3920
 npm run preview               # терминал B — HTML :8765
 
 # 3) Браузер
-open http://127.0.0.1:8765/cruises-europe-2026.html#north
+open http://127.0.0.1:8765/
 ```
 
 Внизу страницы: индикатор **Mac подключён ✓** — значит `price-server` отвечает.
@@ -176,7 +177,9 @@ curl "http://127.0.0.1:3920/deploy?region=all"
 | `npm run preview` | Просмотр на :8765 |
 | `npm run server:status` | Статус серверов |
 | `npm run server:stop` | Остановить серверы |
-| `npm run build-html` | Пересобрать витрину из JSON |
+| `npm run build-site` | Пересобрать весь сайт (Europe + Navimba + index) |
+| `npm run build-html` | Пересобрать витрину Europe из JSON |
+| `npm run build-navimba-html` | Пересобрать navimba.html |
 
 ### Обновление данных
 
@@ -264,13 +267,13 @@ curl "http://127.0.0.1:3920/deploy?region=all"
 **Вручную:**
 
 ```bash
-npm run build-html
-git add cruises-europe-2026.html research/*.json index.html
-git commit -m "Update cruise vitrine"
+npm run build-site
+git add index.html cruises-europe-2026.html navimba.html research/*.json
+git commit -m "Update cruise site"
 git push
 ```
 
-Settings → Pages → branch `main`, folder `/`.
+Settings → Pages → **GitHub Actions** (workflow `Deploy GitHub Pages`) или branch `main`, folder `/`.
 
 ---
 

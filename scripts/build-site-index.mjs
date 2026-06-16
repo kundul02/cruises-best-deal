@@ -1,4 +1,72 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+/** Build index.html — landing hub for the static site. */
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { parseNavimbaLeads } from "./lib/parse-navimba-leads.mjs";
+import { siteNavHtml } from "./lib/site-nav.mjs";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(__dirname, "..");
+const outPath = path.join(root, "index.html");
+
+function loadJson(p, fallback = null) {
+  try {
+    return JSON.parse(fs.readFileSync(p, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function countCruises() {
+  const files = [
+    "summer-med-july-2026.json",
+    "north-aug-2026.json",
+    "transatlantic-fall-2026.json",
+  ];
+  let total = 0;
+  const regions = {};
+  for (const file of files) {
+    const data = loadJson(path.join(root, "research", file), { cruises: [] });
+    const key = file.includes("med")
+      ? "med"
+      : file.includes("north")
+        ? "north"
+        : "transatlantic";
+    const n = data.cruises?.length || 0;
+    regions[key] = n;
+    total += n;
+  }
+  return { total, regions };
+}
+
+function countVtgLeads() {
+  const registry = loadJson(path.join(root, "research", "leads-registry.json"), {});
+  const active = registry.leads?.active;
+  if (Array.isArray(active)) return active.length;
+  const leads = registry.leads || registry.items || [];
+  return Array.isArray(leads) ? leads.length : 0;
+}
+
+function fmtDate(iso) {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleString("ru-RU", { dateStyle: "short", timeStyle: "short" });
+  } catch {
+    return String(iso).slice(0, 10);
+  }
+}
+
+const med = loadJson(path.join(root, "research", "summer-med-july-2026.json"), {});
+const navimba = loadJson(path.join(root, "research", "navimba-latest.json"), {});
+const profile = loadJson(path.join(root, "research", "family-profile.json"), {});
+const { total: cruiseTotal, regions } = countCruises();
+const navimbaLeads = parseNavimbaLeads(navimba, profile);
+const priorityNavimba = navimbaLeads.filter((l) => l.priority && !l.excluded).length;
+const vtgCount = countVtgLeads();
+const lastEurope = med.meta?.fetchedAt || med.fetchedAt || "—";
+
+const html = `<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -31,12 +99,7 @@ h1 { font-size:26px; margin-bottom:6px; letter-spacing:-0.3px; }
 </style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Разделы">
-  <a href="index.html" class="on">Главная</a>
-  <a href="cruises-europe-2026.html">Европа 2026</a>
-  <a href="navimba.html">Navimba</a>
-  <a href="cruises.html">VTG Leads</a>
-</nav>
+${siteNavHtml("home")}
 
 <h1>Cruise Best Deal</h1>
 <p class="sub">Круизы для семьи 2–3 чел. · Med, Север, трансатлантика · форум Navimba · VTG hot deals</p>
@@ -45,23 +108,23 @@ h1 { font-size:26px; margin-bottom:6px; letter-spacing:-0.3px; }
   <a class="card med" href="cruises-europe-2026.html">
     <h2>Европа 2026</h2>
     <p>Cruisello + VTG · HOT, NEW, визы · live-обновления с Mac</p>
-    <div class="stat">194</div>
-    <div class="meta">Med 119 · North 72 · Transatlantic 3</div>
-    <div class="meta">Цены: 16.06.2026, 03:00</div>
+    <div class="stat">${cruiseTotal}</div>
+    <div class="meta">Med ${regions.med || 0} · North ${regions.north || 0} · Transatlantic ${regions.transatlantic || 0}</div>
+    <div class="meta">Цены: ${fmtDate(lastEurope)}</div>
   </a>
 
   <a class="card navimba" href="navimba.html">
     <h2>Navimba</h2>
     <p>Русскоязычный форум · сделки и активные темы</p>
-    <div class="stat">9</div>
-    <div class="meta">6 под ваш профиль</div>
-    <div class="meta">Обновлено: 16.06.2026, 13:09</div>
+    <div class="stat">${navimbaLeads.length}</div>
+    <div class="meta">${priorityNavimba} под ваш профиль</div>
+    <div class="meta">Обновлено: ${fmtDate(navimba.fetchedAt)}</div>
   </a>
 
   <a class="card vtg" href="cruises.html">
     <h2>VTG Leads</h2>
     <p>Глобальные hot deals · VacationsToGo, CruisePlum и др.</p>
-    <div class="stat">20</div>
+    <div class="stat">${vtgCount || "—"}</div>
     <div class="meta">Отдельный pipeline лидов</div>
   </a>
 </div>
@@ -72,3 +135,7 @@ h1 { font-size:26px; margin-bottom:6px; letter-spacing:-0.3px; }
 </p>
 </body>
 </html>
+`;
+
+fs.writeFileSync(outPath, html);
+console.log(`Built ${outPath} — ${cruiseTotal} cruises, ${navimbaLeads.length} navimba, ${vtgCount} vtg`);

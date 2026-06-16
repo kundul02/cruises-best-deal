@@ -217,9 +217,20 @@ body {
   white-space: pre-wrap;
   user-select: all;
 }
+.site-nav { display:flex; flex-wrap:wrap; gap:8px; margin:0 16px 12px; padding:10px 12px; background:var(--card); border-radius:12px; border:1px solid var(--sep); max-width:1280px; }
+.site-nav a { font-size:13px; font-weight:600; color:var(--blue); text-decoration:none; padding:6px 12px; border-radius:8px; }
+.site-nav a:hover { background:var(--bg); }
+.site-nav a.on { background:var(--blue); color:#fff; }
 </style>
 </head>
 <body>
+
+<nav class="site-nav" aria-label="Разделы">
+  <a href="index.html">Главная</a>
+  <a href="cruises-europe-2026.html">Европа 2026</a>
+  <a href="navimba.html">Navimba</a>
+  <a href="cruises.html" class="on">VTG Leads</a>
+</nav>
 
 <div class="header">
   <h1 id="header-title">Cruise Best Deal</h1>

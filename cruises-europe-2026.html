@@ -8,6 +8,12 @@
 :root { --blue:#007AFF; --green:#34C759; --orange:#FF9500; --teal:#5AC8FA; --purple:#5856D6; --bg:#F2F2F7; --card:#fff; --text:#1C1C1E; --text2:#636366; --sep:#E5E5EA; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); color:var(--text); padding:16px; max-width:1280px; margin:0 auto; }
+
+.site-nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; padding:10px 12px; background:var(--card, #fff); border-radius:12px; border:1px solid var(--sep, #E5E5EA); }
+.site-nav a { font-size:13px; font-weight:600; color:var(--blue, #007AFF); text-decoration:none; padding:6px 12px; border-radius:8px; }
+.site-nav a:hover { background:var(--bg, #F2F2F7); }
+.site-nav a.on { background:var(--blue, #007AFF); color:#fff; }
+
 h1 { font-size:22px; margin-bottom:4px; }
 .sub { font-size:13px; color:var(--text2); margin-bottom:16px; line-height:1.5; }
 .region-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
@@ -317,6 +323,12 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 </style>
 </head>
 <body>
+<nav class="site-nav" aria-label="Разделы">
+  <a href="index.html">Главная</a>
+  <a href="cruises-europe-2026.html" class="on">Европа 2026</a>
+  <a href="navimba.html">Navimba</a>
+  <a href="cruises.html">VTG Leads</a>
+</nav>
 <h1>Круизы из Европы · 2026</h1>
 <p class="sub" id="page-sub">Выберите регион · 172 рейсов · цены на 2026-06-16</p>
 

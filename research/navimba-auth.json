@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "authStatus": "logged_in",
+    "user": "Svetlika",
+    "phpbbUserId": "26450",
+    "source": "chrome-default",
+    "cookieFile": ".navimba-cookies.json",
+    "activeTopicsOk": true,
+    "updatedAt": "2026-06-16T10:08:00Z"
+  },
+  "refreshCommand": "npm run navimba-export-chrome-cookies",
+  "note": "Chrome must be logged into navimba.com. Re-export cookies when session expires."
+}
