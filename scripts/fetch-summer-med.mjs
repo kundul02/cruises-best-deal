@@ -1,12 +1,16 @@
 #!/usr/bin/env node
-/** Fetch Jul-Aug 2026 Med cruises from Cruisello → research/summer-med-july-2026.json */
+/** Fetch Med cruises Aug–Dec 2026 from Cruisello → research/summer-med-july-2026.json */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { mergeCruiseInventory } from "./lib/merge-cruise-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const outPath = path.join(root, "research", "summer-med-july-2026.json");
+
+const START = "2026-08-05";
+const END = "2026-12-31";
 
 const PORTS = [
   { slug: "cannes", city: "Cannes", country: "France" },
@@ -16,8 +20,13 @@ const PORTS = [
   { slug: "genoa", city: "Genoa", country: "Italy" },
   { slug: "venice", city: "Venice", country: "Italy" },
   { slug: "naples", city: "Naples", country: "Italy" },
+  { slug: "rome-civitavecchia", city: "Civitavecchia", country: "Italy" },
+  { slug: "savona", city: "Savona", country: "Italy" },
+  { slug: "palermo", city: "Palermo", country: "Italy" },
   { slug: "lisbon", city: "Lisbon", country: "Portugal" },
   { slug: "istanbul", city: "Istanbul", country: "Turkey" },
+  { slug: "piraeus", city: "Piraeus", country: "Greece" },
+  { slug: "malta", city: "Valletta", country: "Malta" },
 ];
 
 const LINE_BOOK = {
@@ -25,6 +34,10 @@ const LINE_BOOK = {
   "Celebrity Cruises": "https://www.celebritycruises.com/",
   "Norwegian Cruise Line": "https://www.ncl.com/",
   "Royal Caribbean": "https://www.royalcaribbean.com/",
+  "Costa Cruises": "https://www.costacruises.com/",
+  "Holland America Line": "https://www.hollandamerica.com/",
+  "Princess Cruises": "https://www.princess.com/",
+  "Cunard Line": "https://www.cunard.com/",
 };
 
 const CHILD_NOTE = {
@@ -137,7 +150,7 @@ function parseDetail(html, html3, slugPath, portMeta) {
 async function main() {
   const slugToPort = new Map();
   for (const p of PORTS) {
-    const listUrl = `https://cruisello.com/cruises?departurePorts=${p.slug}&startDate=2026-07-05&endDate=2026-08-31&sortBy=price&sortOrder=asc`;
+    const listUrl = `https://cruisello.com/cruises?departurePorts=${p.slug}&startDate=${START}&endDate=${END}&sortBy=price&sortOrder=asc`;
     const html = await fetchText(listUrl);
     const clean = html.replace(/\0/g, " ");
     const slugs = [...clean.matchAll(/href="(\/cruises\/[^"?]+)"/g)].map((m) => m[1]);
@@ -158,7 +171,7 @@ async function main() {
       console.log(`SKIP ${slugPath}`);
       continue;
     }
-    if (c.sailDate >= "2026-07-05" && c.sailDate <= "2026-08-31") {
+    if (c.sailDate >= START && c.sailDate <= END) {
       cruises.push(c);
       console.log(`OK ${c.sailDate} ${c.port} €${c.price2}/${c.price3}`);
     }
@@ -182,6 +195,12 @@ async function main() {
 
   deduped.sort((a, b) => a.sailDate.localeCompare(b.sailDate) || (a.price2 || 99999) - (b.price2 || 99999));
 
+  const previous = fs.existsSync(outPath)
+    ? JSON.parse(fs.readFileSync(outPath, "utf8"))
+    : { cruises: [] };
+  const { cruises: mergedCruises, added, addedCount, removed } = mergeCruiseInventory(previous.cruises, deduped);
+  console.log(`Merge: +${addedCount} new, -${removed} dropped`);
+
   fs.writeFileSync(
     outPath,
     JSON.stringify(
@@ -189,17 +208,23 @@ async function main() {
         meta: {
           fetchedAt: new Date().toISOString().slice(0, 10),
           source: "Cruisello.com",
-          dateRange: "2026-07-05 — 2026-08-31",
+          dateRange: `${START} — ${END}`,
           ports: PORTS.map((p) => `${p.city}, ${p.country}`),
           note: "price2/price3 = total EUR inside (or lowest cabin for 3 guests); verify before booking",
+          lastResearchSync: new Date().toISOString(),
+          lastDiscoverAdded: addedCount,
         },
-        cruises: deduped,
+        cruises: mergedCruises,
       },
       null,
       2
     ) + "\n"
   );
-  console.log(`Wrote ${deduped.length} cruises → ${outPath}`);
+  console.log(`Wrote ${mergedCruises.length} cruises → ${outPath}`);
+  if (added.length) {
+    for (const a of added.slice(0, 10)) console.log(`  NEW ${a.sailDate} ${a.ship} ${a.port}`);
+    if (added.length > 10) console.log(`  … +${added.length - 10} more`);
+  }
 }
 
 main().catch((e) => {

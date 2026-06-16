@@ -1,15 +1,16 @@
 #!/usr/bin/env node
-/** Northern Europe cruises Aug 2026 (from 5 Aug) → research/north-aug-2026.json */
+/** Northern Europe cruises Aug–Dec 2026 → research/north-aug-2026.json */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { mergeCruiseInventory } from "./lib/merge-cruise-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const outPath = path.join(root, "research", "north-aug-2026.json");
 
 const START = "2026-08-05";
-const END = "2026-08-31";
+const END = "2026-12-31";
 
 const PORTS = [
   { slug: "copenhagen", city: "Copenhagen", country: "Denmark" },
@@ -18,9 +19,11 @@ const PORTS = [
   { slug: "warnemunde", city: "Warnemünde", country: "Germany" },
   { slug: "bremerhaven", city: "Bremerhaven", country: "Germany" },
   { slug: "amsterdam", city: "Amsterdam", country: "Netherlands" },
+  { slug: "rotterdam", city: "Rotterdam", country: "Netherlands" },
   { slug: "stockholm", city: "Stockholm", country: "Sweden" },
   { slug: "helsinki", city: "Helsinki", country: "Finland" },
   { slug: "bergen", city: "Bergen", country: "Norway" },
+  { slug: "oslo", city: "Oslo", country: "Norway" },
 ];
 
 const LINE_BOOK = {
@@ -207,6 +210,12 @@ async function main() {
 
   deduped.sort((a, b) => a.sailDate.localeCompare(b.sailDate) || (a.price2 || 99999) - (b.price2 || 99999));
 
+  const previous = fs.existsSync(outPath)
+    ? JSON.parse(fs.readFileSync(outPath, "utf8"))
+    : { cruises: [] };
+  const { cruises: mergedCruises, added, addedCount, removed } = mergeCruiseInventory(previous.cruises, deduped);
+  console.log(`Merge: +${addedCount} new, -${removed} dropped`);
+
   fs.writeFileSync(
     outPath,
     JSON.stringify(
@@ -219,14 +228,20 @@ async function main() {
           ports: PORTS.map((p) => `${p.city}, ${p.country}`),
           family: "2–3 adults (daughter 17 = adult fare)",
           note: "price2/price3 = total EUR inside cabin; verify before booking",
+          lastResearchSync: new Date().toISOString(),
+          lastDiscoverAdded: addedCount,
         },
-        cruises: deduped,
+        cruises: mergedCruises,
       },
       null,
       2
     ) + "\n"
   );
-  console.log(`Wrote ${deduped.length} cruises → ${outPath}`);
+  console.log(`Wrote ${mergedCruises.length} cruises → ${outPath}`);
+  if (added.length) {
+    for (const a of added.slice(0, 10)) console.log(`  NEW ${a.sailDate} ${a.ship} ${a.port}`);
+    if (added.length > 10) console.log(`  … +${added.length - 10} more`);
+  }
 }
 
 main().catch((e) => {

@@ -17,6 +17,7 @@
     "enrich-go": "node scripts/batch-go-all.mjs",
     "build-html": "node scripts/build-unified-cruises-html.mjs",
     "fetch-transatlantic": "node scripts/fetch-transatlantic-fall.mjs",
+    "research-aug-dec": "node scripts/research-aug-dec.mjs",
     "discover-cruises": "node scripts/discover-cruises.mjs",
     "enrich-transatlantic": "node scripts/enrich-transatlantic.mjs",
     "tunnel": "cloudflared tunnel --url http://127.0.0.1:3920",

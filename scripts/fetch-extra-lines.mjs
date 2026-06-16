@@ -31,8 +31,8 @@ const REGIONS = {
   north: {
     file: path.join(root, "research", "north-aug-2026.json"),
     start: "2026-08-05",
-    end: "2026-08-31",
-    ports: ["copenhagen", "southampton", "amsterdam", "hamburg", "bremerhaven", "kiel"],
+    end: "2026-12-31",
+    ports: ["copenhagen", "amsterdam", "hamburg", "bremerhaven", "kiel", "rotterdam", "stockholm", "helsinki", "bergen", "oslo"],
     filter: (c) =>
       /Norway|Baltic|North|Fjord|Copenhagen|Hamburg|Bremerhaven|Southampton|Amsterdam/i.test(
         [c.title, c.port, ...(c.itinerary || [])].join(" ")
@@ -40,9 +40,9 @@ const REGIONS = {
   },
   med: {
     file: path.join(root, "research", "summer-med-july-2026.json"),
-    start: "2026-07-05",
-    end: "2026-07-31",
-    ports: ["marseille", "cannes", "barcelona", "genoa", "nice", "rome-civitavecchia"],
+    start: "2026-08-05",
+    end: "2026-12-31",
+    ports: ["marseille", "cannes", "barcelona", "genoa", "rome-civitavecchia", "venice", "naples", "palermo", "savona", "istanbul", "piraeus", "malta"],
     filter: () => true,
   },
 };

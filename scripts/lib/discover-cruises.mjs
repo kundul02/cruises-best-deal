@@ -1,5 +1,5 @@
 /**
- * Re-fetch Cruisello for a region, merge with existing JSON, mark new slugs.
+ * Re-fetch Cruisello for a region (fetch scripts merge + mark new slugs).
  */
 import fs from "fs";
 import path from "path";
@@ -21,30 +21,6 @@ export const DISCOVER_FILES = {
   transatlantic: path.join(root, "research", "transatlantic-fall-2026.json"),
 };
 
-const PRESERVE_KEYS = [
-  "buyOptions",
-  "bestPrice2",
-  "bestPrice3",
-  "lastRefreshed",
-  "vtgBatchAt",
-  "goBatchAt",
-  "discoveredAt",
-];
-
-function mergeCruise(fresh, previous) {
-  if (!previous) {
-    return { ...fresh, discoveredAt: new Date().toISOString().slice(0, 10) };
-  }
-  const merged = { ...fresh };
-  for (const key of PRESERVE_KEYS) {
-    if (previous[key] != null && (key === "buyOptions" ? previous.buyOptions?.length : true)) {
-      merged[key] = previous[key];
-    }
-  }
-  if (previous.discoveredAt) merged.discoveredAt = previous.discoveredAt;
-  return merged;
-}
-
 /**
  * @param {"med"|"north"|"transatlantic"} regionId
  */
@@ -55,52 +31,22 @@ export function discoverRegion(regionId) {
     return { ok: false, error: "Unknown region: " + regionId };
   }
 
-  const previous = fs.existsSync(filePath)
-    ? JSON.parse(fs.readFileSync(filePath, "utf8"))
-    : { meta: {}, cruises: [] };
-  const bySlug = new Map(previous.cruises.map((c) => [c.slug, c]));
-  const beforeSlugs = new Set(bySlug.keys());
+  const before = fs.existsSync(filePath)
+    ? JSON.parse(fs.readFileSync(filePath, "utf8")).cruises.length
+    : 0;
 
-  execSync(`node ${script}`, { cwd: root, stdio: "pipe", timeout: 600_000 });
+  execSync(`node ${script}`, { cwd: root, stdio: "pipe", timeout: 900_000 });
 
-  const fetched = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  const today = new Date().toISOString().slice(0, 10);
-  const added = [];
-  const merged = fetched.cruises.map((c) => {
-    const prev = bySlug.get(c.slug);
-    const isNew = !beforeSlugs.has(c.slug);
-    const out = mergeCruise(c, prev);
-    if (isNew) {
-      out.discoveredAt = today;
-      added.push({
-        slug: c.slug,
-        ship: c.ship,
-        line: c.line,
-        sailDate: c.sailDate,
-        port: c.port,
-        price2: c.price2,
-      });
-    }
-    return out;
-  });
-
-  const data = {
-    meta: {
-      ...fetched.meta,
-      lastDiscover: new Date().toISOString(),
-      lastDiscoverAdded: added.length,
-    },
-    cruises: merged,
-  };
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+  const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const addedCount = data.meta?.lastDiscoverAdded ?? 0;
 
   return {
     ok: true,
     region: regionId,
-    total: merged.length,
-    before: beforeSlugs.size,
-    addedCount: added.length,
-    added,
+    total: data.cruises.length,
+    before,
+    addedCount,
+    added: data.cruises.filter((c) => c.discoveredAt === new Date().toISOString().slice(0, 10)),
   };
 }
 

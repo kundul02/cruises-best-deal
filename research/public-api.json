@@ -1,5 +1,5 @@
 {
-  "priceApi": "https://equipment-darwin-dome-antarctica.trycloudflare.com",
+  "priceApi": "",
   "apiVersion": 2,
   "note": "Set priceApi to your Cloudflare Tunnel URL (https://….trycloudflare.com) when running npm run tunnel"
 }

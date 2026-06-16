@@ -89,16 +89,14 @@
           "url": "https://www.cruisedirect.com/search-results",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "iCruise",
           "url": "https://www.icruise.com",
           "affiliateUrl": "https://www.icruise.com",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "TUI Cruises (прямо)",
@@ -107,7 +105,7 @@
           "price2": 3198,
           "price3": 4947,
           "verifiedAt": "2026-06-14",
-          "note": " · обновлено 2026-06-14"
+          "note": ""
         },
         {
           "vendor": "Cruisello · Book",
@@ -115,16 +113,26 @@
           "price2": 3198,
           "price3": 4947,
           "verifiedAt": "2026-06-14",
-          "note": " · обновлено 2026-06-14"
+          "note": ""
         },
         {
           "vendor": "CruiseCompete",
           "url": "https://www.cruisecompete.com/",
           "price2": null,
           "manual": true,
-          "note": "котировка по email",
+          "note": "котировка по email (1–2 дня)",
           "verifiedAt": null,
           "hidden": true
+        },
+        {
+          "vendor": "Vacations To Go",
+          "url": "https://www.vacationstogo.com/custom.cfm",
+          "price2": null,
+          "price3": null,
+          "manual": true,
+          "vtgStatus": "unavailable",
+          "note": "TUI Cruises не продаётся на Vacations To Go (VTG US)",
+          "verifiedAt": null
         }
       ],
       "lastRefreshed": "2026-06-14T22:08:37.437Z",
@@ -218,16 +226,14 @@
           "url": "https://www.cruisedirect.com/search-results",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "iCruise",
           "url": "https://www.icruise.com",
           "affiliateUrl": "https://www.icruise.com",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "MSC Cruises (прямо)",
@@ -236,7 +242,7 @@
           "price2": 1658,
           "price3": 2214,
           "verifiedAt": "2026-06-14",
-          "note": " · обновлено 2026-06-14"
+          "note": ""
         },
         {
           "vendor": "Cruisello · Book",
@@ -244,7 +250,7 @@
           "price2": 1658,
           "price3": 2214,
           "verifiedAt": "2026-06-14",
-          "note": " · обновлено 2026-06-14"
+          "note": ""
         },
         {
           "vendor": "Vacations To Go",
@@ -259,7 +265,7 @@
           "url": "https://www.cruisecompete.com/",
           "price2": null,
           "manual": true,
-          "note": "котировка по email",
+          "note": "котировка по email (1–2 дня)",
           "verifiedAt": null,
           "hidden": true
         }
@@ -340,16 +346,14 @@
           "url": "https://www.cruisedirect.com/search-results",
           "affiliateUrl": "https://www.tkqlhce.com/click-101701585-15734200?url=https%3A%2F%2Fwww.cruisedirect.com%2Fsearch-results",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "iCruise",
           "url": "https://www.icruise.com",
           "affiliateUrl": "https://www.icruise.com",
           "source": "cruisello-go",
-          "note": "ссылка Cruisello /go/ · цена на сайте",
-          "hidden": false
+          "note": "ссылка Cruisello /go/ · цена на сайте"
         },
         {
           "vendor": "Norwegian Cruise Line (прямо)",
@@ -379,7 +383,7 @@
           "url": "https://www.cruisecompete.com/",
           "price2": null,
           "manual": true,
-          "note": "котировка по email",
+          "note": "котировка по email (1–2 дня)",
           "verifiedAt": null,
           "hidden": true
         }
