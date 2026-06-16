@@ -165,7 +165,11 @@ tr.new-cruise:hover { background:#E3F2FD; }
 .table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--sep); background:var(--card); }
 table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
 th,td { padding:8px 10px; text-align:left; border-bottom:1px solid var(--sep); vertical-align:top; }
-th.col-date,td.col-date { width:72px; }
+th.col-date,td.col-date { width:118px; }
+.date-range { display:flex; flex-direction:column; gap:3px; }
+.date-line { display:block; font-size:12px; line-height:1.35; white-space:nowrap; }
+.date-k { font-size:9px; font-weight:600; text-transform:uppercase; color:var(--text2); letter-spacing:.04em; margin-right:4px; }
+.date-sep { display:none; }
 th.col-port,td.col-port { width:96px; }
 th.col-nights,td.col-nights { width:48px; text-align:center; }
 th.col-ship,td.col-ship { width:22%; }
@@ -340,12 +344,16 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
   tbody tr:not(.buy-detail) td.col-date::before,
   tbody tr:not(.buy-detail) td.col-port::before { display:none; }
   td.col-date {
-    font-size:17px;
+    font-size:15px;
     font-weight:700;
     padding-bottom:6px !important;
     border-bottom:1px solid var(--sep) !important;
     margin-bottom:0;
+    align-items:flex-start !important;
   }
+  td.col-date .date-range { flex:1; min-width:0; }
+  td.col-date .date-line { font-size:14px; white-space:normal; }
+  td.col-date .date-k { display:inline; font-size:10px; }
   .m-nights {
     display:inline-block;
     font-size:12px;
@@ -430,7 +438,7 @@ tr.buy-detail td { padding:0; border-bottom:2px solid var(--sep); }
 <div class="table-wrap">
 <table>
 <thead><tr>
-  <th class="sortable col-date" data-col="date">Дата<span class="arr"></span></th>
+  <th class="sortable col-date" data-col="date">Даты<span class="arr"></span></th>
   <th class="sortable col-port" data-col="port">Порт<span class="arr"></span></th>
   <th class="sortable col-nights" data-col="nights">Ночей<span class="arr"></span></th>
   <th class="col-ship">Корабль</th><th class="col-route">Маршрут</th>
@@ -510,6 +518,31 @@ function regionCruises() {
 }
 
 function fmtEur(n) { return n == null ? "—" : "€" + n.toLocaleString("en-GB"); }
+
+const MONTHS = ${JSON.stringify(MONTHS)};
+
+function fmtDate(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return String(d).padStart(2, "0") + " " + MONTHS[m - 1] + " " + y;
+}
+
+function endSailDate(iso, nights) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(y, m - 1, d + nights);
+  return dt.getFullYear() + "-" + String(dt.getMonth() + 1).padStart(2, "0") + "-" + String(dt.getDate()).padStart(2, "0");
+}
+
+function dateRangeCell(c) {
+  const start = c._fmtDate || "—";
+  const end = c._fmtEndDate || "";
+  if (!end || end === start) {
+    return '<span class="date-range"><span class="date-line"><span class="date-k">Выезд</span>' + start + "</span></span>";
+  }
+  return '<span class="date-range">' +
+    '<span class="date-line"><span class="date-k">Выезд</span>' + start + "</span>" +
+    '<span class="date-line"><span class="date-k">Приезд</span>' + end + "</span>" +
+    "</span>";
+}
 
 function cmp(a, b, col) {
   if (col === "date") return a.sailDate.localeCompare(b.sailDate);
@@ -665,7 +698,10 @@ function buyCell(c) {
 
 function buyPanel(c) {
   const g = buyOptionsGrouped(c);
-  let html = '<div class="buy-panel"><div class="buy-panel-head"><h4>Где купить · ' + c.ship + " · " + (c._fmtDate || "") + '</h4>' +
+  const dateLabel = c._fmtEndDate && c._fmtEndDate !== c._fmtDate
+    ? (c._fmtDate || "") + " → " + c._fmtEndDate
+    : (c._fmtDate || "");
+  let html = '<div class="buy-panel"><div class="buy-panel-head"><h4>Где купить · ' + c.ship + " · " + dateLabel + '</h4>' +
     '<button type="button" class="refresh-btn primary" data-refresh="' + c.slug + '">↻ Обновить Cruisello + VTG</button></div>';
   if (refreshFlash && refreshFlash.slug === c.slug) {
     html += '<div class="buy-flash' + (refreshFlash.err ? " err" : "") + '">' + refreshFlash.msg + "</div>";
@@ -983,7 +1019,7 @@ function render() {
         labels.map(p => "<li>" + p + "</li>").join("") + '</ul></details>'
       : "—";
     const main = '<tr' + rowClass(c) + '>' +
-      '<td class="date col-date" data-label="Дата">' + (c._fmtDate||"") + '<span class="m-nights">' + c.nights + ' н.</span></td>' +
+      '<td class="date col-date" data-label="Даты">' + dateRangeCell(c) + '<span class="m-nights">' + c.nights + ' н.</span></td>' +
       '<td class="port col-port" data-label="Порт"><strong>' + c.port + '</strong><small>' + c.country + '</small></td>' +
       '<td class="col-nights" data-label="Ночей">' + c.nights + '</td>' +
       '<td class="col-ship" data-label="Корабль">' + tags(c) + c.line + '<br><small>' + c.ship + '</small>' +
@@ -1041,8 +1077,11 @@ document.querySelectorAll("th.sortable").forEach(th => {
 });
 
 CRUISES.forEach(c => {
-  const [y,m,d] = c.sailDate.split("-").map(Number);
-  c._fmtDate = String(d).padStart(2,"0") + " " + ${JSON.stringify(MONTHS)}[m-1] + " " + y;
+  c._fmtDate = fmtDate(c.sailDate);
+  if (c.nights) {
+    c.endDate = endSailDate(c.sailDate, c.nights);
+    c._fmtEndDate = fmtDate(c.endDate);
+  }
 });
 const hash = location.hash.replace("#","");
 if (hash === "med" || hash === "north" || hash === "transatlantic") activeRegion = hash;
